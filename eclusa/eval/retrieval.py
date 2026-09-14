@@ -22,7 +22,7 @@ from eclusa.index.store import IndexStore
 
 CASES_PATH = Path(__file__).resolve().parent.parent.parent / "eval" / "retrieval" / "cases.json"
 
-Kind = Literal["changed", "unchanged", "topic", "names_revoked"]
+Kind = Literal["changed", "unchanged", "topic", "names_revoked", "asks_original"]
 
 
 class Case(BaseModel):
@@ -56,6 +56,8 @@ class CaseResult:
     mrr_in_force: float | None
     revoked_below_current: bool | None
     notice_with_revoked: bool | None
+    named_first: bool | None
+    superseded_reachable: bool | None
     top: tuple[str, ...]  # "doc_id citation" of the top-k, for reading
 
 
@@ -70,7 +72,10 @@ def evaluate_case(case: Case, ranked: list[Chunk], manifest: Manifest) -> CaseRe
         for rank, c in enumerate(ranked, start=1)
         if act_of(c) == case.expected_act and c.citation in case.units
     ]
-    hit = bool(matches)
+    superseded = [
+        (r, c) for r, c in matches if manifest.by_id(c.doc_id).status is Status.SUPERSEDED
+    ]
+    hit = bool(superseded) if case.kind == "asks_original" else bool(matches)
     in_force_first = mrr = None
     if case.kind in ("changed", "unchanged"):
         in_force_first = hit and manifest.by_id(matches[0][1].doc_id).status is Status.IN_FORCE
@@ -87,11 +92,13 @@ def evaluate_case(case: Case, ranked: list[Chunk], manifest: Manifest) -> CaseRe
         below = first_current is not None and (
             first_revoked is None or first_current < first_revoked
         )
-    notice = None
+    notice = named_first = None
     if case.kind == "names_revoked":
         revoked_present = any(act_of(c) == case.expected_act for c in ranked)
         has_notice = any(act_of(c) == case.expected_act and c.kind == "notice" for c in ranked)
         notice = (not revoked_present) or has_notice
+        named_first = bool(ranked) and act_of(ranked[0]) == case.expected_act
+    reachable = bool(superseded) if case.kind == "asks_original" else None
     return CaseResult(
         id=case.id,
         kind=case.kind,
@@ -100,6 +107,8 @@ def evaluate_case(case: Case, ranked: list[Chunk], manifest: Manifest) -> CaseRe
         mrr_in_force=mrr,
         revoked_below_current=below,
         notice_with_revoked=notice,
+        named_first=named_first,
+        superseded_reachable=reachable,
         top=tuple(f"{c.doc_id} {c.citation or '(notice)'}" for c in ranked),
     )
 
@@ -119,8 +128,12 @@ def aggregate(results: list[CaseResult]) -> dict[str, float | int]:
         "notice_with_revoked": frac(
             [r.notice_with_revoked for r in results if r.notice_with_revoked is not None]
         ),
+        "named_first": frac([r.named_first for r in results if r.named_first is not None]),
+        "superseded_reachable": frac(
+            [r.superseded_reachable for r in results if r.superseded_reachable is not None]
+        ),
     }
-    for kind in ("changed", "unchanged", "topic", "names_revoked"):
+    for kind in ("changed", "unchanged", "topic", "names_revoked", "asks_original"):
         subset = [r for r in results if r.kind == kind]
         out[f"hit@k[{kind}]"] = frac([r.hit for r in subset])
         if kind in ("changed", "unchanged"):

@@ -57,6 +57,8 @@ def main(argv: list[str] | None = None) -> int:
                 ("mrr", res.mrr_in_force),
                 ("revoked_below", res.revoked_below_current),
                 ("notice", res.notice_with_revoked),
+                ("named_first", res.named_first),
+                ("superseded_reachable", res.superseded_reachable),
             )
             if value is not None
         )

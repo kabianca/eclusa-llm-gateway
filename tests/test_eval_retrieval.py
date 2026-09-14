@@ -41,6 +41,8 @@ def test_cases_are_unique_well_typed_and_point_at_real_units(manifest, corpus_di
             assert manifest.current(case.expected_act) is not None, case.id
         if case.kind == "names_revoked":
             assert statuses == {Status.REVOKED}, case.id
+        if case.kind == "asks_original":
+            assert Status.SUPERSEDED in statuses, f"{case.id}: the unit must exist in the original"
 
 
 def chunk(doc_id: str, citation: str | None, kind: str = "unit") -> Chunk:
@@ -82,7 +84,21 @@ def test_metric_definitions_on_a_synthetic_ranking(manifest):
 
     # names_revoked: the notice must come along when the revoked text does
     r = evaluate_case(cases["revoked-pep"], [chunk(old, "art. 4º, caput")], manifest)
-    assert r.hit and r.notice_with_revoked is False
+    assert r.hit and r.notice_with_revoked is False and r.named_first is True
+    r = evaluate_case(
+        cases["revoked-pep"], [chunk(v5, "art. 27, caput"), chunk(old, "art. 4º, caput")], manifest
+    )
+    assert r.named_first is False, (
+        "forcing the act in force first is wrong when the question names 3.461"
+    )
+
+    # asks_original: the superseded wording must be reachable; the in-force copy alone is a miss
+    r = evaluate_case(cases["original-70"], [chunk(v5, "art. 70, caput")], manifest)
+    assert not r.hit and r.superseded_reachable is False
+    r = evaluate_case(
+        cases["original-70"], [chunk(v5, "art. 70, caput"), chunk(v1, "art. 70, caput")], manifest
+    )
+    assert r.hit and r.superseded_reachable is True
     r = evaluate_case(
         cases["revoked-pep"], [chunk(old, "art. 4º, caput"), chunk(old, None, "notice")], manifest
     )
@@ -125,5 +141,7 @@ def test_version_aware_retrieval_holds_the_frozen_after_numbers(manifest, corpus
     assert metrics["in_force_first"] == 1.0
     assert metrics["revoked_below_current"] == 1.0
     assert metrics["notice_with_revoked"] == 1.0
-    assert metrics["hit@k"] >= 0.9167
+    assert metrics["named_first"] == 1.0, "the exception of the revoked-below rule"
+    assert metrics["superseded_reachable"] == 1.0, "the exception of the in-force-first rule"
+    assert metrics["hit@k"] >= 0.9231
     assert metrics["mrr_in_force"] >= 0.8042

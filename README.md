@@ -187,6 +187,18 @@ revoked below current 60% → 100%, revocation notice present 0% → 100%. The
 provision was found in the same 92% — the layer cannot find what the
 embeddings miss, and does not pretend to.
 
+Three of those numbers went to 100% because the layer guarantees the property
+by construction — the version in force comes from the index by rule, the
+notice is attached by rule. They measure that the rule was applied, not that
+the rule is right: they are regression guards, and they are reported as such.
+The number that measures retrieval is the one that did not move. And a rule
+is only tested where it fires unless the set also holds the cases where it
+must not: two questions that name the revoked act, where forcing the text in
+force first would be wrong, and two that ask about the original wording,
+where dropping it would be — added by documented amendment to the frozen set,
+and passing before and after, which is what shows the rules have an exception
+that works.
+
 **A near-miss broke the binary.** "Quais procedimentos devem ser adotados na
 compra de ouro?" was meant to be a refusal: the act that regulates gold
 purchases is outside the corpus. But Carta Circular 4.001 lists red-flag

@@ -6,19 +6,23 @@
     "chunks": 529
   },
   "metrics": {
-    "cases": 24,
-    "hit@k": 0.9167,
+    "cases": 26,
+    "hit@k": 0.9231,
     "in_force_first": 0.25,
     "mrr_in_force": 0.3844,
     "revoked_below_current": 0.6,
     "notice_with_revoked": 0.0,
+    "named_first": 1.0,
+    "superseded_reachable": 1.0,
     "hit@k[changed]": 1.0,
     "in_force_first[changed]": 0.3636,
     "hit@k[unchanged]": 1.0,
     "in_force_first[unchanged]": 0.0,
     "hit@k[topic]": 0.8,
-    "hit@k[names_revoked]": 0.6667
+    "hit@k[names_revoked]": 0.6667,
+    "hit@k[asks_original]": 1.0
   },
+  "retrieval": "index alone",
   "results": [
     {
       "id": "changed-70",
@@ -28,6 +32,8 @@
       "mrr_in_force": 0.2,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 70, caput",
         "circular-3583-2012@v2 (notice)",
@@ -47,6 +53,8 @@
       "mrr_in_force": 0.5,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 16, § 2º",
         "circular-3978-2020@v5 art. 16, § 2º",
@@ -66,6 +74,8 @@
       "mrr_in_force": 0.16666666666666666,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 16, § 4º",
         "circular-3978-2020@v5 art. 16, § 4º",
@@ -85,6 +95,8 @@
       "mrr_in_force": 0.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 18, § 1º",
         "circular-3978-2020@v1 art. 18, caput",
@@ -104,6 +116,8 @@
       "mrr_in_force": 0.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 24, caput",
         "circular-3978-2020@v5 art. 24, caput",
@@ -123,6 +137,8 @@
       "mrr_in_force": 0.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v5 art. 24, § 2º",
         "circular-3978-2020@v1 art. 24, § 2º",
@@ -142,6 +158,8 @@
       "mrr_in_force": 1.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v5 art. 24, § 3º",
         "circular-3978-2020@v1 art. 25, caput",
@@ -161,6 +179,8 @@
       "mrr_in_force": 1.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v5 art. 28, § 4º",
         "circular-3978-2020@v5 art. 28, caput",
@@ -180,6 +200,8 @@
       "mrr_in_force": 0.3333333333333333,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 33, caput",
         "circular-3978-2020@v5 art. 33, caput",
@@ -199,6 +221,8 @@
       "mrr_in_force": 0.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 69, caput",
         "circular-3978-2020@v5 art. 69, caput",
@@ -218,6 +242,8 @@
       "mrr_in_force": 1.0,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v5 art. 23-A, caput",
         "circular-3978-2020@v1 art. 23, caput",
@@ -237,6 +263,8 @@
       "mrr_in_force": 0.2,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 10, caput",
         "circular-3978-2020@v1 art. 12, caput",
@@ -256,6 +284,8 @@
       "mrr_in_force": 0.5,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 2º, caput",
         "circular-3978-2020@v5 art. 2º, caput",
@@ -275,6 +305,8 @@
       "mrr_in_force": 0.5,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 48, caput",
         "circular-3978-2020@v5 art. 48, caput",
@@ -294,6 +326,8 @@
       "mrr_in_force": 0.5,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 27, caput",
         "circular-3978-2020@v5 art. 27, caput",
@@ -313,6 +347,8 @@
       "mrr_in_force": 0.25,
       "revoked_below_current": null,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 38, caput",
         "circular-3978-2020@v1 art. 38, § 2º",
@@ -332,6 +368,8 @@
       "mrr_in_force": null,
       "revoked_below_current": false,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3461-2009@v10 art. 2º, caput",
         "circular-3461-2009@v10 art. 11, parágrafo único",
@@ -351,6 +389,8 @@
       "mrr_in_force": null,
       "revoked_below_current": true,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 27, caput",
         "circular-3978-2020@v5 art. 27, caput",
@@ -370,6 +410,8 @@
       "mrr_in_force": null,
       "revoked_below_current": false,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3461-2009@v10 art. 6º, caput",
         "circular-3978-2020@v1 art. 28, caput",
@@ -389,6 +431,8 @@
       "mrr_in_force": null,
       "revoked_below_current": true,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 48, caput",
         "circular-3978-2020@v5 art. 48, caput",
@@ -408,6 +452,8 @@
       "mrr_in_force": null,
       "revoked_below_current": true,
       "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": null,
       "top": [
         "circular-3978-2020@v1 art. 40, § 2º",
         "circular-3978-2020@v1 art. 38, § 2º",
@@ -427,6 +473,8 @@
       "mrr_in_force": null,
       "revoked_below_current": null,
       "notice_with_revoked": false,
+      "named_first": true,
+      "superseded_reachable": null,
       "top": [
         "circular-3461-2009@v10 art. 4º, § 3º",
         "circular-3461-2009@v10 art. 4º, § 7º",
@@ -446,6 +494,8 @@
       "mrr_in_force": null,
       "revoked_below_current": null,
       "notice_with_revoked": false,
+      "named_first": true,
+      "superseded_reachable": null,
       "top": [
         "circular-3461-2009@v10 art. 2º, caput",
         "circular-3461-2009@v10 art. 2º, § 2º",
@@ -465,6 +515,8 @@
       "mrr_in_force": null,
       "revoked_below_current": null,
       "notice_with_revoked": false,
+      "named_first": true,
+      "superseded_reachable": null,
       "top": [
         "circular-3461-2009@v10 art. 13, § 3º",
         "circular-3461-2009@v10 art. 14, caput",
@@ -474,6 +526,48 @@
         "circular-3461-2009@v10 art. 12, § 2º",
         "circular-3461-2009@v10 art. 14, § 2º",
         "circular-3461-2009@v10 art. 14, § 1º"
+      ]
+    },
+    {
+      "id": "original-70",
+      "kind": "asks_original",
+      "hit": true,
+      "in_force_first": null,
+      "mrr_in_force": null,
+      "revoked_below_current": null,
+      "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": true,
+      "top": [
+        "circular-3978-2020@v1 art. 70, caput",
+        "circular-3517-2010@v2 art. 2º, caput",
+        "circular-3583-2012@v2 art. 2º, caput",
+        "circular-3889-2018@v2 art. 2º, caput",
+        "circular-3654-2013@v2 art. 3º, caput",
+        "circular-4005-2020@v1 art. 1º, caput",
+        "circular-3839-2017@v2 art. 4º, caput",
+        "circular-3517-2010@v2 art. 1º, caput"
+      ]
+    },
+    {
+      "id": "original-16-endereco",
+      "kind": "asks_original",
+      "hit": true,
+      "in_force_first": null,
+      "mrr_in_force": null,
+      "revoked_below_current": null,
+      "notice_with_revoked": null,
+      "named_first": null,
+      "superseded_reachable": true,
+      "top": [
+        "circular-3978-2020@v1 art. 16, § 1º",
+        "circular-3978-2020@v5 art. 16, § 1º",
+        "circular-3583-2012@v2 art. 1º, caput",
+        "circular-3978-2020@v1 art. 16, caput",
+        "circular-3978-2020@v1 art. 16, § 2º",
+        "circular-3978-2020@v5 art. 16, caput",
+        "circular-3839-2017@v2 art. 3º, caput",
+        "circular-3978-2020@v1 art. 13, § 1º"
       ]
     }
   ]

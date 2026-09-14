@@ -1,56 +1,248 @@
 {
   "k": 8,
   "cases": [
-    {"id": "changed-70", "kind": "changed", "question": "Quando a Circular 3.978 entra em vigor?",
-     "expected_act": "circular-3978-2020", "units": ["art. 70, caput"]},
-    {"id": "changed-16-pn", "kind": "changed", "question": "Quais dados devem ser coletados, no mínimo, na identificação de um cliente pessoa natural?",
-     "expected_act": "circular-3978-2020", "units": ["art. 16, § 2º"]},
-    {"id": "changed-16-pj", "kind": "changed", "question": "A identificação de cliente pessoa jurídica exige o endereço da sede?",
-     "expected_act": "circular-3978-2020", "units": ["art. 16, § 2º"]},
-    {"id": "changed-18-info", "kind": "changed", "question": "Que informações os procedimentos de qualificação do cliente devem coletar?",
-     "expected_act": "circular-3978-2020", "units": ["art. 18, § 1º"]},
-    {"id": "changed-18-residencia", "kind": "changed", "question": "A qualificação do cliente deve identificar o local de residência da pessoa natural?",
-     "expected_act": "circular-3978-2020", "units": ["art. 18, § 1º"]},
-    {"id": "changed-24-excecoes", "kind": "changed", "question": "Quais pessoas jurídicas se excetuam da obrigação de identificar o beneficiário final?",
-     "expected_act": "circular-3978-2020", "units": ["art. 24, § 3º"]},
-    {"id": "changed-24-fundos", "kind": "changed", "question": "Fundos de investimento registrados na CVM precisam identificar o beneficiário final?",
-     "expected_act": "circular-3978-2020", "units": ["art. 24, § 3º"]},
-    {"id": "changed-28-cambio", "kind": "changed", "question": "Nas operações no mercado de câmbio, que documentos comprobatórios devem ser registrados e guardados?",
-     "expected_act": "circular-3978-2020", "units": ["art. 28, § 4º"]},
-    {"id": "changed-33-transporte", "kind": "changed", "question": "Em operação em espécie acima de R$ 2.000 realizada por empresa de transporte de valores, quem é considerado o portador dos recursos?",
-     "expected_act": "circular-3978-2020", "units": ["art. 33, parágrafo único"]},
-    {"id": "changed-68-cambio", "kind": "changed", "question": "A Circular 3.978 altera a Circular 3.691 sobre o mercado de câmbio?",
-     "expected_act": "circular-3978-2020", "units": ["art. 68, caput"]},
-    {"id": "changed-23a-renegociacao", "kind": "changed", "question": "As instituições ficam dispensadas de qualificar e classificar clientes em operações de crédito de programa federal de renegociação de dívidas?",
-     "expected_act": "circular-3978-2020", "units": ["art. 23-A, caput"]},
-
-    {"id": "unchanged-10", "kind": "unchanged", "question": "Qual é o objetivo da avaliação interna de risco?",
-     "expected_act": "circular-3978-2020", "units": ["art. 10, caput"]},
-    {"id": "unchanged-2", "kind": "unchanged", "question": "As instituições devem implementar e manter uma política de prevenção à lavagem de dinheiro?",
-     "expected_act": "circular-3978-2020", "units": ["art. 2º, caput"]},
-    {"id": "unchanged-48", "kind": "unchanged", "question": "As instituições devem comunicar ao Coaf as operações suspeitas de lavagem de dinheiro?",
-     "expected_act": "circular-3978-2020", "units": ["art. 48, caput"]},
-    {"id": "unchanged-27", "kind": "unchanged", "question": "As instituições devem ter procedimentos para qualificar clientes como pessoa exposta politicamente?",
-     "expected_act": "circular-3978-2020", "units": ["art. 27, caput"]},
-    {"id": "unchanged-38", "kind": "unchanged", "question": "Qual é o objetivo dos procedimentos de monitoramento, seleção e análise de operações?",
-     "expected_act": "circular-3978-2020", "units": ["art. 38, caput"]},
-
-    {"id": "topic-cadastro", "kind": "topic", "question": "Que informações cadastrais devem ser coletadas dos clientes e mantidas atualizadas?",
-     "expected_act": "circular-3978-2020", "units": ["art. 16, § 2º", "art. 18, § 1º", "art. 18, § 5º", "art. 16, caput", "art. 18, caput"], "revoked_act": "circular-3461-2009"},
-    {"id": "topic-pep", "kind": "topic", "question": "As instituições devem obter informações que permitam caracterizar seus clientes como pessoas expostas politicamente?",
-     "expected_act": "circular-3978-2020", "units": ["art. 27, caput"], "revoked_act": "circular-3461-2009"},
-    {"id": "topic-registros", "kind": "topic", "question": "Que registros de operações e serviços financeiros as instituições devem manter?",
-     "expected_act": "circular-3978-2020", "units": ["art. 28, caput"], "revoked_act": "circular-3461-2009"},
-    {"id": "topic-coaf", "kind": "topic", "question": "O que as instituições devem comunicar ao Coaf?",
-     "expected_act": "circular-3978-2020", "units": ["art. 48, caput"], "revoked_act": "circular-3461-2009"},
-    {"id": "topic-monitoramento", "kind": "topic", "question": "Que operações e situações os procedimentos de monitoramento devem ser capazes de identificar?",
-     "expected_act": "circular-3978-2020", "units": ["art. 39, caput"], "revoked_act": "circular-3461-2009"},
-
-    {"id": "revoked-pep", "kind": "names_revoked", "question": "O que a Circular 3.461 dizia sobre pessoas expostas politicamente?",
-     "expected_act": "circular-3461-2009", "units": ["art. 4º, caput"]},
-    {"id": "revoked-cadastro", "kind": "names_revoked", "question": "Segundo a Circular 3.461, que informações cadastrais dos clientes deviam ser coletadas?",
-     "expected_act": "circular-3461-2009", "units": ["art. 2º, caput"]},
-    {"id": "revoked-coaf", "kind": "names_revoked", "question": "O que a Circular 3.461 mandava comunicar ao Coaf?",
-     "expected_act": "circular-3461-2009", "units": ["art. 13, caput"]}
+    {
+      "id": "changed-70",
+      "kind": "changed",
+      "question": "Quando a Circular 3.978 entra em vigor?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 70, caput"
+      ]
+    },
+    {
+      "id": "changed-16-pn",
+      "kind": "changed",
+      "question": "Quais dados devem ser coletados, no mínimo, na identificação de um cliente pessoa natural?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 16, § 2º"
+      ]
+    },
+    {
+      "id": "changed-16-pj",
+      "kind": "changed",
+      "question": "A identificação de cliente pessoa jurídica exige o endereço da sede?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 16, § 2º"
+      ]
+    },
+    {
+      "id": "changed-18-info",
+      "kind": "changed",
+      "question": "Que informações os procedimentos de qualificação do cliente devem coletar?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 18, § 1º"
+      ]
+    },
+    {
+      "id": "changed-18-residencia",
+      "kind": "changed",
+      "question": "A qualificação do cliente deve identificar o local de residência da pessoa natural?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 18, § 1º"
+      ]
+    },
+    {
+      "id": "changed-24-excecoes",
+      "kind": "changed",
+      "question": "Quais pessoas jurídicas se excetuam da obrigação de identificar o beneficiário final?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 24, § 3º"
+      ]
+    },
+    {
+      "id": "changed-24-fundos",
+      "kind": "changed",
+      "question": "Fundos de investimento registrados na CVM precisam identificar o beneficiário final?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 24, § 3º"
+      ]
+    },
+    {
+      "id": "changed-28-cambio",
+      "kind": "changed",
+      "question": "Nas operações no mercado de câmbio, que documentos comprobatórios devem ser registrados e guardados?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 28, § 4º"
+      ]
+    },
+    {
+      "id": "changed-33-transporte",
+      "kind": "changed",
+      "question": "Em operação em espécie acima de R$ 2.000 realizada por empresa de transporte de valores, quem é considerado o portador dos recursos?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 33, parágrafo único"
+      ]
+    },
+    {
+      "id": "changed-68-cambio",
+      "kind": "changed",
+      "question": "A Circular 3.978 altera a Circular 3.691 sobre o mercado de câmbio?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 68, caput"
+      ]
+    },
+    {
+      "id": "changed-23a-renegociacao",
+      "kind": "changed",
+      "question": "As instituições ficam dispensadas de qualificar e classificar clientes em operações de crédito de programa federal de renegociação de dívidas?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 23-A, caput"
+      ]
+    },
+    {
+      "id": "unchanged-10",
+      "kind": "unchanged",
+      "question": "Qual é o objetivo da avaliação interna de risco?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 10, caput"
+      ]
+    },
+    {
+      "id": "unchanged-2",
+      "kind": "unchanged",
+      "question": "As instituições devem implementar e manter uma política de prevenção à lavagem de dinheiro?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 2º, caput"
+      ]
+    },
+    {
+      "id": "unchanged-48",
+      "kind": "unchanged",
+      "question": "As instituições devem comunicar ao Coaf as operações suspeitas de lavagem de dinheiro?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 48, caput"
+      ]
+    },
+    {
+      "id": "unchanged-27",
+      "kind": "unchanged",
+      "question": "As instituições devem ter procedimentos para qualificar clientes como pessoa exposta politicamente?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 27, caput"
+      ]
+    },
+    {
+      "id": "unchanged-38",
+      "kind": "unchanged",
+      "question": "Qual é o objetivo dos procedimentos de monitoramento, seleção e análise de operações?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 38, caput"
+      ]
+    },
+    {
+      "id": "topic-cadastro",
+      "kind": "topic",
+      "question": "Que informações cadastrais devem ser coletadas dos clientes e mantidas atualizadas?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 16, § 2º",
+        "art. 18, § 1º",
+        "art. 18, § 5º",
+        "art. 16, caput",
+        "art. 18, caput"
+      ],
+      "revoked_act": "circular-3461-2009"
+    },
+    {
+      "id": "topic-pep",
+      "kind": "topic",
+      "question": "As instituições devem obter informações que permitam caracterizar seus clientes como pessoas expostas politicamente?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 27, caput"
+      ],
+      "revoked_act": "circular-3461-2009"
+    },
+    {
+      "id": "topic-registros",
+      "kind": "topic",
+      "question": "Que registros de operações e serviços financeiros as instituições devem manter?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 28, caput"
+      ],
+      "revoked_act": "circular-3461-2009"
+    },
+    {
+      "id": "topic-coaf",
+      "kind": "topic",
+      "question": "O que as instituições devem comunicar ao Coaf?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 48, caput"
+      ],
+      "revoked_act": "circular-3461-2009"
+    },
+    {
+      "id": "topic-monitoramento",
+      "kind": "topic",
+      "question": "Que operações e situações os procedimentos de monitoramento devem ser capazes de identificar?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 39, caput"
+      ],
+      "revoked_act": "circular-3461-2009"
+    },
+    {
+      "id": "revoked-pep",
+      "kind": "names_revoked",
+      "question": "O que a Circular 3.461 dizia sobre pessoas expostas politicamente?",
+      "expected_act": "circular-3461-2009",
+      "units": [
+        "art. 4º, caput"
+      ]
+    },
+    {
+      "id": "revoked-cadastro",
+      "kind": "names_revoked",
+      "question": "Segundo a Circular 3.461, que informações cadastrais dos clientes deviam ser coletadas?",
+      "expected_act": "circular-3461-2009",
+      "units": [
+        "art. 2º, caput"
+      ]
+    },
+    {
+      "id": "revoked-coaf",
+      "kind": "names_revoked",
+      "question": "O que a Circular 3.461 mandava comunicar ao Coaf?",
+      "expected_act": "circular-3461-2009",
+      "units": [
+        "art. 13, caput"
+      ]
+    },
+    {
+      "id": "original-70",
+      "kind": "asks_original",
+      "question": "O que o texto original da Circular 3.978 previa como data de entrada em vigor?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 70, caput"
+      ]
+    },
+    {
+      "id": "original-16-endereco",
+      "kind": "asks_original",
+      "question": "Na redação original da Circular 3.978, a identificação do cliente exigia o endereço residencial?",
+      "expected_act": "circular-3978-2020",
+      "units": [
+        "art. 16, § 2º"
+      ]
+    }
   ]
 }
