@@ -1,0 +1,39 @@
+# Private working brief. The public docs/DESIGN.md is distilled from it at the end.
+docs/design.md
+
+# Secrets. This project holds an OpenAI key: a leaked key here costs money.
+# The only committed environment file is the example with no values in it.
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets/
+*.secret.yaml
+*.secret.yml
+kubeconfig*
+
+# Runtime output: audit trail, logs, downloaded models, local indexes.
+data/
+logs/
+var/
+.cache/
+.hf-cache/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# IDEs and editors
+.idea/
+.vscode/

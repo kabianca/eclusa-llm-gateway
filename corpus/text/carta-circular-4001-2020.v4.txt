@@ -1,0 +1,202 @@
+CARTA CIRCULAR Nº 4.001, DE 29 DE JANEIRO DE 2020
+Divulga relação de operações e situações que podem
+configurar indícios de ocorrência dos crimes de
+“lavagem” ou ocultação de bens, direitos e valores,
+de que trata a Lei nº 9.613, de 3 de março de 1998,
+e de financiamento ao terrorismo, previstos na Lei nº
+13.260, de 16 de março de 2016, passíveis de
+comunicação ao Conselho de Controle de Atividades
+Financeiras (Coaf).
+A Chefe do Departamento de Supervisão de Conduta (Decon), no uso da atribuição que lhe confere o art. 23, inciso I, alínea “a”, do Regimento Interno do Banco Central do Brasil, anexo à Portaria nº 105.173, de 24 de outubro de 2019,
+R ES OL VE:
+Art. 1º As operações ou as situações descritas a seguir exemplificam a ocorrência de indícios de suspeita para fins dos procedimentos de monitoramento e seleção previstos na Circular nº 3.978, de 23 de janeiro de 2020:
+I - situações relacionadas com operações em espécie em moeda nacional com a utilização de contas de depósitos ou de contas de pagamento:
+a) depósitos, aportes, saques, pedidos de provisionamento para saque ou qualquer outro instrumento de transferência de recursos em espécie, que apresentem atipicidade em relação à atividade econômica do cliente ou incompatibilidade com a sua capacidade financeira;
+b) movimentações em espécie realizadas por clientes cujas atividades possuam como característica a utilização de outros instrumentos de transferência de recursos, tais como cheques, cartões de débito ou crédito;
+c) aumentos substanciais no volume de depósitos ou aportes em espécie de qualquer pessoa natural ou jurídica, sem causa aparente, nos casos em que tais depósitos ou aportes forem posteriormente transferidos, dentro de curto período de tempo, a destino não relacionado com o cliente;
+d) fragmentação de depósitos ou outro instrumento de transferência de recurso em espécie, inclusive boleto de pagamento, de forma a dissimular o valor total da movimentação;
+e) fragmentação de saques em espécie, a fim de burlar limites regulatórios de reportes;
+f) depósitos ou aportes de grandes valores em espécie, de forma parcelada, principalmente nos mesmos caixas ou terminais de autoatendimento próximos, destinados a uma única conta ou a várias contas em municípios ou agências distintas;
+g) depósitos ou aportes em espécie em contas de clientes que exerçam atividade comercial relacionada com negociação de bens de luxo ou de alto valor, tais como obras de arte, imóveis, barcos, joias, automóveis ou aeronaves;
+h) saques em espécie de conta que receba diversos depósitos por transferência eletrônica de várias origens em curto período de tempo;
+i) depósitos ou aportes em espécie com cédulas úmidas, malcheirosas, mofadas, ou com aspecto de que foram armazenadas em local impróprio ou ainda que apresentem marcas, símbolos ou selos desconhecidos, empacotadas em maços desorganizados e não uniformes;
+j) depósitos, aportes ou troca de grandes quantidades de cédulas de pequeno valor, por pessoa natural ou jurídica, cuja atividade ou negócio não tenha como característica recebimentos de grandes quantias de recursos em espécie;
+k) saques no período de cinco dias úteis em valores inferiores aos limites estabelecidos, de forma a dissimular o valor total da operação e evitar comunicações de operações em espécie;
+l) dois ou mais saques em espécie no caixa no mesmo dia, com indícios de tentativa de burla para evitar a identificação do sacador;
+m) dois ou mais depósitos em terminais de autoatendimento em espécie , no período de cinco dias úteis, com indícios de tentativa de burla para evitar a identificação do depositante;
+n) depósitos em espécie relevantes em contas de servidores públicos e de qualquer tipo de Pessoas Expostas Politicamente (PEP), conforme elencados no art. 27 da Circular nº 3.978, de 2020, bem como seu representante, familiar ou estreito colaborador;
+o) tentativa de provisionamento ou de saque em espécie de valores oriundos de emendas parlamentares de contas destinadas ao recebimento desses recursos; (Incluída pela Instrução Normativa BCB nº 732, de 4/5/2026.)
+II - situações relacionadas com operações em espécie e cartões pré -pagos em moeda estrangeira e cheques de viagem:
+a) movimentações de moeda estrangeira em espécie ou de cheques de viagem denominados em moeda estrangeira, que apresentem atipicidade em relação à atividade econômica do cliente ou incompatibilidade com a sua capacidade financeira;
+b) negociações de moeda estrangeira em espécie ou de cheques de viagem denominados em moeda estrangeira, que não apresentem compatibilidade com a natureza declarada da operação;
+c) negociações de moeda estrangeira em espécie ou de cheques de viagem denominados em moeda estrangeira, realizadas por diferentes pessoas naturais, não relacionadas entre si, que informem o mesmo endereço residencial, telefone de contato ou possuam o mesmo representante legal;
+d) negociações envolvendo taxas de câmbio com variação significativa em relação às praticadas pelo mercado;
+e) negociações de moeda estrangeira em espécie envolvendo cédulas úmidas, malcheirosas, mofadas, ou com aspecto de terem sido armazenadas em local impróprio, ou ainda que apresentem marcas, símbolos ou selos desconhecidos, empacotadas em maços desorganizados e não uniformes;
+f) negociações de moeda estrangeira em espécie ou troca de grandes quantidades de cédulas de pequeno valor, realizadas por pessoa natural ou jurídica, cuja atividade ou negócio não tenha como característica o recebimento desse tipo de recurso;
+g) utilização, carga ou recarga de cartão pré-pago em valor não compatível com a capacidade financeira, atividade ou perfil do cliente;
+h) utilização de diversas fontes de recursos para carga e recarga de cartões pré -pagos;
+i) carga e recarga de cartões pré-pagos seguidas imediatamente por saques em caixas eletrônicos;
+III - situações relacionadas com a identificação e qualificação de clientes:
+a) resistência ao fornecimento de informações necessárias para o início de relacionamento ou para a atualização cadastral;
+b) oferecimento de informação falsa;
+c) prestação de informação de difícil ou onerosa verificação;
+d) abertura, movimentação de contas ou realização de operações por detentor de procuração ou de qualquer outro tipo de mandato;
+e) ocorrência de irregularidades relacionadas aos procedimentos de identificação e registro das operações exigidos pela regulamentação vigente;
+f) cadastramento de várias contas em uma mesma data, ou em curto período, com depósitos de valores idênticos ou aproximados, ou com outros elementos em comum, tais como origem dos recursos, titulares, procuradores, sócios, endereço, número de telefone, et c.;
+g) operações em que não seja possível identificar o beneficiário final, observados os procedimentos definidos na regulamentação vigente;
+h) representação de diferentes pessoas jurídicas ou organizações pelos mesmos procuradores ou representantes legais, sem justificativa razoável para tal ocorrência;
+i) informação de mesmo endereço residencial ou comercial por pessoas naturais, sem demonstração da existência de relação familiar ou comercial;
+j) incompatibilidade da atividade econômica ou faturamento informados com o padrão apresentado por clientes com o mesmo perfil;
+k) registro de mesmo endereço de e-mail ou de Internet Protocol (IP) por diferentes pessoas jurídicas ou organizações, sem justificativa razoável para tal ocorrência;
+l) registro de mesmo endereço de e-mail ou Internet Protocol (IP) por pessoas naturais, sem justificativa razoável para tal ocorrência;
+m) informações e documentos apresentados pelo cliente conflitantes com as informações públicas disponíveis;
+n) sócios de empresas sem aparente capacidade financeira para o porte da atividade empresarial declarada;
+IV - situações relacionadas com a movimentação de contas de depósito e de contas de pagamento em moeda nacional, que digam respeito a:
+a) movimentação de recursos incompatível com o patrimônio, a atividade econômica ou a ocupação profissional e a capacidade financeira do cliente;
+b) transferências de valores arredondados na unidade de milhar ou que estejam um pouco abaixo do limite para notificação de operações;
+c) movimentação de recursos de alto valor, de forma contumaz, em benefício de terceiros;
+d) manutenção de numerosas contas destinadas ao acolhimento de depósitos em nome de um mesmo cliente, cujos valores, somados, resultem em quantia significativa;
+e) movimentação de quantia significativa por meio de conta até então pouco movimentada ou de conta que acolha depósito inusitado;
+f) ausência repentina de movimentação financeira em conta que anteriormente apresentava grande movimentação;
+g) utilização de cofres de aluguel de forma atípica em relação ao perfil do cliente;
+h) dispensa da faculdade de utilização de prerrogativas como recebimento de crédito, de juros remuneratórios para grandes saldos ou, ainda, de outros serviços bancários especiais que, em circunstâncias normais, sejam valiosas para qualquer cliente;
+i) mudança repentina e injustificada na forma de movimentação de recursos ou nos tipos de transação utilizados;
+j) solicitação de não observância ou atuação no sentido de induzir funcionários da instituição a não seguirem os procedimentos regulamentares ou formais para a realização de uma operação;
+k) recebimento de recursos com imediata compra de instrumentos para a realização de pagamentos ou de transferências a terceiros, sem justificativa;
+l) operações que, por sua habitualidade, valor e forma, configurem artifício para burla da identificação da origem, do destino, dos responsáveis ou dos destinatários finais;
+m) existência de contas que apresentem créditos e débitos com a utilização de instrumentos de transferência de recursos não característicos para a ocupação ou o ramo de atividade desenvolvida pelo cliente;
+n) recebimento de depósitos provenientes de diversas origens, sem fundamentação econômico-financeira, especialmente provenientes de regiões distantes do local de atuação da pessoa jurídica ou distantes do domicílio da pessoa natural;
+o) pagamentos habituais a fornecedores ou beneficiários que não apresentem ligação com a atividade ou ramo de negócio da pessoa jurídica;
+p) pagamentos ou transferências por pessoa jurídica para fornecedor distante de seu local de atuação, sem fundamentação econômico-financeira;
+q) depósitos de cheques endossados totalizando valores significativos;
+r) existência de conta de depósitos à vista ou de conta de pagamento de organizações sem fins lucrativos cujos saldos ou movimentações financeiras não apresentem fundamentação econômica ou legal ou nas quais pareça não haver vinculação entre a atividade declarada da organização e as outras partes envolvidas nas transações;
+s) movimentação habitual de recursos financeiros de ou para qualquer tipo de PEP, conforme elencados no art. 27 da Circular nº 3.978, de 2020, bem como seu representante, familiar ou estreito colaborador, não justificada por eventos econômicos;
+t) existência de contas em nome de menores ou incapazes, cujos representantes realizem grande número de operações e/ou operações de valores relevantes;
+u) transações significativas e incomuns por meio de contas de depósitos ou de contas de pagamento de investidores não residentes constituídos sob a forma de trust;
+v) recebimentos de valores relevantes no mesmo terminal de pagamento ( Point of Sale - POS), que apresentem indícios de atipicidade ou de incompatibilidade com a capacidade financeira do estabelecimento comercial credenciado;
+w) recebimentos de valores relevantes no mesmo terminal de pagamento ( Point of sale - POS), que apresentem indícios de atipicidade ou de incompatibilidade com o perfil do estabelecimento comercial credenciado;
+x) desvios frequentes em padrões adotados por cada administradora de cartões de credenciamento ou de cartões de crédito, verificados no monitoramento das compras de seus titulares;
+y) transações em horário considerado incompatível com a atividade do estabelecimento comercial credenciado;
+z) transações em terminal (Point of sale - POS) realizadas em localização geográfica distante do local de atuação do estabelecimento comercial credenciado;
+aa) operações atípicas em contas de clientes que exerçam atividade comercial relacionada com negociação de bens de luxo ou de alto valor, tais como obras de arte, imóveis, barcos, joias, automóveis ou aeronaves;
+ab) utilização de instrumento financeiro de forma a ocultar patrimônio e/ou evitar a realização de bloqueios judiciais, inclusive cheque administrativo;
+ac) movimentação de valores incompatíveis com o faturamento mensal das pessoas jurídicas;
+ad) recebimento de créditos com o imediato débito dos valores;
+ae) movimentações de valores com empresas sem atividade regulamentada pelos órgãos competentes;
+V - situações relacionadas com operações de investimento no País:
+a) operações ou conjunto de operações de compra ou de venda de ativos financeiros a preços incompatíveis com os praticados no mercado ou quando realizadas por pessoa natural ou jurídica cuja atividade declarada e perfil não se coadunem ao tipo de negociação realizada;
+b) operações atípicas que resultem em elevados ganhos para os agentes intermediários, em desproporção com a natureza dos serviços efetivamente prestados;
+c) investimentos significativos em produtos de baixa rentabilidade e liquidez;
+d) investimentos significativos não proporcionais à capacidade financeira do cliente, ou cuja origem não seja claramente conhecida;
+e) resgates de investimentos no curtíssimo prazo, independentemente do resultado auferido;
+VI - situações relacionadas com operações de crédito no País:
+a) operações de crédito no País liquidadas com recursos aparentemente incompatíveis com a situação financeira do cliente;
+b) solicitação de concessão de crédito no País incompatível com a atividade econômica ou com a capacidade financeira do cliente;
+c) operação de crédito no País seguida de remessa de recursos ao exterior, sem fundamento econômico ou legal, e sem relacionamento com a operação de crédito;
+d) operações de crédito no País, simultâneas ou consecutivas, liquidadas antecipadamente ou em prazo muito curto;
+e) liquidação de operações de crédito ou assunção de dívida no País por terceiros, sem justificativa aparente;
+f) concessão de garantias de operações de crédito no País por terceiros não relacionados ao tomador;
+g) operação de crédito no País com oferecimento de garantia no exterior por cliente sem tradição de realização de operações no exterior;
+h) aquisição de bens ou serviços incompatíveis com o objeto da pessoa jurídica, especialmente quando os recursos forem originados de crédito no País;
+VII - situações relacionadas com a movimentação de recursos oriundos de contratos com o setor público:
+a) movimentações atípicas de recursos por agentes públicos, conforme definidos no art. 2º da Lei nº 8.429, de 2 de junho de 1992;
+b) movimentações atípicas de recursos por pessoa natural ou jurídica relacionadas a patrocínio, propaganda, marketing, consultorias, assessorias e capacitação;
+c) movimentações atípicas de recursos por organizações sem fins lucrativos;
+d) movimentações atípicas de recursos por pessoa natural ou jurídica relacionadas a licitações;
+VIII - situações relacionadas a consórcios:
+a) existência de consorciados detentores de elevado número de cotas, incompatível com sua capacidade financeira ou com o objeto da pessoa jurídica;
+b) aumento expressivo do número de cotas pertencentes a um mesmo consorciado;
+c) oferecimento de lances incompatíveis com a capacidade financeira do consorciado;
+d) oferecimento de lances muito próximos ao valor do bem;
+e) pagamento antecipado de quantidade expressiva de prestações vincendas, não condizente com a capacidade financeira do consorciado;
+f) aquisição de cotas previamente contempladas, seguida de quitação das prestações vincendas;
+g) utilização de documentos falsificados na adesão ou tentativa de adesão a grupo de consórcio;
+h) pagamentos realizados em localidades diferentes ao do endereço do cadastro;
+i) informe de conta de depósito à vista ou de poupança para pagamento de crédito em espécie, em agência/localidade diferente da inicialmente fornecida ou remessa de eventual Ordem de Pagamento (OP) para conta de depósito à vista ou de poupança divergente da inicialmente fornecida;
+IX - situações relacionadas a pessoas ou entidades suspeitas de envolvimento com financiamento ao terrorismo e a proliferação de armas de destruição em massa:
+a) movimentações financeiras envolvendo pessoas ou entidades relacionadas a atividades terroristas listadas pelo Conselho de Segurança das Nações Unidas (CSNU);
+b) operações ou prestação de serviços, de qualquer valor, a pessoas ou entidades que reconhecidamente tenham cometido ou intentado cometer atos terroristas, ou deles participado ou facilitado o seu cometimento;
+c) existência de recursos pertencentes ou controlados, direta ou indiretamente, por pessoas ou entidades que reconhecidamente tenham cometido ou intentado cometer atos terroristas, ou deles participado ou facilitado o seu cometimento;
+d) movimentações com indícios de financiamento ao terrorismo;
+e) movimentações financeiras envolvendo pessoas ou entidades relacionadas à proliferação de armas de destruição em massa listadas pelo CSNU;
+f) operações ou prestação de serviços, de qualquer valor, a pessoas ou entidades que reconhecidamente tenham cometido ou intentado cometer crimes de proliferação de armas de destruição em massa, ou deles participado ou facilitado o seu cometimento;
+g) existência de recursos pertencentes ou controlados, direta ou indiretamente, por pessoas ou entidades que reconhecidamente tenham cometido ou intentado cometer crimes de proliferação de armas de destruição em massa, ou deles participado ou facilitado o seu cometimento;
+h) movimentações com indícios de financiamento da proliferação de armas de destruição em massa;
+X - situações relacionadas com atividades internacionais:
+a) operação com pessoas naturais ou jurídicas, inclusive sociedades e instituições financeiras, situadas em países que não apliquem ou apliquem insuficientemente as recomendações do Grupo de Ação contra a Lavagem de Dinheiro e o Financiamento do Terrorismo (Gafi), ou que tenham sede em países ou dependências com tributação favorecida ou regimes fiscais privilegiados, ou em locais onde seja observada a prática contumaz dos crimes previstos na Lei nº 9.613, de 3 de março de 1998, não claramente caracterizadas em sua legalidade e fundamentação econômica;
+b) operações complexas e com custos mais elevados que visem a dificultar o rastreamento dos recursos ou a identificação da natureza da operação;
+c) pagamentos de importação e recebimentos de exportação, antecipados ou não, por empresa sem tradição ou cuja capacidade financeira seja incompatível com o montante negociado;
+d) pagamentos a terceiros não relacionados a operações de importação ou de exportação;
+e) transferências unilaterais que, pela habitualidade, valor ou forma, não se justifiquem ou apresentem atipicidade;
+f) transferências internacionais, inclusive a título de disponibilidade no exterior, nas quais não se justifique a origem dos fundos envolvidos ou que se mostrem incompatíveis com a capacidade financeira ou com o perfil do cliente;
+g) exportações ou importações aparentemente fictícias ou com indícios de superfaturamento ou subfaturamento, ou ainda em situações que não seja possível obter informações sobre o desembaraço aduaneiro das mercadorias;
+h) existência de informações na carta de crédito com discrepâncias em relação a outros documentos da operação de comércio internacional;
+i) pagamentos ao exterior após créditos em reais efetuados nas contas de depósitos dos titulares das operações de câmbio por pessoas naturais ou jurídicas que não demonstrem a existência de vínculo comercial ou econômico;
+j) movimentações decorrentes de programa de repatriação de recursos que apresentem inconsistências relacionadas à identificação do titular ou do beneficiário final, bem como ausência de informações confiáveis sobre a origem e a fundamentação econômica ou legal;
+k) pagamentos de frete ou de outros serviços que apresentem indícios de atipicidade ou de incompatibilidade com a atividade ou capacidade econômico-financeira do cliente;
+l) transferências internacionais por uma ou mais pessoas naturais ou jurídicas com indícios de fragmentação, como forma de ocultar a real origem ou destino dos recursos;
+m) transações em uma mesma data, ou em curto período, de valores idênticos ou aproximados, ou com outros elementos em comum, tais como origem ou destino dos recursos, titulares, procuradores, endereço, número de telefone, que configurem artifício de burla do limite máximo de operação;
+n) transferência via facilitadora de pagamentos ou com a utilização do cartão de crédito de uso internacional, que, pela habitualidade, valor ou forma, não se justifiquem ou apresentem atipicidade;
+o) transferências relacionadas a investimentos não convencionais que, pela habitualidade, valor ou forma, não se justifiquem ou apresentem atipicidade;
+p) pagamento de frete internacional sem amparo em documentação que evidencie vínculo com operação comercial;
+XI - situações relacionadas com operações de crédito contratadas no exterior:
+a) contratação de operações de crédito no exterior com cláusulas que estabeleçam condições incompatíveis com as praticadas no mercado, como juros destoantes da prática ou prazo muito longo;
+b) contratação, no exterior, de várias operações de crédito consecutivas, sem que a instituição tome conhecimento da quitação das anteriores;
+c) contratação, no exterior, de operações de crédito que não sejam quitadas por intermédio de operações na mesma instituição;
+d) contratação, no exterior, de operações de crédito, quitadas sem explicação aparente para a origem dos recursos;
+e) contratação de empréstimos ou financiamentos no exterior, oferecendo garantias em valores ou formas incompatíveis com a atividade ou capacidade financeira do cliente ou em valores muito superiores ao valor das operações contratadas ou cuja origem não seja claramente conhecida;
+f) contratação de operações de crédito no exterior, cujo credor seja de difícil identificação e sem que exista relação ou fundamentação para a operação entre as partes ;
+XII - situações relacionadas com operações de investimento externo:
+a) recebimento de investimento externo direto, cujos recursos retornem imediatamente a título de disponibilidade no exterior;
+b) recebimento de investimento externo direto, com realização quase imediata de remessas de recursos para o exterior a título de lucros e dividendos;
+c) remessas de lucros e dividendos ao exterior em valores incompatíveis com o valor investido;
+d) remessas ao exterior a título de investimento em montantes incompatíveis com a capacidade financeira do cliente;
+e) remessas de recursos de um mesmo investidor situado no exterior para várias empresas no País;
+f) remessas de recursos de vários investidores situados no exterior para uma mesma empresa no País;
+g) recebimento de aporte de capital desproporcional ao porte ou à natureza empresarial do cliente, ou em valores incompatíveis com a capacidade financeira dos sócios;
+h) retorno de investimento feito no exterior sem comprovação da re messa que lhe tenha dado origem;
+XIII - situações relacionadas com funcionários, parceiros e prestadores de serviços terceirizados:
+a) alteração inusitada nos padrões de vida e de comportamento do empregado, do parceiro ou de prestador de serviços terceirizados, sem causa aparente;
+b) modificação inusitada do resultado operacional da pessoa jurídica do parceiro, incluído correspondente no País, sem causa aparente;
+c) qualquer negócio realizado de modo diverso ao procedimento formal da instituição por funcionário, parceiro, incluído correspondente no País, ou prestador de serviços terceirizados;
+d) fornecimento de auxílio ou informações, remunerados ou não, a cliente em prejuízo do programa de prevenção à lavagem de dinheiro e ao financiamento do terrorismo da instituição, ou de auxílio para estruturar ou fracionar operações, burlar limites regulamentares ou operacionais;
+XIV - situações relacionadas a campanhas eleitorais:
+a) recebimento de doações, em contas (eleitorais ou não) de candidatos, contas de estreito colaborador dessas pessoas ou em contas de partidos políticos, de valores que desrespeitem as vedações ou extrapolem os limites definidos na legislação em vigor;
+b) uso incompatível com as exigências regulatórias do fundo de caixa do partido eleitoral;
+c) recebimento de doações, em contas de candidatos, de valores que desrespeitem as vedações ou extrapolem os limites definidos na legislação em vigor, inclusive mediante uso de terceiros e/ou de contas de terceiros;
+d) transferências, a partir das contas de candidatos, para pessoas naturais ou jurídicas cuja atividade não guarde aparente relação com contas de campanha;
+XV - situações relacionadas a BNDU e outros ativos não financeiros:
+a) negociação de BNDU ou outro ativo não financeiro para pessoas naturais ou jurídicas sem capacidade financeira;
+b) negociação de BNDU ou outro ativo não financeiro mediante pagamento em espécie;
+c) negociação de BNDU ou outro ativo não financeiro por preço significativamente superior ao de avaliação;
+d) negociação de outro ativo não financeiro em benefício de terceiros;
+XVI - situações relacionadas com a movimentação de contas correntes em moeda estrangeira (CCME):
+a) movimentação de recursos incompatível com a atividade econômica e a capacidade financeira do cliente;
+b) recebimentos ou pagamentos de/para terceiros cujas movimentações financeiras não apresentem fundamentação econômica ou legal ou nas quais pareça não haver vinculação entre a atividade declarada do titular da CCME e as outras partes envolvidas nas transações;
+c) movimentação de recursos, em especial nas contas tituladas por agentes autorizados a operar no mercado de câmbio, que denotem inobservância a limites por operação cambial ou qualquer outra situação em que não se justifiquem ou apresentem atipicidade, p ela habitualidade, valor, forma ou ausência de aderência às normas cambiais;
+d) transações atípicas em CCME de movimentação restrita. Exemplos: contas de agências de turismo e contas de administradoras de cartão de crédito;
+XVII - situações relacionadas com operações realizadas em municípios localizados em regiões de risco:
+a) operação atípica em municípios localizados em regiões de fronteira;
+b) operação atípica em municípios localizados em regiões de extração mineral;
+c) operação atípica em municípios localizados em outras regiões de risco.
+XVIII - situações relacionadas com a primeira aquisição de ouro: (Incluído pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+a) proposta de venda de ouro com pagamento em espécie; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+b) proposta de venda de ouro com pagamento a terceiro; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+c) proposta de venda de ouro sem a indicação do título minerário de origem ou com a indicação de título minerário inativo; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+d) proposta de venda de ouro oriundo de áreas com títulos minerários para extração por meio de Permissão de Lavra Garimpeira (PLG), com indicação de origem sem indícios de extração mineral, ou lavra incompatível com capacidade produtiva declarada; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+e) venda ou proposta de venda de ouro oriundo de áreas caracterizadas por elevados índices de desmatamento ilegal; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+f) proposta de venda de ouro com resistência no fornecimento de informações acerca da origem do produto; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+g) proposta de venda de ouro sem que o vendedor esteja identificado no documento autorizativo para transporte de ouro emitido pelo titular do direito minerário produtor da substância, nos termos do § 1º do art. 38 da Lei nº 12.844, de 19 de julho de 2013; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+h) venda ou proposta de venda de ouro contendo indícios de falsidade documental; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+i) proposta de venda de ouro com informações incompatíveis com os dados do título minerário registrados no Cadastro Mineiro da Agência Nacional de Mineração (ANM); (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+j) proposta de venda de ouro em região aurífera diferente da autorizada para o título minerário produtor da substância, conforme dados do Cadastro Mineiro da ANM ; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+XIX - situações relacionadas com o mercado de ouro em geral: (Incluído pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+a) venda ou compra de ouro com recursos em espécie, que apresentem atipicidade em relação à atividade econômica do cliente ou incompatibilidade com a sua capacidade financeira; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+b) venda ou compra de ouro incompatível com o patrimônio, a atividade econômica ou a ocupação profissional e a capacidade financeira do cliente; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+c) fracionamento de operações de venda de ouro visando burlar limites regulamentares ou operacionais; (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+d) venda ou proposta de venda de ouro contendo informação sobre a qualidade, a constituição, a pureza ou sobre qualquer outra característica da substância comercializada divergente da descrição contida na nota fiscal da operação. (Incluída pela Instrução Normativa BCB nº 461, de 2/4/2024.)
+§ 1º As operações ou as situações referidas no caput devem ser comunicadas, nos termos da referida Circular, somente nos casos em que os indícios forem confirmados ao término da execução dos procedimentos de análise de operações e situações suspeitas.
+§ 2º Os procedimentos referidos no § 1º devem considerar todas as informações disponíveis, inclusive aquelas obtidas por meio dos procedimentos destinados a conhecer clientes, funcionários, parceiros e prestadores de serviços terceirizados.
+Art. 2º Esta Carta Circular entra em vigor em 1º de outubro de 2020, quando fica revogada a Carta Circular nº 3.542, de 12 de março de 2012. (Redação dada, a partir de 1º/6/2020, pela Carta Circular nº 4.037, de 27/4/2020.)
+Andreia Laís de Melo Silva Vargas
+Este texto não substitui o publicado no DOU de 31/1/2020, Seção 1, p. 92/93, e no Sisbacen.
