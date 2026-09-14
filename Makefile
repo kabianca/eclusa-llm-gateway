@@ -7,7 +7,7 @@ PIP    := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 RUFF   := $(VENV)/bin/ruff
 
-.PHONY: venv test lint index
+.PHONY: venv test lint index eval record
 
 $(VENV)/bin/activate: pyproject.toml
 	$(PYTHON) -m venv $(VENV)
@@ -28,3 +28,13 @@ lint: venv
 # the image build runs the same command). The model is fetched once, pinned by revision.
 index: venv
 	$(VENV)/bin/python -m eclusa.index build --out var/index
+
+# The gates, over recordings and the frozen cases: no network to any model, no key.
+eval: venv
+	$(VENV)/bin/python -m eclusa.eval retrieval
+	$(VENV)/bin/python -m eclusa.eval generation
+
+# The only live call in the project. Needs ECLUSA_LIVE=1 and OPENAI_API_KEY in the
+# environment, `pip install -e ".[live]"`, and a spending cap on the provider account.
+record: venv
+	$(VENV)/bin/python -m eclusa.eval record --ceiling-usd 0.02 --max-total-usd 0.50

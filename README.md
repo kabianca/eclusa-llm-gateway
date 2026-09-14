@@ -250,6 +250,22 @@ switch quietly. It is a finding, to be written down here first, and only then
 a reason to change the model — saying what changed and what the numbers were
 before and after.
 
+### Who says an answer is right: a person, once
+
+Recording the model's answers gives outputs; saying whether an output is right
+needs a grader, and there were two bad options and one good one. An LLM judge
+adds a second non-deterministic component to a project whose thesis is
+determinism. A rule-based grader reaches form — outcome, citations, key
+phrases — but not content. So the author grades by hand, once: fifteen
+questions, a domain she can judge, and the verdicts committed next to the
+recorded answers (`eval/generation/`). From then on the evaluation is a
+regression test — recorded response plus committed grade — with no judge and
+no network. The expectations were written from the corpus text before the
+live run, so the recording could not shape what it was measured against; the
+grades are written after, on content the code cannot judge. A `fail` grade is
+kept and reported, not hidden: it is what the reversal condition on the
+generation model is measured against.
+
 ### The corpus answers what is in force, not the history of changes
 
 Amending acts — Resolução BCB 119, 282, 344, Circular 4.005 — are in the
