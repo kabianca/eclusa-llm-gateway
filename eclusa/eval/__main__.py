@@ -11,6 +11,7 @@ from pathlib import Path
 from eclusa.corpus import manifest as manifest_mod
 from eclusa.eval.retrieval import load_cases, run
 from eclusa.index.embedding import Embedder
+from eclusa.index.retrieve import retrieve
 from eclusa.index.store import IndexStore
 
 
@@ -24,11 +25,28 @@ def main(argv: list[str] | None = None) -> int:
         "--out", type=Path, default=None, help="write summary and per-case results as JSON"
     )
     r.add_argument("--show", action="store_true", help="print the top-k of every case")
+    r.add_argument(
+        "--retrieval",
+        choices=("raw", "version"),
+        default="version",
+        help="raw: the index alone (the baseline); version: the layer the gateway uses",
+    )
     args = parser.parse_args(argv)
 
     manifest = manifest_mod.load(args.corpus / "manifest.json")
     store = IndexStore.load(args.index)
-    summary, results = run(load_cases(), store, Embedder.pinned(threads=4), manifest)
+    embedder = Embedder.pinned(threads=4)
+    cases = load_cases()
+    search = None
+    if args.retrieval == "version":
+
+        def search(question: str):
+            return retrieve(question, store, embedder, manifest, k=cases.k)
+
+    summary, results = run(cases, store, embedder, manifest, search=search)
+    summary["retrieval"] = {"raw": "index alone", "version": "eclusa.index.retrieve"}[
+        args.retrieval
+    ]
     print(json.dumps(summary, indent=2, ensure_ascii=False))
     for res in results:
         flags = " ".join(

@@ -45,13 +45,6 @@ def chunked(manifest, segmented) -> dict[str, list[Chunk]]:
     }
 
 
-@pytest.fixture(scope="module")
-def embedder() -> embedding.Embedder:
-    # Threads do not change the bytes on the dev machine (measured 1 vs 4); the
-    # reproducibility test below asserts it again wherever the suite runs.
-    return embedding.Embedder.pinned(threads=4)
-
-
 # --- chunks: what retrieval can return ----------------------------------------------------
 
 

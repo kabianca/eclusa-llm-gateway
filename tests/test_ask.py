@@ -12,8 +12,6 @@ from datetime import date
 
 import pytest
 
-from eclusa.index.embedding import Embedder
-from eclusa.index.store import build
 from eclusa.service.ask import REQUESTED_OUTPUT_TOKENS, Gateway
 from eclusa.service.audit import AuditLog
 from eclusa.service.budget import Budget, estimate_input_tokens
@@ -28,7 +26,6 @@ from eclusa.service.provider import (
     RecordingProvider,
 )
 
-DOCS = ("circular-3978-2020@v1", "circular-3978-2020@v5", "carta-circular-4001-2020@v4")
 VERSION_QUESTION = "Quando a Circular 3.978 entra em vigor?"
 GOLD_QUESTION = "Quais procedimentos devem ser adotados na compra de ouro?"
 
@@ -78,17 +75,6 @@ def draft_json(**fields) -> str:
     }
     base.update(fields)
     return json.dumps(base, ensure_ascii=False)
-
-
-@pytest.fixture(scope="module")
-def embedder():
-    return Embedder.pinned(threads=4)
-
-
-@pytest.fixture(scope="module")
-def small_index(manifest, corpus_dir, embedder):
-    small = manifest.model_copy(update={"documents": tuple(manifest.by_id(d) for d in DOCS)})
-    return build(small, corpus_dir, embedder, corpus_dir / "manifest.json")
 
 
 @pytest.fixture

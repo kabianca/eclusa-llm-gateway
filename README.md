@@ -168,8 +168,24 @@ dada, a partir de 1º/6/2020, pela Circular nº 4.005)* and the extra words
 dilute the similarity. This is the failure the corpus was built to expose: two
 near-identical texts of the same act, and embedding similarity preferring the
 superseded one because it is shorter. No flag on the document fixes it;
-retrieval has to know what a version is. That layer is the next thing to build,
-and this number is what its evaluation will be measured against.
+retrieval has to know what a version is.
+
+The pair of numbers, then — because a number alone reads as an unsolved
+problem. Before touching retrieval, twenty-four version-sensitive questions
+and five metrics were written and frozen (`eval/retrieval/METRIC.md`), so that
+the fix could not be tuned to its own test. On that set, the raw index found
+the expected provision in 92% of the cases but ranked the version in force
+first in **25%** — and in **0%** of the provisions whose wording never
+changed, because identical texts tie and the tie-break by chunk id picked
+`@v1` before `@v5` alphabetically. A tie is a decision; that one was wrong. The
+version-aware layer changes no score: it groups chunks by act and unit, puts
+the version in force first, keeps the original only where its wording differs,
+ranks revoked acts below acts in force unless the question names them, and
+attaches the revocation notice by rule. On the same frozen set: in-force
+first **100%**, mean reciprocal rank of the in-force provision 0.38 → 0.80,
+revoked below current 60% → 100%, revocation notice present 0% → 100%. The
+provision was found in the same 92% — the layer cannot find what the
+embeddings miss, and does not pretend to.
 
 **A near-miss broke the binary.** "Quais procedimentos devem ser adotados na
 compra de ouro?" was meant to be a refusal: the act that regulates gold

@@ -56,6 +56,24 @@ in the README, it does not measure the fix.
 - Every expected unit was checked by opening the corpus text, not by running
   the retriever and copying what it returned.
 
+## Results
+
+- `results-before.json` — the index alone (`python -m eclusa.eval retrieval
+  --retrieval raw`), measured 2026-09-14 before the retrieval layer existed.
+- `results-after.json` — the version-aware layer (`--retrieval version`, the
+  default and what the gateway uses), measured 2026-09-14 after it was written.
+  No score was changed between the two; the layer reorders and attaches.
+- `tests/test_eval_retrieval.py` holds the gate: the after numbers may not
+  regress.
+
+| metric | before | after |
+|---|---|---|
+| hit@8 | 0.9167 | 0.9167 |
+| in_force_first | 0.25 | 1.0 |
+| mrr_in_force | 0.3844 | 0.8042 |
+| revoked_below_current | 0.6 | 1.0 |
+| notice_with_revoked | 0.0 | 1.0 |
+
 ## CHANGELOG
 
 - 2026-09-14 — frozen.

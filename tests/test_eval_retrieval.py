@@ -3,6 +3,8 @@ checked against the corpus text, not against what the retriever returns. The met
 computed here on a synthetic ranking so their definitions are pinned independently of any
 index."""
 
+import pytest
+
 from eclusa.corpus.manifest import Status
 from eclusa.eval.retrieval import aggregate, evaluate_case, load_cases
 from eclusa.index.chunks import Chunk, chunk_document
@@ -99,3 +101,29 @@ def test_metric_definitions_on_a_synthetic_ranking(manifest):
     assert summary["cases"] == 2 and summary["hit@k"] == 1.0
     assert summary["in_force_first"] == 0.5 and summary["mrr_in_force"] == 0.75
     assert summary["in_force_first[changed]"] == 0.0 and summary["in_force_first[unchanged]"] == 1.0
+
+
+@pytest.mark.slow
+def test_version_aware_retrieval_holds_the_frozen_after_numbers(manifest, corpus_dir, embedder):
+    # The gate for retrieval, separate from generation: builds the whole index and requires
+    # the numbers measured on 2026-09-14 (eval/retrieval/results-after.json). A change that
+    # lowers any of them fails here, whatever the model would have answered.
+    from eclusa.eval.retrieval import run
+    from eclusa.index.retrieve import retrieve
+    from eclusa.index.store import build
+
+    store = build(manifest, corpus_dir, embedder, corpus_dir / "manifest.json")
+    cases = load_cases()
+    summary, _ = run(
+        cases,
+        store,
+        embedder,
+        manifest,
+        search=lambda q: retrieve(q, store, embedder, manifest, k=cases.k),
+    )
+    metrics = summary["metrics"]
+    assert metrics["in_force_first"] == 1.0
+    assert metrics["revoked_below_current"] == 1.0
+    assert metrics["notice_with_revoked"] == 1.0
+    assert metrics["hit@k"] >= 0.9167
+    assert metrics["mrr_in_force"] >= 0.8042

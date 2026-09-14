@@ -16,3 +16,31 @@ def corpus_dir() -> Path:
 @pytest.fixture(scope="session")
 def manifest() -> manifest_mod.Manifest:
     return manifest_mod.load(CORPUS_DIR / "manifest.json")
+
+
+SMALL_INDEX_DOCS = (
+    "circular-3978-2020@v1",  # the demonstration case: original ...
+    "circular-3978-2020@v5",  # ... and consolidated text of the same act
+    "carta-circular-4001-2020@v4",  # the partial showcase (gold, inciso XIX)
+    "circular-3461-2009@v10",  # a revoked act, with its revocation notice
+)
+
+
+@pytest.fixture(scope="session")
+def embedder():
+    from eclusa.index.embedding import Embedder
+
+    # Threads do not change the bytes on the dev machine (measured 1 vs 4); the
+    # reproducibility test asserts it again wherever the suite runs.
+    return Embedder.pinned(threads=4)
+
+
+@pytest.fixture(scope="session")
+def small_index(manifest, embedder):
+    """Built once per session: four documents, enough for version, partial and revocation."""
+    from eclusa.index.store import build
+
+    small = manifest.model_copy(
+        update={"documents": tuple(manifest.by_id(d) for d in SMALL_INDEX_DOCS)}
+    )
+    return build(small, CORPUS_DIR, embedder, CORPUS_DIR / "manifest.json")

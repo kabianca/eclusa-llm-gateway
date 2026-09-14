@@ -1,6 +1,7 @@
 """The lock cycle: a question enters, and what leaves has been checked, charged and written down.
 
-    retrieve -> budget (hard stop) -> provider (recorded by default) -> contract -> audit
+    retrieve (version-aware) -> budget (hard stop) -> provider (recorded by default)
+    -> contract -> audit
 
 Every path through this function writes exactly one audit record — answered,
 partial, refused, stopped by the budget, blocked by the contract, or failed at
@@ -20,6 +21,7 @@ from pydantic import ValidationError
 
 from eclusa.corpus.manifest import Manifest
 from eclusa.index.embedding import Embedder
+from eclusa.index.retrieve import retrieve
 from eclusa.index.store import IndexStore
 from eclusa.ingest.extract import load_paragraphs
 from eclusa.ingest.segment import Segment, segment
@@ -60,8 +62,7 @@ class Gateway:
     def ask(self, question: str, request_id: str | None = None) -> Response:
         request_id = request_id or uuid.uuid4().hex
         started = time.monotonic()
-        hits = self.index.search(self.embedder.embed_query(question), k=self.k)
-        chunks = [h.chunk for h in hits]
+        chunks = retrieve(question, self.index, self.embedder, self.manifest, k=self.k)
         retrieved = Retrieved(chunks=tuple(chunks), segments=self._segments)
         base = dict(
             request_id=request_id,
