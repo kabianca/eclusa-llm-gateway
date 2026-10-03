@@ -23,6 +23,7 @@ SMALL_INDEX_DOCS = (
     "circular-3978-2020@v5",  # ... and consolidated text of the same act
     "carta-circular-4001-2020@v4",  # the partial showcase (gold, inciso XIX)
     "circular-3461-2009@v10",  # a revoked act, with its revocation notice
+    "resolucao-bcb-344-2023@v1",  # an amending act, whose art. 1º transcribes art. 23-A
 )
 
 

@@ -243,6 +243,33 @@
       "units": [
         "art. 16, § 2º"
       ]
+    },
+    {
+      "id": "diff-344",
+      "kind": "asks_diff",
+      "question": "O que a Resolução BCB 344 mudou na Circular 3.978?",
+      "expected_act": "resolucao-bcb-344-2023",
+      "units": [
+        "art. 1º, caput"
+      ]
+    },
+    {
+      "id": "diff-119",
+      "kind": "asks_diff",
+      "question": "Quais dispositivos da Circular 3.978 a Resolução BCB 119 alterou?",
+      "expected_act": "resolucao-bcb-119-2021",
+      "units": [
+        "art. 1º, caput"
+      ]
+    },
+    {
+      "id": "diff-4005",
+      "kind": "asks_diff",
+      "question": "O que a Circular 4.005 alterou na Circular 3.978?",
+      "expected_act": "circular-4005-2020",
+      "units": [
+        "art. 1º, caput"
+      ]
     }
   ]
 }

@@ -13,9 +13,12 @@ What this layer decides, in order:
 
 1. Search a pool wider than k, then group chunks by (act, unit). One unit of one
    act is one candidate, whatever number of versions it has.
-2. Rank groups: acts in force first, revoked acts after — unless the question
-   names the revoked act, in which case it is what was asked about. Within a
-   tier, by best score, then by act and unit for a deterministic order.
+2. Rank groups: text in force first; a revoked act's text, and an amending
+   act's transcription of another act's text, after — unless the question names
+   that act, in which case it is what was asked about. "O que a Resolução 344
+   mudou?" names it and gets the transcription; a question about the substance
+   does not, and gets the consolidated law. Within a tier, by best score, then
+   by act and unit for a deterministic order.
 3. Inside a group, the version in force comes first. The superseded version is
    emitted right after it only when its text differs — that is the history an
    answer may need to mention ("the original wording said July"); an identical
@@ -108,7 +111,11 @@ def _group(ranking: list[Hit], manifest: Manifest, named: set[str]) -> list[Grou
             ),
         )
         revoked = manifest.current(act_id) is None
-        tier = 1 if revoked and act_id not in named else 0
+        # A group of nothing but transcribed text is not the law; a group that also
+        # holds the act's own provisions (3.978's art. 68, revoked in force, amending
+        # in the original) stays with the law.
+        transcribed = all(h.chunk.kind == "amendment" for h in per_doc.values())
+        tier = 1 if (revoked or transcribed) and act_id not in named else 0
         best = max(h.score for h in per_doc.values())
         groups.append(Group(act_id, unit, best, tier, tuple(ordered)))
     return sorted(groups, key=lambda g: (g.tier, -g.best, g.act_id, g.unit))

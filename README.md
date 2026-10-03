@@ -159,6 +159,28 @@ environment has 24.02.0", not as an unexplained diff. It is the same discipline
 as the frozen corpus and the dated model identifier, one layer down: pin what
 moves, and write down what you pinned.
 
+**A boundary in this README was not a boundary; it was a decision of mine.**
+This file used to state, as a property of the corpus, that it answers what is
+in force and not the history of changes: that *"O que a Resolução BCB 344
+mudou?"* had no answer, that the corpus contains the act and not its diff. It
+was written with conviction and it was wrong. Resolução 344's art. 1º is
+followed, in the corpus, by the full text it gave to art. 23-A, closing with
+*(NR)* — the act states its own effect exhaustively. What had no answer was the
+**index**, because the chunker dropped every block an amending act
+transcribes — ten per cent of the corpus, 183 of 1,873 paragraphs — on the
+reasonable grounds that they duplicate consolidated text and would compete
+with it in retrieval. The competition is real; discarding a tenth of the corpus
+was not the only way to avoid it. It took a reader saying "look at the eight
+lines after the passage you quoted" to see it. Those blocks are indexed now, as
+their own kind of chunk, demoted below text in force unless the question names
+the amending act — the rule the revocation notice already used. On the frozen
+set the new metric went 0 → 100%, nothing regressed, and the mean reciprocal
+rank of in-force provisions rose 0.80 → 0.85, because one case — does Circular
+3.978 amend the FX circular? — had been ranking on a caput whose content was
+being thrown away. The lesson is not about chunking. A limitation worth putting
+in a README is worth checking against the corpus first, or you publish your own
+implementation choice as a fact about the world.
+
 **The version trap has a number.** The first question put to the finished
 index was the demonstration case, *"Quando a Circular 3.978 entra em vigor?"*
 The top hit was art. 70 of the **original** text — *1º de julho de 2020*, a
@@ -266,19 +288,25 @@ grades are written after, on content the code cannot judge. A `fail` grade is
 kept and reported, not hidden: it is what the reversal condition on the
 generation model is measured against.
 
-### The corpus answers what is in force, not the history of changes
+### Three kinds of passage, because the corpus holds three
 
-Amending acts — Resolução BCB 119, 282, 344, Circular 4.005 — are in the
-corpus, but the articles they quote are not indexed: they would duplicate the
-consolidated text, which already carries each change's provenance marker, and
-compete with it in retrieval. So *"O que a Resolução 344 mudou?"* has no direct
-answer in the index, even though the resolution is in the corpus. The markers
-in the consolidated text carry part of it — art. 23-A reads *(Incluído pela
-Resolução BCB nº 344, de 4/10/2023)* — and that is what such a question gets:
-a partial answer that cites the marked provisions and declares that the
-amending act's own text, and its full differential effect, are not what this
-corpus indexes. The corpus contains the act, not its diff. This is a boundary,
-stated here so nobody has to discover it.
+A chunk is a *unit* of the law — a caput or a § with what nests under it. Two
+kinds of passage are not that, and each gets its own.
+
+A revoked act's **revocation notice** is a chunk of its own, because it is the
+passage an answer about a revoked act has to cite and no question ever
+resembles it; retrieval attaches it by rule rather than by similarity.
+
+An amending act's article, carrying **the text it transcribes**, is the third:
+*"Art. 1º A Circular nº 3.978 … passa a vigorar com as seguintes alterações:
+«Art. 23-A …»"*. Those transcriptions duplicate consolidated text that already
+carries its own provenance marker, so the obvious move is to drop them, and for
+a while I did — which is how *"O que a Resolução 344 mudou?"* came to have no
+answer in a corpus that answers it verbatim. They are indexed now, always
+joined to the article that transcribes them so they can never pass for the law
+itself, and ranked below text in force unless the question names the amending
+act. The header of such a passage says what it is, and the prompt forbids
+citing it as the wording in force.
 
 ### The blocked draft is kept whole, and that costs some privacy
 
@@ -310,6 +338,9 @@ which also lets the model be pinned and upgraded independently of the
 gateway. Both keep the same pin — name, revision, file hashes — that this
 repository verifies.
 
-## Licence
-
-GPL-3.0. See [LICENSE](LICENSE).
+<p align="center">
+  Built by <b>Karla Oliveira</b> · <a href="https://github.com/kabianca">@kabianca</a>
+<!-- · <a href="https://www.linkedin.com/in/karlaboliveira/">LinkedIn</a> -->
+  <br>
+  <sub>Licensed under GPL-3.0 · Questions and critique are welcome | open an issue.</sub>
+</p>

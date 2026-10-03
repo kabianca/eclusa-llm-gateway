@@ -35,10 +35,10 @@
      "question": "Qual o prazo para uma joalheria comunicar operações suspeitas ao Coaf?",
      "expected": {"outcome": "partial", "must_cite": [["circular-3978-2020@v5", "art. 48, § 2º"]], "gap_mentions": "joalheria"},
      "why": "The dangerous error here is not inventing, it is transplanting: the corpus does set a deadline for reporting suspicious operations to the Coaf (art. 48, § 2º: the next business day), but for institutions authorised by the BCB. Jewellers are supervised by the Coaf itself and are nowhere in this corpus. The honest response states the deadline the corpus sets, says whom it binds, and declares that this sector is not covered — which is what partial is for. Answering with the number alone is the failure; refusing outright throws away what the corpus does say."},
-    {"id": "partial-344", "kind": "partial",
+    {"id": "answer-344", "kind": "answerable",
      "question": "O que a Resolução BCB 344 mudou na Circular 3.978?",
-     "expected": {"outcome": "partial", "must_cite": [["circular-3978-2020@v5", "art. 23-A, caput"]]},
-     "why": "Resolução 344's only effect was to include art. 23-A, and the consolidated text carries the marker that says so — so the corpus does hold the effect. What it cannot hold is the proof that this was the *only* effect: the resolution's own text is in the corpus but not indexed, so nothing lets the system rule out further changes. The gap is epistemic, and declaring it is more honest than claiming completeness: cite art. 23-A with its marker, and say that the amending act's own text is not indexed, so its full differential effect cannot be confirmed from this corpus."},
+     "expected": {"outcome": "answered", "must_cite": [["resolucao-bcb-344-2023@v1", "art. 1º, caput"]], "answer_must_say": "23-A"},
+     "why": "Answerable, and it was not before amendment 2 of the retrieval set. Resolução 344's art. 1º states its own effect exhaustively — 'passa a vigorar com as seguintes alterações:' followed by the full text it gives to art. 23-A, closing with (NR) — and that transcription is now indexed, joined to the article that transcribes it. The answer names art. 23-A and what it dispenses. It cites the resolution because that is where the corpus says what the resolution did; the wording in force is in Circular 3.978, art. 23-A, and the passage's own header says so."},
 
     {"id": "refusal-pena", "kind": "refusal",
      "question": "Qual é a pena para o crime de lavagem de dinheiro?",

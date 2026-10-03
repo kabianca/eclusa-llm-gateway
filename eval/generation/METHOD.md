@@ -93,34 +93,34 @@ and matches what the version-aware retrieval actually delivers.
      revocation notice. Requiring only the notice would have passed an answer
      that stated the revocation and answered nothing.
   4. Every citation scope is version-pinned (see above).
+- 2026-10-03, amendment 2 — `partial-344` became `answer-344`: the corpus does
+  say what Resolução 344 changed, and after the retrieval amendment the index
+  does too. The section below has the chain.
 
-## Open before the recording
+## Amendment 2 — the question that was open is answered (2026-10-03)
 
-`partial-344` expects the answer to cite `circular-3978-2020@v5 art. 23-A,
-caput`, whose marker reads "(Incluído pela Resolução BCB nº 344, de
-4/10/2023.)". Checked against the real index on 2026-10-03: **retrieval does
-not deliver it.** For *"O que a Resolução BCB 344 mudou na Circular 3.978?"*
-the top-8 is the boilerplate caput of every amending act — Resolução 344's own
-art. 1º reads only "A Circular nº 3.978, de 23 de janeiro de 2020, passa a
-vigorar com as seguintes alterações:", and the quoted block that names art.
-23-A is deliberately not indexed. The link between act and provision lives in
-the marker on art. 23-A, which similarity does not reach from this phrasing.
+`partial-344` expected the answer to cite art. 23-A of the consolidated text,
+and checking the expectations against the live index showed retrieval did not
+deliver it: the link between an act and the provisions it changed lives in a
+marker that similarity does not reach from "o que a Resolução 344 mudou?".
 
-The expectation was written without verifying that, so it would fail on form
-for a reason that is not the model's. Two ways out, the author's call:
+The author's reading closed it. The corpus **does** hold what Resolução 344
+changed, verbatim — its art. 1º is followed by the full text it gives to art.
+23-A, closing with "(NR)". What did not hold it was the index, because the
+chunker dropped every block an amending act transcribes: ten per cent of the
+corpus, 183 of 1,873 paragraphs. That was a decision of mine dressed as a
+property of the corpus.
 
-- **Correct the expectation** to what the corpus can support today: cite
-  `resolucao-bcb-344-2023@v1 art. 1º, caput` and declare the larger gap — the
-  corpus shows *that* Resolução 344 amended the Circular, not *which*
-  provisions. Honest about the pipeline as it stands; a weaker case than
-  intended.
-- **Make it a retrieval question first.** A marker index would fix it
-  deterministically, the way the revocation notice is attached by rule: when a
-  question names an act, also surface the provisions whose text carries that
-  act's marker. That is a change to retrieval, so it goes in the frozen-first
-  order — case and metric into `eval/retrieval`, baseline, then the mechanism —
-  and if it works the README's boundary ("the corpus contains the act, not its
-  diff") moves and must be rewritten.
+So the transcriptions are indexed, as a third kind of chunk joined to the
+article that transcribes them, ranked below text in force unless the question
+names the amending act — the rule already used for revoked acts. Frozen first
+in `eval/retrieval` (amendment 2 there), then built, then measured:
+`amendment_text_reachable` 0.0 → 1.0, no regression anywhere, and
+`mrr_in_force` 0.8042 → 0.8458.
 
-Until this is decided, `partial-344` stays as written and is known to fail on
-form; nothing is recorded, so nothing is green that should not be.
+The case becomes `answer-344`, kind `answerable`, expecting `answered` and a
+citation of `resolucao-bcb-344-2023@v1 art. 1º, caput`. The system prompt
+gained the matching rule: a transcribed passage may be cited for what an act
+changed, never as the wording in force.
+
+Nothing is open before the recording now.

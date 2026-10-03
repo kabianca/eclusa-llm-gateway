@@ -13,6 +13,7 @@ import pytest
 
 from eclusa.index import embedding
 from eclusa.index.chunks import (
+    AMENDMENT_NOTE,
     BODY_KINDS,
     HEAD_KINDS,
     Chunk,
@@ -54,10 +55,14 @@ def test_every_embeddable_segment_is_reachable_and_nothing_else_is(segmented, ch
         assert reachable == {s.index for s in segs if is_embeddable(s)}, doc_id
         for c in chunked[doc_id]:
             kinds = {segs[i].kind for i in c.segment_indexes}
-            assert not kinds & {"preamble", "heading", "quoted", "closing", "annex"}, (
-                doc_id,
-                c.chunk_id,
-            )
+            assert not kinds & {"preamble", "heading", "closing", "annex"}, (doc_id, c.chunk_id)
+            # Transcribed text is embedded, but only ever joined to the article that
+            # transcribes it, and the chunk says so in its kind and in its header.
+            if "quoted" in kinds:
+                assert c.kind == "amendment", (doc_id, c.chunk_id)
+                assert AMENDMENT_NOTE in c.text
+            else:
+                assert c.kind != "amendment", (doc_id, c.chunk_id)
 
 
 def test_chunk_ids_are_unique_and_deterministic(manifest, segmented, chunked):
@@ -102,16 +107,27 @@ def test_revocation_notice_is_its_own_chunk_naming_the_revoking_act(manifest, ch
     )
 
 
-def test_amending_acts_contribute_only_their_own_articles(segmented, chunked):
-    # Resolução BCB 119 quotes the new wording of 3.978 arts. 16, 18, 24, 33; none of that
-    # is embedded — it would compete with the consolidated text, which carries the marker.
-    chunks = chunked["resolucao-bcb-119-2021@v1"]
-    assert [c.citation for c in chunks] == ["art. 1º, caput", "art. 2º, caput"]
-    assert not any(
-        "quoted" == segmented["resolucao-bcb-119-2021@v1"][i].kind
-        for c in chunks
-        for i in c.segment_indexes
-    )
+def test_an_amending_act_carries_the_text_it_transcribes_under_its_own_article(segmented, chunked):
+    # Resolução BCB 119 transcribes the new wording of 3.978 arts. 16, 18, 24 and 33. All of
+    # it is embedded — it is the only place the corpus says what the resolution changed — and
+    # all of it hangs off the resolution's own art. 1º, which is what transcribes it. The
+    # retrieval layer keeps it below the consolidated text unless a question names the act.
+    doc_id = "resolucao-bcb-119-2021@v1"
+    chunks = chunked[doc_id]
+    assert {c.citation for c in chunks} == {"art. 1º, caput", "art. 2º, caput"}
+    amendments = [c for c in chunks if c.kind == "amendment"]
+    assert amendments and {c.citation for c in amendments} == {"art. 1º, caput"}
+    assert len(amendments) > 1, "four transcribed articles do not fit one chunk; it splits"
+    transcribed = " ".join(c.text for c in amendments)
+    for article in ("Art. 16.", "Art. 18.", "Art. 24.", "Art. 33."):
+        # This act transcribes with straight quotes; others use curly ones.
+        assert f'"{article}' in transcribed or f"“{article}" in transcribed, article
+    quoted = {
+        i for c in amendments for i in c.segment_indexes if segmented[doc_id][i].kind == "quoted"
+    }
+    assert quoted == {s.index for s in segmented[doc_id] if s.kind == "quoted"}
+    closing = next(c for c in chunks if c.citation == "art. 2º, caput")
+    assert closing.kind == "unit", "the resolution's own provisions stay units"
 
 
 def test_head_and_body_kinds_cover_the_locatable_devices():
@@ -186,7 +202,7 @@ def test_index_build_is_reproducible_and_round_trips(manifest, corpus_dir, embed
     loaded = IndexStore.load(tmp_path / "a")
     assert np.array_equal(loaded.vectors, first.vectors) and loaded.chunks == first.chunks
     assert loaded.meta["model_revision"] == embedding.MODEL_REVISION
-    assert loaded.meta["chunk_policy"] == "units-v1" and "built_at" not in loaded.meta
+    assert loaded.meta["chunk_policy"] == "units-v2" and "built_at" not in loaded.meta
 
 
 @pytest.mark.slow

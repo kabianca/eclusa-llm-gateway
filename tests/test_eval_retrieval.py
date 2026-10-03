@@ -43,6 +43,11 @@ def test_cases_are_unique_well_typed_and_point_at_real_units(manifest, corpus_di
             assert statuses == {Status.REVOKED}, case.id
         if case.kind == "asks_original":
             assert Status.SUPERSEDED in statuses, f"{case.id}: the unit must exist in the original"
+        if case.kind == "asks_diff":
+            assert manifest.current(case.expected_act) is not None, case.id
+            assert case.question.count(str(manifest.versions(case.expected_act)[0].number)) or (
+                "4.005" in case.question
+            ), f"{case.id}: the question must name the amending act, or the rule cannot fire"
 
 
 def chunk(doc_id: str, citation: str | None, kind: str = "unit") -> Chunk:
@@ -143,5 +148,6 @@ def test_version_aware_retrieval_holds_the_frozen_after_numbers(manifest, corpus
     assert metrics["notice_with_revoked"] == 1.0
     assert metrics["named_first"] == 1.0, "the exception of the revoked-below rule"
     assert metrics["superseded_reachable"] == 1.0, "the exception of the in-force-first rule"
-    assert metrics["hit@k"] >= 0.9231
-    assert metrics["mrr_in_force"] >= 0.8042
+    assert metrics["amendment_text_reachable"] == 1.0, "what an amending act changed"
+    assert metrics["hit@k"] >= 0.931
+    assert metrics["mrr_in_force"] >= 0.8458

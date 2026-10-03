@@ -76,6 +76,7 @@ def main(argv: list[str] | None = None) -> int:
                 ("notice", res.notice_with_revoked),
                 ("named_first", res.named_first),
                 ("superseded_reachable", res.superseded_reachable),
+                ("amendment", res.amendment_text_reachable),
             )
             if value is not None
         )

@@ -17,6 +17,9 @@ kubeconfig*
 data/
 logs/
 var/
+# The gate's own trail is regenerated on every run; the live recording's trail
+# (audit-record.jsonl) is evidence of the one live run and stays versioned.
+eval/generation/audit-gate.jsonl
 .cache/
 .hf-cache/
 

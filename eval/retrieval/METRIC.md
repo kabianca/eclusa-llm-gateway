@@ -34,6 +34,9 @@ in the README, it does not measure the fix.
 - `asks_original` (amendment 1) — the question is legitimately about the
   superseded wording. Adversarial for the "in force first" rule: the original
   must remain within reach, so the contract's "cite both" can be satisfied.
+- `asks_diff` (amendment 2) — the question names an amending act and asks what
+  it changed. The answer is the text the act quotes, which was not indexed at
+  all before this amendment.
 
 ## Metrics (all fractions over the cases of the kinds they apply to)
 
@@ -57,6 +60,10 @@ in the README, it does not measure the fix.
   document is in the top-8. Kind `asks_original`. Guards the exception of the
   in-force-first rule: a layer that dropped history would fail this. `hit@8`
   for this kind counts the superseded document's unit.
+- `amendment_text_reachable` (amendment 2) — the expected unit of the named
+  amending act is in the top-8 **as an amendment chunk**, i.e. carrying the
+  text the act quotes rather than only its "passa a vigorar com as seguintes
+  alterações:" caput. Kind `asks_diff`.
 
 Three of the metrics — `in_force_first`, `revoked_below_current`,
 `notice_with_revoked` — went to 1.0 because the layer guarantees those
@@ -76,32 +83,63 @@ layer does not move.
 
 ## Results
 
-- `results-before.json` — the index alone (`python -m eclusa.eval retrieval
-  --retrieval raw`), measured 2026-09-14 before the retrieval layer existed.
-- `results-after.json` — the version-aware layer (`--retrieval version`, the
-  default and what the gateway uses), measured 2026-09-14 after it was written.
-  No score was changed between the two; the layer reorders and attaches.
-- `tests/test_eval_retrieval.py` holds the gate: the after numbers may not
-  regress.
+Three measurements, all on the 29-case amended set so the denominators match:
 
-| metric | before | after |
-|---|---|---|
-| hit@8 (24 original cases) | 0.9167 | 0.9167 |
-| in_force_first | 0.25 | 1.0 |
-| mrr_in_force | 0.3844 | 0.8042 |
-| revoked_below_current | 0.6 | 1.0 |
-| notice_with_revoked | 0.0 | 1.0 |
-| hit@8 (26 cases, amended set) | 0.9231 | 0.9231 |
-| named_first (amendment 1) | 1.0 | 1.0 |
-| superseded_reachable (amendment 1) | 1.0 | 1.0 |
+- `results-before.json` — the index alone (`--retrieval raw`), the state before
+  any retrieval layer existed.
+- `results-after.json` — the version-aware layer (`--retrieval version`), the
+  state before amendment 2. No score changed between the two: the layer
+  reorders and attaches.
+- `results-amendment.json` — the same layer over an index that also holds the
+  text amending acts transcribe (amendment 2). The chunking changed, so the
+  index was rebuilt and `chunk_policy` went to `units-v2`.
 
-The two amendment metrics read 1.0 before *and* after: the rules do not fire
-where they must not, and the layer did not lose the history it was told to
-keep. They exist so that a future change cannot make either rule always fire.
+`tests/test_eval_retrieval.py` holds the gate: these numbers may not regress.
+
+| metric | raw index | version layer | + transcribed text |
+|---|---|---|---|
+| hit@8 | 0.931 | 0.931 | 0.931 |
+| in_force_first | 0.25 | 1.0 | 1.0 |
+| mrr_in_force | 0.3844 | 0.8042 | **0.8458** |
+| revoked_below_current | 0.6 | 1.0 | 1.0 |
+| notice_with_revoked | 0.0 | 1.0 | 1.0 |
+| named_first (amendment 1) | 1.0 | 1.0 | 1.0 |
+| superseded_reachable (amendment 1) | 1.0 | 1.0 | 1.0 |
+| amendment_text_reachable (amendment 2) | 0.0 | 0.0 | **1.0** |
+
+Three of these — `in_force_first`, `revoked_below_current`,
+`notice_with_revoked` — are 1.0 because the layer guarantees the property by
+construction; they measure that the rule was applied, not that the rule is
+right, and they are regression guards. `named_first` and
+`superseded_reachable` read 1.0 throughout: the rules do not fire where they
+must not. `hit@8` is the number that measures retrieval, and no change has
+moved it: the layer cannot find what the embeddings miss.
+
+`mrr_in_force` rising with amendment 2 has one cause, checked case by case:
+`changed-68-cambio` went from 0.33 to 1.0. It asks whether Circular 3.978
+amends Circular 3.691 on the FX market. Art. 68 of the original 3.978 is the
+article that does it, and its chunk used to be the bare caput — "passa a
+vigorar com as seguintes alterações:" — because the transcription that
+actually mentions câmbio was dropped. With the transcription in the chunk, the
+article the question is about finally outranks its neighbours.
 
 ## CHANGELOG
 
 - 2026-09-14 — frozen.
+- 2026-10-03, amendment 2 — ten per cent of the corpus (183 of 1,873
+  paragraphs) was the text that amending acts quote, and none of it was
+  indexed: the chunker dropped quoted segments so that they would not compete
+  with the consolidated text that already carries their provenance markers. The
+  side effect, found while checking the generation expectations against the
+  live index, is that "what did act X change?" had no answer in the index even
+  though the corpus holds the answer verbatim — Resolução 344's art. 1º is
+  followed by the full text it gave to art. 23-A. Added kind `asks_diff` with
+  three cases and metric `amendment_text_reachable`, frozen here before the
+  chunker and the ranking changed. **The adversarial guard for the new rule is
+  already in the set**: `changed-23a-renegociacao` asks the substance without
+  naming Resolução 344, so `in_force_first` fails if an amendment chunk ever
+  outranks the law in force. The 26 earlier cases and their metrics are
+  untouched.
 - 2026-09-14, amendment 1 — the set tested the two rules only where they must
   fire. It had questions naming the revoked act, but no metric caught a rule
   that always fired; it had no question legitimately about the superseded

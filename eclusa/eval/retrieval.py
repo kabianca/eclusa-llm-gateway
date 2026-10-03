@@ -22,7 +22,7 @@ from eclusa.index.store import IndexStore
 
 CASES_PATH = Path(__file__).resolve().parent.parent.parent / "eval" / "retrieval" / "cases.json"
 
-Kind = Literal["changed", "unchanged", "topic", "names_revoked", "asks_original"]
+Kind = Literal["changed", "unchanged", "topic", "names_revoked", "asks_original", "asks_diff"]
 
 
 class Case(BaseModel):
@@ -58,6 +58,7 @@ class CaseResult:
     notice_with_revoked: bool | None
     named_first: bool | None
     superseded_reachable: bool | None
+    amendment_text_reachable: bool | None
     top: tuple[str, ...]  # "doc_id citation" of the top-k, for reading
 
 
@@ -99,6 +100,9 @@ def evaluate_case(case: Case, ranked: list[Chunk], manifest: Manifest) -> CaseRe
         notice = (not revoked_present) or has_notice
         named_first = bool(ranked) and act_of(ranked[0]) == case.expected_act
     reachable = bool(superseded) if case.kind == "asks_original" else None
+    amendment = None
+    if case.kind == "asks_diff":
+        amendment = any(c.kind == "amendment" for _, c in matches)
     return CaseResult(
         id=case.id,
         kind=case.kind,
@@ -109,6 +113,7 @@ def evaluate_case(case: Case, ranked: list[Chunk], manifest: Manifest) -> CaseRe
         notice_with_revoked=notice,
         named_first=named_first,
         superseded_reachable=reachable,
+        amendment_text_reachable=amendment,
         top=tuple(f"{c.doc_id} {c.citation or '(notice)'}" for c in ranked),
     )
 
@@ -132,8 +137,11 @@ def aggregate(results: list[CaseResult]) -> dict[str, float | int]:
         "superseded_reachable": frac(
             [r.superseded_reachable for r in results if r.superseded_reachable is not None]
         ),
+        "amendment_text_reachable": frac(
+            [r.amendment_text_reachable for r in results if r.amendment_text_reachable is not None]
+        ),
     }
-    for kind in ("changed", "unchanged", "topic", "names_revoked", "asks_original"):
+    for kind in ("changed", "unchanged", "topic", "names_revoked", "asks_original", "asks_diff"):
         subset = [r for r in results if r.kind == kind]
         out[f"hit@k[{kind}]"] = frac([r.hit for r in subset])
         if kind in ("changed", "unchanged"):

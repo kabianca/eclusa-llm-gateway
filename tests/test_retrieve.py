@@ -98,6 +98,38 @@ def test_a_revoked_act_never_enters_without_its_revocation_notice(manifest, smal
     assert len(chunks) == 8 and len({c.chunk_id for c in chunks}) == 8
 
 
+def test_transcribed_text_is_reachable_only_when_the_question_names_the_amending_act(
+    manifest, small_index, embedder
+):
+    # Naming the act brings its transcription within reach — the only place the corpus says
+    # what Resolução 344 changed. Within reach, not first: the frozen metric asks for
+    # reachability, and the act's trivial "entra em vigor" article can still score higher on
+    # a question that names the act. Ranking it first would be tuning past the measurement.
+    named = retrieve(
+        "O que a Resolução BCB 344 mudou na Circular 3.978?", small_index, embedder, manifest, k=8
+    )
+    transcription = next(
+        c for c in named if c.doc_id == "resolucao-bcb-344-2023@v1" and c.kind == "amendment"
+    )
+    assert "Art. 23-A" in transcription.text
+
+    # The same subject without naming the act: the law in force must win outright, or an
+    # answer would quote an amending act's transcription as if it were the rule.
+    substance = retrieve(
+        "As instituições ficam dispensadas de qualificar clientes em operações de crédito "
+        "de programa federal de renegociação de dívidas?",
+        small_index,
+        embedder,
+        manifest,
+        k=8,
+    )
+    assert substance[0].doc_id == "circular-3978-2020@v5"
+    assert substance[0].citation == "art. 23-A, caput" and substance[0].kind == "unit"
+    assert not any(
+        c.doc_id == "resolucao-bcb-344-2023@v1" and c.kind == "amendment" for c in substance
+    ), "the transcription is demoted out of reach when the act is not named"
+
+
 def test_retrieval_is_deterministic_and_never_exceeds_k(manifest, small_index, embedder):
     a = retrieve(VERSION_QUESTION, small_index, embedder, manifest, k=5)
     b = retrieve(VERSION_QUESTION, small_index, embedder, manifest, k=5)
