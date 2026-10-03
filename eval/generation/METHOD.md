@@ -84,6 +84,57 @@ The trial's artifacts were deleted rather than kept: the prompt is part of the
 recording key, so that entry was already unreachable, and a dead entry in an
 append-only file is worse than no entry.
 
+## What the first full run found (2026-10-03)
+
+Fifteen cases, US$ 0.0457, four contract violations — and three of the four were
+faults of mine, which is the point of looking at the blocked drafts rather than
+at the counts.
+
+**Two rules were written per sentence and had to be per answer.** For *"o que o
+texto original previa?"* the model answered in three statements: the original
+provided 1º de julho (citing v1), the text in force provides 1º de outubro
+(citing v5), the change came from Circular 4.005 (citing it). That is a better
+answer than one sentence carrying every citation, and `superseded_without_current`
+refused it, because it demanded the counterpart inside the same statement. Same
+for `revoked_without_notice` on *"o que a 3.461 dizia sobre PEP?"*: five
+statements of what the act required and a sixth stating it was revoked, citing
+the notice — refused five times. The obligation belongs to the answer: the answer
+may not rest on superseded or revoked text alone, and which sentence carries the
+counterpart is the model's business. The superseded rule is now matched per
+locator as well, so the old art. 70 is answered by the current art. 70 and not
+by any other provision of the act.
+
+Changing a rule after seeing results is adjacent to tuning the test to the
+system, so what did *not* change is worth stating: the purpose of both rules is
+word for word what it was. The bug was in the unit the obligation was expressed
+over.
+
+**A refusal carrying statements was reported as unparseable.** The model refused
+*"qual é a pena para o crime de lavagem?"* and attached one cited statement about
+what the Circular is for, plus a gap. The JSON was perfect; the shape rule
+rejected it, and the trail said "the output is not a draft", which sends the
+diagnosis the wrong way. Now the trail distinguishes output that is not JSON
+from JSON that is not a draft, and the prompt says what it never said: a refusal
+goes with `statements` and `gaps` empty, and context goes in `refusal_note` — if
+there is a cited statement *and* a gap, the outcome is `partial`.
+
+**A refusal by the lock was passing as a refusal by the model.** `refusal-pena`
+matched its expectation on form, because the expectation asks for `refused` and
+the caller did receive a refusal — one produced by the contract catching a bad
+answer, not by the model declining. Those are opposites: one is the system
+working, the other is the system being saved from itself. `compare` now says so.
+
+**One violation was the system working.** For *"quais informações cadastrais a
+Circular 3.461 exige?"* — present tense, revoked act — the model answered "a
+Circular 3.461 **exige**…" without stating the revocation, which was retrieved
+and sitting in the context. The contract stopped it. That is the case this
+project exists to catch, and it is the only one of the four that the model got
+wrong.
+
+The run was therefore re-recorded after the fixes: the prompt is part of the
+recording key, so measuring with one prompt and running with another would have
+left the recordings describing a system that no longer exists.
+
 ## Precautions for the live run
 
 - The run is the only live call in the project. It needs `ECLUSA_LIVE=1` and

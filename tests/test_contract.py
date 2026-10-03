@@ -231,6 +231,71 @@ def test_answering_from_a_revoked_act_requires_citing_its_revocation(manifest, w
     assert verify(stated, retrieved(world, art4, notice), manifest) == []
 
 
+def test_the_counterpart_may_live_in_another_statement(manifest, world):
+    # What the first live run produced, and what the rules used to refuse: one statement for
+    # the original wording, the next for the text in force. Better prose than one sentence
+    # carrying both citations, and it satisfies what the rules are for.
+    _, chunks = world
+    v1 = chunk_for(chunks, "circular-3978-2020@v1", "art. 70, caput")
+    v5 = chunk_for(chunks, "circular-3978-2020@v5", "art. 70, caput")
+    split = Draft(
+        outcome="answered",
+        statements=(
+            Statement(
+                text="O texto original previa 1º de julho de 2020.",
+                citations=(cite(v1, "art. 70, caput"),),
+            ),
+            Statement(
+                text="O texto em vigor prevê 1º de outubro de 2020.",
+                citations=(cite(v5, "art. 70, caput"),),
+            ),
+        ),
+    )
+    assert verify(split, retrieved(world, v1, v5), manifest) == []
+
+
+def test_the_counterpart_must_be_the_same_provision(manifest, world):
+    # Citing the old art. 70 is not answered by citing the current art. 1º: the obligation is
+    # per provision, or an answer could satisfy it with any unrelated passage of the act.
+    _, chunks = world
+    v1 = chunk_for(chunks, "circular-3978-2020@v1", "art. 70, caput")
+    elsewhere = chunk_for(chunks, "circular-3978-2020@v5", "art. 1º, caput")
+    wrong = Draft(
+        outcome="answered",
+        statements=(
+            Statement(text="Julho.", citations=(cite(v1, "art. 70, caput"),)),
+            Statement(
+                text="A Circular dispõe sobre PLD.", citations=(cite(elsewhere, "art. 1º, caput"),)
+            ),
+        ),
+    )
+    rules = [v.rule for v in verify(wrong, retrieved(world, v1, elsewhere), manifest)]
+    assert rules == ["superseded_without_current"]
+
+
+def test_the_revocation_may_be_stated_in_a_closing_statement(manifest, world):
+    # Also from the live run: five statements of what the revoked act required, and a sixth
+    # saying it was revoked, citing the notice. The answer states the revocation; that is the
+    # obligation. An answer that never states it still fails.
+    _, chunks = world
+    art4 = chunk_for(chunks, "circular-3461-2009@v10", "art. 4º, caput")
+    notice = chunk_for(chunks, "circular-3461-2009@v10", kind="notice")
+    closing = Draft(
+        outcome="answered",
+        statements=(
+            Statement(text="A 3.461 exigia...", citations=(cite(art4, "art. 4º, caput"),)),
+            Statement(
+                text="A Circular 3.461 foi revogada pela Circular 3.978 a partir de 1º/10/2020.",
+                citations=(cite(notice, "revogação"),),
+            ),
+        ),
+    )
+    assert verify(closing, retrieved(world, art4, notice), manifest) == []
+    silent = closing.model_copy(update={"statements": closing.statements[:1]})
+    rules = [v.rule for v in verify(silent, retrieved(world, art4, notice), manifest)]
+    assert rules == ["revoked_without_notice"]
+
+
 # --- what leaves the lock ---------------------------------------------------------------------
 
 

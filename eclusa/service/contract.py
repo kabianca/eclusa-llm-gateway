@@ -103,15 +103,17 @@ class Retrieved:
 def verify(draft: Draft, retrieved: Retrieved, manifest: Manifest) -> list[Violation]:
     """Every violation found, or an empty list: the draft is an answer."""
     violations: list[Violation] = []
+    resolved: list[tuple[int, tuple[Citation, ...]]] = []
     for n, statement in enumerate(draft.statements, start=1):
-        cited_docs: set[str] = set()
+        good: list[Citation] = []
         for c in statement.citations:
             problem = _resolve(c, retrieved, manifest)
             if problem:
                 violations.append(Violation(problem[0], f"statement {n}: {problem[1]}"))
             else:
-                cited_docs.add(c.doc_id)
-        violations.extend(_version_rules(n, cited_docs, statement, retrieved, manifest))
+                good.append(c)
+        resolved.append((n, tuple(good)))
+    violations.extend(_version_rules(resolved, retrieved, manifest))
     return violations
 
 
@@ -133,35 +135,50 @@ def _resolve(c: Citation, retrieved: Retrieved, manifest: Manifest) -> tuple[str
 
 
 def _version_rules(
-    n: int,
-    cited_docs: set[str],
-    statement: Statement,
+    resolved: list[tuple[int, tuple[Citation, ...]]],
     retrieved: Retrieved,
     manifest: Manifest,
 ) -> list[Violation]:
+    """The two obligations a moving text creates. They fall on the *answer*, not on the sentence.
+
+    Written per statement at first, which the first live run showed to be wrong: the model
+    said "the original provided 1º de julho" in one statement and "the text in force provides
+    1º de outubro" in the next, citing each where it belonged, and was refused. That is better
+    prose than cramming both citations into one sentence, and it satisfies what the rules are
+    for. What must hold is that the answer never rests on superseded or revoked text alone;
+    which sentence carries the counterpart is the model's business.
+
+    The superseded rule is matched per *locator*, not merely per act, so that citing the old
+    art. 70 is answered by the current art. 70 and not by any other provision of the act.
+    """
     out: list[Violation] = []
-    docs = [manifest.by_id(d) for d in sorted(cited_docs)]
-    for doc in docs:
-        if doc.status is Status.SUPERSEDED and doc.superseded_by not in cited_docs:
-            out.append(
-                Violation(
-                    "superseded_without_current",
-                    f"statement {n}: cites {doc.doc_id} (superseded) without {doc.superseded_by}",
+    everything = [c for _, cs in resolved for c in cs]
+    cited = {(c.doc_id, c.locator) for c in everything}
+    notices = {
+        manifest.by_id(c.doc_id).act_id
+        for c in everything
+        if (chunk := retrieved.chunk(c.chunk_id)) is not None and chunk.kind == "notice"
+    }
+    for n, citations in resolved:
+        docs = [manifest.by_id(c.doc_id) for c in citations]
+        for c, doc in zip(citations, docs, strict=True):
+            if doc.status is Status.SUPERSEDED and (doc.superseded_by, c.locator) not in cited:
+                out.append(
+                    Violation(
+                        "superseded_without_current",
+                        f"statement {n}: cites {doc.doc_id} {c.locator} (superseded) and the "
+                        f"answer never cites {doc.superseded_by} {c.locator}",
+                    )
                 )
-            )
-    revoked = [d for d in docs if d.status is Status.REVOKED]
-    if revoked and all(d.status is Status.REVOKED for d in docs):
-        cites_notice = any(
-            (chunk := retrieved.chunk(c.chunk_id)) is not None and chunk.kind == "notice"
-            for c in statement.citations
-        )
-        if not cites_notice:
-            out.append(
-                Violation(
-                    "revoked_without_notice",
-                    f"statement {n}: supported only by revoked text; the revocation must be cited",
+        if docs and all(d.status is Status.REVOKED for d in docs):
+            for act in sorted({d.act_id for d in docs} - notices):
+                out.append(
+                    Violation(
+                        "revoked_without_notice",
+                        f"statement {n}: rests only on revoked text and the answer never cites "
+                        f"the revocation of {act}",
+                    )
                 )
-            )
     return out
 
 

@@ -221,14 +221,32 @@ def test_a_violating_draft_is_blocked_and_kept_whole_in_the_trail(gateway_factor
     assert record.blocked_output_sha256 is not None and record.cited_chunk_ids == ()
 
 
-def test_unparseable_output_is_a_contract_violation_with_the_raw_output_kept(gateway_factory):
+def test_output_that_is_not_json_is_told_apart_from_json_that_is_not_a_draft(gateway_factory):
+    # Two different failures, and the trail must say which: the first live run produced the
+    # second kind — well-formed JSON whose shape broke the contract — under a message that
+    # claimed the output was unparseable, which sent the diagnosis the wrong way.
     gateway = gateway_factory(ScriptedProvider(lambda request: "Não sei responder em JSON."))
     response = gateway.ask(VERSION_QUESTION)
     assert response.refusal_reason is RefusalReason.CONTRACT_VIOLATION
     record = only_record(gateway)
     assert record.outcome is Outcome.CONTRACT_VIOLATION
     assert record.blocked_output == "Não sei responder em JSON."
-    assert record.violations == ("unparseable: the output is not a draft",)
+    assert record.violations[0].startswith("unparseable: the output is not JSON")
+
+    # A refusal that carries statements and a gap is a draft the shape rule rejects.
+    shaped_wrong = draft_json(
+        outcome="refused",
+        refusal_reason="not_in_corpus",
+        statements=[
+            {"text": "contexto", "citations": [{"doc_id": "d", "chunk_id": "c", "locator": "l"}]}
+        ],
+        gaps=[{"text": "o resto", "where": None}],
+    )
+    gateway = gateway_factory(ScriptedProvider(lambda request: shaped_wrong))
+    gateway.ask(VERSION_QUESTION)
+    record = gateway.audit.records()[-1]  # same trail as the gateway above, so take the last
+    assert record.violations[0].startswith("invalid_draft: valid JSON, but not a draft")
+    assert record.blocked_output == shaped_wrong
 
 
 def test_a_refusal_from_the_model_passes_through(gateway_factory):

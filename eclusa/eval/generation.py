@@ -19,7 +19,13 @@ from pydantic import BaseModel, ConfigDict, Field
 
 from eclusa.index.store import IndexStore
 from eclusa.service.contract import Response
-from eclusa.service.outcomes import Outcome
+from eclusa.service.outcomes import Outcome, RefusalReason
+
+SAVED_BY_THE_LOCK = (
+    RefusalReason.CONTRACT_VIOLATION,
+    RefusalReason.BUDGET_EXCEEDED,
+    RefusalReason.PROVIDER_ERROR,
+)
 
 CASES_PATH = Path(__file__).resolve().parent.parent.parent / "eval" / "generation" / "cases.json"
 
@@ -83,6 +89,11 @@ def compare(case: GenCase, response: Response, store: IndexStore) -> Comparison:
     problems: list[str] = []
     if response.outcome.value != exp.outcome:
         problems.append(f"outcome {response.outcome.value}, expected {exp.outcome}")
+    elif exp.outcome == "refused" and response.refusal_reason in SAVED_BY_THE_LOCK:
+        # The caller sees a refusal either way, but a case that expects the model to refuse
+        # is not satisfied by the contract catching a bad answer: one is the system working,
+        # the other is the system being saved from itself.
+        problems.append(f"refused by the lock ({response.refusal_reason.value}), not by the model")
     if exp.refusal_reason and (response.refusal_reason or "") != exp.refusal_reason:
         problems.append(f"refusal_reason {response.refusal_reason}, expected {exp.refusal_reason}")
     draft = response.draft

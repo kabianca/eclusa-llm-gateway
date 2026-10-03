@@ -113,14 +113,14 @@ class Gateway:
             recorded_response=not completion.live,
             recording_date=completion.recorded_at.isoformat() if completion.recorded_at else None,
         )
-        draft = _parse(completion)
+        draft, why_not = _parse(completion)
         if draft is None:
             self._record(
                 base,
                 started,
                 Outcome.CONTRACT_VIOLATION,
                 RefusalReason.CONTRACT_VIOLATION,
-                violations=("unparseable: the output is not a draft",),
+                violations=(why_not,),
                 blocked_output_sha256=_sha(completion.text),
                 blocked_output=completion.text,
                 **usage,
@@ -129,7 +129,7 @@ class Gateway:
                 request_id=request_id,
                 outcome=Outcome.REFUSED,
                 refusal_reason=RefusalReason.CONTRACT_VIOLATION,
-                refusal_note="the model's output could not be read as a draft",
+                refusal_note=why_not,
             )
 
         enforced = enforce(request_id, draft, retrieved, self.manifest)
@@ -175,11 +175,18 @@ class Gateway:
         )
 
 
-def _parse(completion: Completion) -> Draft | None:
+def _parse(completion: Completion) -> tuple[Draft | None, str]:
+    """The draft, or why it is not one. The two failures are different and the trail says which:
+    output that is not JSON at all, and JSON that breaks the contract's own shape."""
     try:
-        return Draft.model_validate(json.loads(completion.text))
-    except (json.JSONDecodeError, ValidationError):
-        return None
+        payload = json.loads(completion.text)
+    except json.JSONDecodeError as exc:
+        return None, f"unparseable: the output is not JSON ({exc.msg} at char {exc.pos})"
+    try:
+        return Draft.model_validate(payload), ""
+    except ValidationError as exc:
+        reasons = "; ".join(e["msg"] for e in exc.errors()[:3])
+        return None, f"invalid_draft: valid JSON, but not a draft ({reasons})"
 
 
 def _sha(text: str) -> str:
