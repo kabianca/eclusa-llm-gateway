@@ -42,13 +42,25 @@ def test_cases_are_well_formed_and_point_at_real_provisions(manifest, corpus_dir
     for case in cases.cases:
         for ref in case.expected.must_cite + case.expected.may_also_cite:
             assert tuple(ref) in units, (case.id, ref)
+            assert "@" in ref[0], (
+                f"{case.id}: cite the document, version included, not the act alone: {ref[0]}"
+            )
         if case.kind in ("refusal", "ambiguous"):
             assert case.expected.outcome == "refused" and not case.expected.must_cite, case.id
+            assert case.kind != "refusal" or not case.expected.gap_mentions, (
+                f"{case.id}: a question the corpus bears on belongs to partial, not refusal"
+            )
         if case.kind == "partial":
-            assert case.expected.outcome == "partial", case.id
+            # A partial cites what the corpus covers; that the gap is declared at all is
+            # enforced by the Draft model, so gap_mentions stays an optional sharpener —
+            # partial-344's gap is epistemic and has no phrase worth demanding.
+            assert case.expected.outcome == "partial" and case.expected.must_cite, case.id
         if case.kind == "revoked":
             assert any(ref[1] == "notice" for ref in case.expected.must_cite), (
                 f"{case.id}: a revoked act is only ever cited with its revocation"
+            )
+            assert any(ref[1] != "notice" for ref in case.expected.must_cite), (
+                f"{case.id}: and with the provision it answers from, or it answers nothing"
             )
         if case.kind == "version":
             assert any(ref[0].endswith("@v5") for ref in case.expected.must_cite), case.id

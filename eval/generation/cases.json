@@ -1,17 +1,17 @@
 {
-  "status": "expectations drafted 2026-09-14 from the corpus text; to be confirmed by the author before the live recording",
+  "status": "expectations drafted 2026-09-14 from the corpus text, reviewed and confirmed by the author 2026-10-03 (amendment 1 in METHOD.md); the live recording has not been made yet",
   "cases": [
     {"id": "answer-10", "kind": "answerable",
      "question": "Qual é o objetivo da avaliação interna de risco prevista na Circular 3.978?",
-     "expected": {"outcome": "answered", "must_cite": [["circular-3978-2020", "art. 10, caput"]]},
+     "expected": {"outcome": "answered", "must_cite": [["circular-3978-2020@v5", "art. 10, caput"]]},
      "why": "Art. 10 states it: identify and measure the risk of the institution's products and services being used for ML/TF."},
     {"id": "answer-48-prazo", "kind": "answerable",
      "question": "Em que prazo a comunicação de operação suspeita deve ser feita ao Coaf?",
-     "expected": {"outcome": "answered", "must_cite": [["circular-3978-2020", "art. 48, § 2º"]]},
+     "expected": {"outcome": "answered", "must_cite": [["circular-3978-2020@v5", "art. 48, § 2º"]]},
      "why": "Art. 48, § 2º: until the business day following the decision to communicate."},
     {"id": "answer-4001-especie", "kind": "answerable",
      "question": "Depósitos em espécie atípicos em relação à atividade econômica do cliente são indício de suspeita segundo a Carta Circular 4.001?",
-     "expected": {"outcome": "answered", "must_cite": [["carta-circular-4001-2020", "art. 1º, caput"]]},
+     "expected": {"outcome": "answered", "must_cite": [["carta-circular-4001-2020@v4", "art. 1º, caput"]]},
      "why": "Art. 1º, I, a) of Carta Circular 4.001 lists exactly that; the unit is art. 1º, caput (its incisos and alíneas nest under it)."},
 
     {"id": "version-70", "kind": "version",
@@ -29,21 +29,21 @@
 
     {"id": "partial-ouro", "kind": "partial",
      "question": "Quais procedimentos devem ser adotados na compra de ouro?",
-     "expected": {"outcome": "partial", "must_cite": [["carta-circular-4001-2020", "art. 1º, caput"]], "gap_mentions": "406"},
+     "expected": {"outcome": "partial", "must_cite": [["carta-circular-4001-2020@v4", "art. 1º, caput"]], "gap_mentions": "406"},
      "why": "The corpus has red-flag situations around the gold market (4.001, art. 1º, XIX, under the art. 1º unit); purchase procedures are in IN BCB 406/2023, outside the corpus. The showcase of the third outcome."},
+    {"id": "partial-joalheria", "kind": "partial",
+     "question": "Qual o prazo para uma joalheria comunicar operações suspeitas ao Coaf?",
+     "expected": {"outcome": "partial", "must_cite": [["circular-3978-2020@v5", "art. 48, § 2º"]], "gap_mentions": "joalheria"},
+     "why": "The dangerous error here is not inventing, it is transplanting: the corpus does set a deadline for reporting suspicious operations to the Coaf (art. 48, § 2º: the next business day), but for institutions authorised by the BCB. Jewellers are supervised by the Coaf itself and are nowhere in this corpus. The honest response states the deadline the corpus sets, says whom it binds, and declares that this sector is not covered — which is what partial is for. Answering with the number alone is the failure; refusing outright throws away what the corpus does say."},
     {"id": "partial-344", "kind": "partial",
      "question": "O que a Resolução BCB 344 mudou na Circular 3.978?",
      "expected": {"outcome": "partial", "must_cite": [["circular-3978-2020@v5", "art. 23-A, caput"]]},
-     "why": "The consolidated marker on art. 23-A says it was included by Resolução 344; the amending act's own text is in the corpus but not indexed. The corpus contains the act, not its diff."},
+     "why": "Resolução 344's only effect was to include art. 23-A, and the consolidated text carries the marker that says so — so the corpus does hold the effect. What it cannot hold is the proof that this was the *only* effect: the resolution's own text is in the corpus but not indexed, so nothing lets the system rule out further changes. The gap is epistemic, and declaring it is more honest than claiming completeness: cite art. 23-A with its marker, and say that the amending act's own text is not indexed, so its full differential effect cannot be confirmed from this corpus."},
 
     {"id": "refusal-pena", "kind": "refusal",
      "question": "Qual é a pena para o crime de lavagem de dinheiro?",
      "expected": {"outcome": "refused"},
      "why": "Lei 9.613/1998 is federal law, not a BCB act; the corpus regulates institutions, not the crime."},
-    {"id": "refusal-joalheria", "kind": "refusal",
-     "question": "Qual o prazo para uma joalheria comunicar operações suspeitas ao Coaf?",
-     "expected": {"outcome": "refused"},
-     "why": "Jewellers are COAF-regulated, not BCB-supervised; the deadline in the corpus (art. 48, § 2º) is for BCB institutions and must not be transplanted."},
     {"id": "refusal-multa", "kind": "refusal",
      "question": "Qual é a multa por descumprir a Circular 3.978?",
      "expected": {"outcome": "refused"},
@@ -60,11 +60,11 @@
 
     {"id": "revoked-pep", "kind": "revoked",
      "question": "O que a Circular 3.461 dizia sobre pessoas expostas politicamente?",
-     "expected": {"outcome": "answered", "must_cite": [["circular-3461-2009", "art. 4º, caput"], ["circular-3461-2009", "notice"]], "answer_must_say": "revogada"},
+     "expected": {"outcome": "answered", "must_cite": [["circular-3461-2009@v10", "art. 4º, caput"], ["circular-3461-2009@v10", "notice"]], "answer_must_say": "revogada"},
      "why": "Answerable from the revoked text, provided the revocation by Circular 3.978 (from 1º/10/2020) is stated and its notice cited — the contract's revoked_without_notice rule."},
     {"id": "revoked-present-tense", "kind": "revoked",
      "question": "Quais informações cadastrais a Circular 3.461 exige dos clientes?",
-     "expected": {"outcome": "answered", "must_cite": [["circular-3461-2009", "notice"]], "answer_must_say": "revogada"},
-     "why": "Present tense about a revoked act: the trap is answering as if it were in force. Any outcome that states the revocation and cites the notice passes; a silent answer fails."}
+     "expected": {"outcome": "answered", "must_cite": [["circular-3461-2009@v10", "art. 2º, caput"], ["circular-3461-2009@v10", "notice"]], "answer_must_say": "revogada"},
+     "why": "Present tense about a revoked act: the trap is answering as if it were in force. The answer is correct when it gives what art. 2º required and states that the act was revoked, citing the notice — so both are required here; citing only the revocation would pass on form while answering nothing, and answering without it is the silent failure this case exists to catch."}
   ]
 }
