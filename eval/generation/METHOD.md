@@ -69,7 +69,10 @@ and matches what the version-aware retrieval actually delivers.
   the provider account**, set in the provider's dashboard — the code protects
   each request, a cap on the account catches the loop the code did not foresee.
 - Recordings are appended, never rewritten. Re-recording is a deliberate act
-  with a new cassette and a note here.
+  with a new cassette and a note here. Because of that, spend **one** call
+  first — `make record ARGS="--only answer-10"` — and look at it before
+  committing the rest: a first run that fails on the API shape would otherwise
+  leave fifteen useless entries inside an append-only file.
 
 ## CHANGELOG
 

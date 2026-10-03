@@ -39,6 +39,12 @@ def main(argv: list[str] | None = None) -> int:
     rec.add_argument(
         "--max-total-usd", type=float, default=0.50, help="per run, worst cases summed"
     )
+    rec.add_argument(
+        "--only",
+        nargs="+",
+        metavar="CASE_ID",
+        help="record just these cases; the cassette is append-only, so spend one call first",
+    )
     gen = sub.add_parser(
         "generation", help="replay the generation cases in recorded mode (the gate)"
     )
@@ -119,6 +125,13 @@ def _generation(args) -> int:
         prompt=Prompt.load("answer-v1"),
     )
     cases = gen_mod.load_cases()
+    if getattr(args, "only", None):
+        chosen = [c for c in cases.cases if c.id in set(args.only)]
+        missing = set(args.only) - {c.id for c in chosen}
+        if missing:
+            print(f"no such case: {', '.join(sorted(missing))}")
+            return 1
+        cases = cases.model_copy(update={"cases": tuple(chosen)})
     if args.command == "record":
         try:
             done = record(cases, gateway, args.out, args.max_total_usd, date.today())

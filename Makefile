@@ -36,5 +36,6 @@ eval: venv
 
 # The only live call in the project. Needs ECLUSA_LIVE=1 and OPENAI_API_KEY in the
 # environment, `pip install -e ".[live]"`, and a spending cap on the provider account.
+# ARGS lets you spend one call before the other fourteen: make record ARGS="--only answer-10"
 record: venv
-	$(VENV)/bin/python -m eclusa.eval record --ceiling-usd 0.02 --max-total-usd 0.50
+	$(VENV)/bin/python -m eclusa.eval record --ceiling-usd 0.02 --max-total-usd 0.50 $(ARGS)

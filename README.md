@@ -10,7 +10,7 @@
 An LLM gateway over the Banco Central do Brasil's normative texts on the
 prevention of money laundering and terrorism financing (PLD/FT). A question
 enters, the answer is checked against a contract — every statement traceable to
-a retrieved passage, or the answer is refused — the budget is debited, the audit
+a retrieved passage, or the answer is refused: the budget is debited, the audit
 record is written, and only then does the answer leave.
 
 <p>
@@ -41,15 +41,15 @@ different service, reached a different way).
 
 ## What running it taught me
 
-**An inserted article moved a heading to a different owner — and would have
+**An inserted article moved a heading to a different owner, and would have
 shifted the version comparison.** The corpus holds Circular 3.978 twice: the
 original wording (v1, from the endpoint's HTML) and the current consolidation
 (v5, from PDF). A test compares the two article by article and expects the
 articles that no amendment touched to come out byte-identical from the two
 routes. Art. 23 failed, and its text had not changed. Resolução BCB 344/2023
 inserted art. 23-A right after it, at the end of the section, and the section
-title that follows — *Da Identificação e da Qualificação do Beneficiário
-Final* — was being attached to whichever article came before it: art. 23 in v1,
+title that follows (*Da Identificação e da Qualificação do Beneficiário
+Final*) was being attached to whichever article came before it: art. 23 in v1,
 art. 23-A in v5. The extractor was giving headings to the article above them.
 A heading with the wrong owner is a small thing until it lands on the version
 comparison, which is the case this project puts in the window: it would have
@@ -72,12 +72,12 @@ designation, which the manifest knows. Collecting the whole corpus *before*
 writing the segmenter is what made this visible; a segmenter validated on three
 samples would have shipped the repetition rule.
 
-**Sixty-two of seventy articles identical across two extraction routes — and
+**Sixty-two of seventy articles identical across two extraction routes, and
 the other eight, one by one.** The version comparison only means something if
 what differs between v1 and v5 is regulation and not extraction. So the eight
 differing articles were classified individually rather than declared "real
 change": arts. 16, 18, 24 and 33 changed by Resolução BCB 119/2021; 28 and 68
-by Resolução BCB 282/2022; 70 — the entry into force, *julho* to *outubro* —
+by Resolução BCB 282/2022; 70 (the entry into force, *julho* to *outubro* —
 by Circular 4.005/2020; and 69, whose inciso XVII gained an editorial
 cross-reference (*Vide Circular nº 3.942*) in the consolidation. Every change
 carries its provenance inline in the consolidated text; none is an artefact of
