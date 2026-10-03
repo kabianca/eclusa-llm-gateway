@@ -39,9 +39,19 @@ class Prompt:
 
 
 def _passage(n: int, chunk: Chunk, manifest: Manifest) -> str:
+    """Two header lines, then the passage.
+
+    The act's title goes on its own line and the three fields the model must copy go on
+    the next, with ``locator`` last so that it ends at the newline. The first live call
+    showed why: the title used to sit in parentheses right after the locator, the prompt
+    says to copy the locator exactly, and the model copied "art. 10, caput (Circular nº
+    3.978, de 23 de janeiro de 2020)" — right document, right chunk, right answer, and a
+    citation the contract could not resolve. The header was ambiguous, so the header is
+    what changed; loosening the contract to accept a suffix would have given away the
+    guarantee that a citation names a device that exists.
+    """
     doc = manifest.by_id(chunk.doc_id)
     locator = chunk.citation or "revogação"
-    header = (
-        f"[{n}] doc_id={chunk.doc_id} chunk_id={chunk.chunk_id} locator={locator} ({doc.title})"
-    )
-    return f"{header}\n{chunk.text}"
+    title = f"[{n}] {doc.title}"
+    fields = f"doc_id={chunk.doc_id} chunk_id={chunk.chunk_id} locator={locator}"
+    return f"{title}\n{fields}\n{chunk.text}"

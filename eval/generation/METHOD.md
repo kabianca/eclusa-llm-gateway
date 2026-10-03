@@ -60,6 +60,30 @@ and matches what the version-aware retrieval actually delivers.
   the revocation notice (or a partial that does), never a silent answer from
   the revoked text.
 
+## What the first live call found (2026-10-03)
+
+One case, `answer-10`, US$ 0.00215 — and a `contract_violation`. The model got
+the document right, the chunk right and the answer right, and wrote the locator
+as `art. 10, caput (Circular nº 3.978, de 23 de janeiro de 2020)`. The header
+of every passage used to render `locator={locator} ({act title})`, with the
+title glued to the locator and no separator, while the prompt says to copy the
+locator exactly. The model obeyed; the header lied.
+
+Fixed where the fault was. The title moved to its own line and the three fields
+to copy sit on the next, with `locator` last so it ends at the newline. The
+contract was not touched: accepting a locator with a suffix would have given
+away the guarantee that a citation names a device that exists in the chunk —
+the one thing this project claims.
+
+Two things this confirms. Spending one call before fourteen was worth it: the
+cassette is append-only and this would have been fifteen useless entries.
+And the blocked draft in the audit record is what made the diagnosis possible
+in one reading — "the model tried to say X and was stopped", with X in full.
+
+The trial's artifacts were deleted rather than kept: the prompt is part of the
+recording key, so that entry was already unreachable, and a dead entry in an
+append-only file is worse than no entry.
+
 ## Precautions for the live run
 
 - The run is the only live call in the project. It needs `ECLUSA_LIVE=1` and

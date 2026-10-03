@@ -50,9 +50,7 @@ class ScriptedProvider:
         )
 
 
-PASSAGE_HEADER = re.compile(
-    r"^\[\d+\] doc_id=(?P<doc>\S+) chunk_id=(?P<chunk>\S+) locator=(?P<loc>.+?) \("
-)
+PASSAGE_HEADER = re.compile(r"^doc_id=(?P<doc>\S+) chunk_id=(?P<chunk>\S+) locator=(?P<loc>.+)$")
 
 
 def passage_ids(request: CompletionRequest) -> dict[str, tuple[str, str]]:
