@@ -45,6 +45,9 @@ def main(argv: list[str] | None = None) -> int:
         metavar="CASE_ID",
         help="record just these cases; the cassette is append-only, so spend one call first",
     )
+    rev = sub.add_parser("review", help="print the recorded answers in a readable form, to grade")
+    rev.add_argument("--out", type=Path, default=Path("eval/generation"))
+    rev.add_argument("--only", nargs="+", metavar="CASE_ID")
     gen = sub.add_parser(
         "generation", help="replay the generation cases in recorded mode (the gate)"
     )
@@ -53,6 +56,8 @@ def main(argv: list[str] | None = None) -> int:
     gen.add_argument("--out", type=Path, default=Path("eval/generation"))
     args = parser.parse_args(argv)
 
+    if args.command == "review":
+        return _review(args)
     if args.command in ("record", "generation"):
         return _generation(args)
 
@@ -96,6 +101,45 @@ def main(argv: list[str] | None = None) -> int:
         args.out.write_text(
             json.dumps(payload, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
         )
+    return 0
+
+
+def _review(args) -> int:
+    """What the author reads to grade: the question, why the case exists, and the answer."""
+    import json
+    import textwrap
+
+    from eclusa.eval import generation as gen_mod
+
+    cases = gen_mod.load_cases().cases
+    if args.only:
+        cases = [c for c in cases if c.id in set(args.only)]
+    for case in cases:
+        path = args.out / "responses" / f"{case.id}.json"
+        if not path.exists():
+            print(f"\n## {case.id} — not recorded")
+            continue
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        response = payload["response"]
+        print("\n" + "=" * 98)
+        print(
+            f"## {case.id}  [{case.kind}]  esperado={case.expected.outcome}  "
+            f"veio={response['outcome']}  (audit={payload['audit_outcome']})"
+        )
+        print(f"P: {case.question}")
+        print(textwrap.fill(f"porquê do caso: {case.why}", 98, subsequent_indent="   "))
+        if response.get("refusal_reason"):
+            note = response.get("refusal_note") or ""
+            print(f"RECUSA ({response['refusal_reason']}): {note}"[:400])
+        draft = response.get("draft")
+        if draft:
+            for i, s in enumerate(draft["statements"], 1):
+                print("\n" + textwrap.fill(f"[{i}] {s['text']}", 98, subsequent_indent="    "))
+                for c in s["citations"]:
+                    print(f"     -> {c['doc_id']}  {c['locator']}")
+            for g in draft.get("gaps", []):
+                print("\n" + textwrap.fill(f"LACUNA: {g['text']}", 98, subsequent_indent="    "))
+                print(f"     onde: {g.get('where')}")
     return 0
 
 
@@ -150,18 +194,15 @@ def _generation(args) -> int:
         )
         return 0
     results = gen_mod.gate(cases, gateway, args.out)
-    bad = 0
+    bad = ungraded = 0
     for r in results:
-        verdict = r.grade.verdict if r.grade else None
-        status = "ok" if r.ok else "FAIL"
         bad += not r.ok
-        print(
-            f"{status:4s} {r.case_id:24s} audit={r.audit_outcome} grade={verdict} "
-            f"{'; '.join(r.comparison.mismatches)}"
-        )
+        ungraded += r.needs_grade and (r.grade is None or r.grade.verdict is None)
+        detail = "; ".join(r.comparison.mismatches)
+        print(f"{r.status:9s} {r.case_id:24s} audit={r.audit_outcome} {detail}")
         if r.grade and r.grade.notes:
-            print(f"     note: {r.grade.notes}")
-    print(f"{len(results)} cases, {bad} failing")
+            print(f"          note: {r.grade.notes}")
+    print(f"{len(results)} cases, {bad} failing, {ungraded} awaiting a verdict")
     return 1 if bad else 0
 
 

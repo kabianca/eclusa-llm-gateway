@@ -150,6 +150,25 @@ class GateResult:
     def ok(self) -> bool:
         return self.comparison.ok and self.grade is not None and self.grade.verdict == "pass"
 
+    @property
+    def needs_grade(self) -> bool:
+        """Only an answer that already matches its expectation needs a human verdict.
+
+        Where the form failed the case is failing whatever anyone writes, so grading it is
+        busywork. Where the form matched, the answer looks right, and whether it *is* right
+        is the one judgement no code here makes — which is also where a plausible wrong
+        answer would otherwise pass.
+        """
+        return self.comparison.ok
+
+    @property
+    def status(self) -> str:
+        if not self.comparison.ok:
+            return "FAIL form"
+        if self.grade is None or self.grade.verdict is None:
+            return "UNGRADED"
+        return "ok" if self.grade.verdict == "pass" else "FAIL grade"
+
 
 def question_sha(question: str) -> str:
     return hashlib.sha256(question.encode("utf-8")).hexdigest()

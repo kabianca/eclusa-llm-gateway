@@ -135,6 +135,43 @@ The run was therefore re-recorded after the fixes: the prompt is part of the
 recording key, so measuring with one prompt and running with another would have
 left the recordings describing a system that no longer exists.
 
+## Amendment 3 — two expectations corrected (2026-10-03)
+
+Both were written by me and both encoded a premise the corpus contradicts.
+They are corrected because the premise was wrong, not because the model
+disagreed with them; the `why` of each already described the right substance.
+
+**`version-16`** demanded the word *"não"*. Asked whether identifying a legal
+person requires the seat's address, the model answered *"Sim"* and cited art.
+16, § 4º — which the amendment of 2021 never touched and which does require
+*o endereço da sede* for a legal person seated abroad and exempt from CNPJ. The
+general rule in art. 16, § 2º, II is firma/denominação and CNPJ only; the
+question has no binary answer, and I had not noticed § 4º when writing the
+case. The phrase check is dropped. Whether an answer that opens with *"Sim"*
+and then gives both rules is the right answer is a judgement about content —
+the author's, in the grade.
+
+**`partial-ouro`** demanded that the declared gap name *"406"*. The corpus does
+not contain Instrução Normativa 406, so that asked the model for outside
+knowledge, which is the one thing the contract forbids. A partial must declare
+a gap — the `Draft` model enforces that — and whether the gap is the right one
+is graded by hand.
+
+Neither correction touches an outcome, a citation requirement or a case's
+purpose.
+
+## Grading: what has to be graded, and what does not
+
+A verdict is consequential only where the recorded answer already **matches its
+expectation**. Where the form failed, the case is failing whatever anyone
+writes in `grades.json`, and grading it is busywork; where the form matched,
+the answer looks right, and whether it *is* right is the judgement no code here
+makes — which is also exactly where a plausible wrong answer would otherwise
+pass. `python -m eclusa.eval generation` prints `UNGRADED` for the cases that
+still need one, and `python -m eclusa.eval review` prints the recorded answers
+in a readable form so that grading is reading one output instead of fifteen
+JSON files.
+
 ## Precautions for the live run
 
 - The run is the only live call in the project. It needs `ECLUSA_LIVE=1` and
