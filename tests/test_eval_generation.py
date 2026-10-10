@@ -317,3 +317,52 @@ def test_gate_replays_recordings_and_holds_them_to_expectation_and_grade(
     )
     assert results["version-70"].grade.notes == "refused the demonstration question"
     assert all(r.audit_outcome is Outcome.REFUSED for r in results.values())
+
+
+# The verdicts the author gave on 2026-10-10, over the recordings of that day. Together
+# they are the regression test: a change to retrieval, chunking, the prompt or the contract
+# that makes one of these stop passing fails here, and the recordings never move.
+GRADED_PASSING = {
+    "answer-10",
+    "answer-48-prazo",
+    "answer-4001-especie",
+    "version-70",
+    "version-16",
+    "partial-ouro",
+    "partial-joalheria",
+    "answer-344",
+    "refusal-pena",
+    "refusal-multa",
+}
+
+
+@pytest.mark.slow
+def test_the_recorded_answers_still_pass_their_expectation_and_their_grade(
+    manifest, corpus_dir, full_index, embedder, tmp_path
+):
+    """Recorded response plus committed grade equals a regression test, with no judge and no
+    network. The provider replays; a miss would raise rather than call anything."""
+    gateway = make_gateway(
+        manifest,
+        corpus_dir,
+        full_index,
+        embedder,
+        RecordedProvider(Path("eval/generation/recordings.jsonl")),
+        tmp_path / "gate.jsonl",
+    )
+    results = {r.case_id: r for r in gen.gate(gen.load_cases(), gateway, Path("eval/generation"))}
+    assert {cid for cid, r in results.items() if r.ok} == GRADED_PASSING
+    assert not [r for r in results.values() if r.needs_grade and r.grade.verdict is None], (
+        "a case that matches its expectation must carry a verdict"
+    )
+    # The five that fail, fail on form: three the contract stopped, two where the model
+    # answered a question the case says must be refused. None of them is a silent pass.
+    failing = {cid for cid, r in results.items() if not r.ok}
+    assert failing == {
+        "version-original-70",
+        "revoked-pep",
+        "revoked-present-tense",
+        "ambiguous-prazo",
+        "ambiguous-art4",
+    }
+    assert all(not r.comparison.ok for cid, r in results.items() if cid in failing)

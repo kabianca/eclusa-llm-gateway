@@ -1,0 +1,52 @@
+{
+  "case_id": "partial-joalheria",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-partial-joalheria-2026-10-03",
+    "outcome": "partial",
+    "draft": {
+      "outcome": "partial",
+      "statements": [
+        {
+          "text": "As instituições referidas no art. 1º devem comunicar ao Coaf as operações ou situações suspeitas de lavagem de dinheiro e de financiamento do terrorismo.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0314",
+              "locator": "art. 48, caput"
+            }
+          ]
+        },
+        {
+          "text": "A comunicação da operação ou situação suspeita ao Coaf deve ser realizada até o dia útil seguinte ao da decisão de comunicação.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0319",
+              "locator": "art. 48, § 2º"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "text": "As passagens não informam se uma joalheria está entre as instituições referidas no art. 1º.",
+          "where": "Circular nº 3.978/2020, art. 1º, fora deste corpus"
+        }
+      ]
+    }
+  },
+  "audit_outcome": "partial",
+  "cost_usd": 0.0027975,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0314",
+    "circular-3978-2020@v5#0319",
+    "circular-3978-2020@v5#0315",
+    "circular-3978-2020@v5#0322",
+    "circular-3978-2020@v5#0338",
+    "circular-3978-2020@v5#0337",
+    "circular-3978-2020@v5#0326",
+    "circular-3978-2020@v5#0330"
+  ]
+}

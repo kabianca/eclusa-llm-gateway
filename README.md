@@ -291,6 +291,29 @@ corpus covers red-flag situations around the gold market (Carta Circular
 Instrução Normativa BCB 406/2023, outside this corpus.* That sentence is more
 convincing than any refusal.
 
+**What the model did when it met the contract.** The fifteen evaluation cases
+were recorded once against the live model, for four and a half cents, and
+graded by hand against the corpus text — no LLM judge, because a project whose
+thesis is determinism should not bolt a second non-deterministic component onto
+its own measurement. Ten passed. Five did not, and none of them failed
+quietly. Three were stopped by the contract: asked what Circular 3.461
+requires — present tense, about an act revoked in 2020 — the model answered
+that it *requires*, with the revocation sitting unused in its own context;
+asked what the original wording of Circular 3.978 provided, it answered *1º de
+julho de 2020* and stopped there, a date that never came into force. A plain
+retrieval pipeline would have shipped all three as confident, cited, wrong
+answers. The other two were questions the cases say must be refused for
+ambiguity, which the model answered on one reading instead of naming the
+ambiguity.
+
+Three violations in fifteen is not *most*, which was the condition written down
+in advance for replacing the model, so the model stays what it is and the
+number is reported as it came. All three were in the hardest discipline —
+version and revocation — which is exactly where a governance layer is supposed
+to earn its place. The ten passing cases and the five failing ones are frozen in
+the suite: recorded response plus committed grade is a regression test, with no
+judge and no network.
+
 ## Design decisions
 
 ### The embedding model is local, multilingual, fp32 — and 470 MB

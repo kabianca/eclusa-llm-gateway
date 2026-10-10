@@ -20,7 +20,12 @@ So a case holds three layers, each written at a different moment:
    the run) — what the model produced, once, live, through the whole lock:
    retrieval, budget, contract, audit. Written by `python -m eclusa.eval record`.
 3. **Grade** (`grades.json`, after reading the responses) — the author's verdict
-   on content, `pass` or `fail`, with a note. Nothing is graded by the code.
+   on content, with a note. Nothing is graded by the code. Three verdicts, for
+   the same reason the contract has three outcomes: `pass` is right, `fail` is
+   wrong, and `parcial` is right as far as it goes — acceptable but imperfect,
+   usually because the answer said more or less than the question asked.
+   `parcial` does not block the gate and is always listed in the report, so that
+   it is never silently forgotten.
 
 The gate (`python -m eclusa.eval generation`, and the test that wraps it once
 recordings exist) replays every case through the gateway in recorded mode and
@@ -171,6 +176,27 @@ pass. `python -m eclusa.eval generation` prints `UNGRADED` for the cases that
 still need one, and `python -m eclusa.eval review` prints the recorded answers
 in a readable form so that grading is reading one output instead of fifteen
 JSON files.
+
+## The result (2026-10-10)
+
+Fifteen cases, US$ 0.0477, graded by hand against the corpus text. **Ten pass**
+— nine `pass` and one `parcial` — and five fail, none of them silently:
+
+| what failed | cases | what happened |
+|---|---|---|
+| the contract stopped the answer | `revoked-pep`, `revoked-present-tense`, `version-original-70` | the model answered from revoked or superseded text without giving what is in force |
+| the model answered where the case requires a refusal | `ambiguous-art4`, `ambiguous-prazo` | an ambiguous question answered on one reading instead of naming the ambiguity |
+
+**The reversal condition on the model was not met.** Three contract violations
+in fifteen is not "most of them", so the pinned model stays what it is, and the
+number is reported as it came. All three were in the hardest discipline —
+version and revocation — which is where a governance layer is supposed to earn
+its place.
+
+The ten passing cases and the five failing ones are frozen in
+`tests/test_eval_generation.py`. Recorded response plus committed grade is a
+regression test: a change to retrieval, chunking, the prompt or the contract
+that moves any of them fails there, with no judge and no network.
 
 ## Precautions for the live run
 

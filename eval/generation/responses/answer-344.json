@@ -1,0 +1,57 @@
+{
+  "case_id": "answer-344",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-answer-344-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "A Resolução BCB nº 344 alterou a Circular nº 3.978 para dispensar as instituições referidas no art. 1º de realizar os procedimentos de qualificação e de classificação de clientes na contratação de operação de crédito amparada por programa instituído pelo poder público federal destinado à renegociação de dívidas de pessoas físicas inscritas em cadastros de inadimplentes, desde que atendidas cumulativamente as condições dos incisos I a III do art. 23-A.",
+          "citations": [
+            {
+              "doc_id": "resolucao-bcb-344-2023@v1",
+              "chunk_id": "resolucao-bcb-344-2023@v1#0004",
+              "locator": "art. 1º, caput"
+            }
+          ]
+        },
+        {
+          "text": "A alteração também previu que o disposto no caput do art. 23-A não se aplica à contratação de outros produtos e serviços pelo cliente beneficiário da renegociação.",
+          "citations": [
+            {
+              "doc_id": "resolucao-bcb-344-2023@v1",
+              "chunk_id": "resolucao-bcb-344-2023@v1#0004",
+              "locator": "art. 1º, caput"
+            }
+          ]
+        },
+        {
+          "text": "A Resolução BCB nº 344 entrou em vigor na data de sua publicação.",
+          "citations": [
+            {
+              "doc_id": "resolucao-bcb-344-2023@v1",
+              "chunk_id": "resolucao-bcb-344-2023@v1#0010",
+              "locator": "art. 2º, caput"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.003543,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "resolucao-bcb-282-2022@v1#0008",
+    "resolucao-bcb-344-2023@v1#0010",
+    "circular-3978-2020@v5#0425",
+    "circular-3978-2020@v1#0386",
+    "resolucao-bcb-44-2020@v1#0017",
+    "resolucao-bcb-344-2023@v1#0004",
+    "instrucao-normativa-bcb-761-2026@v1#0005",
+    "circular-3978-2020@v5#0100"
+  ]
+}

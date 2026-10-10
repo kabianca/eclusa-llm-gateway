@@ -15,7 +15,7 @@ from datetime import date
 from pathlib import Path
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
 from eclusa.index.store import IndexStore
 from eclusa.service.contract import Response
@@ -121,9 +121,20 @@ def compare(case: GenCase, response: Response, store: IndexStore) -> Comparison:
 
 
 class Grade(BaseModel):
+    """The author's verdict on content, which no code here makes.
+
+    Three states, for the same reason the contract has three outcomes: forcing a binary
+    where the thing being judged has a middle produces a false answer. ``pass`` is right,
+    ``fail`` is wrong, ``parcial`` is right as far as it goes — an answer that is acceptable
+    but imperfect, usually because it said more or less than the question asked.
+
+    ``parcial`` does not block the gate, and it is always listed in the report: the point is
+    that it is never silently forgotten, not that it stops a build.
+    """
+
     model_config = ConfigDict(frozen=True, extra="forbid")
 
-    verdict: Literal["pass", "fail"] | None = None
+    verdict: Literal["pass", "parcial", "fail"] | None = None
     notes: str = ""
 
 
@@ -146,9 +157,15 @@ class GateResult:
     grade: Grade | None
     audit_outcome: Outcome | None
 
+    PASSING = ("pass", "parcial")
+
     @property
     def ok(self) -> bool:
-        return self.comparison.ok and self.grade is not None and self.grade.verdict == "pass"
+        return (
+            self.comparison.ok
+            and self.grade is not None
+            and self.grade.verdict in GateResult.PASSING
+        )
 
     @property
     def needs_grade(self) -> bool:
@@ -167,6 +184,8 @@ class GateResult:
             return "FAIL form"
         if self.grade is None or self.grade.verdict is None:
             return "UNGRADED"
+        if self.grade.verdict == "parcial":
+            return "ok*"
         return "ok" if self.grade.verdict == "pass" else "FAIL grade"
 
 
@@ -174,17 +193,31 @@ def question_sha(question: str) -> str:
     return hashlib.sha256(question.encode("utf-8")).hexdigest()
 
 
+class GradesInvalid(ValueError):
+    """grades.json is hand-written, so saying what is wrong with it beats a stack trace."""
+
+
+def _load_grades(path: Path) -> Grades | None:
+    if not path.exists():
+        return None
+    try:
+        return Grades.model_validate_json(path.read_text(encoding="utf-8"))
+    except ValidationError as exc:
+        problems = "; ".join(
+            f"{'.'.join(str(p) for p in e['loc'])}: {e['msg']}" for e in exc.errors()[:5]
+        )
+        raise GradesInvalid(
+            f"{path} is not valid. A verdict is 'pass', 'parcial' or 'fail' — or null, for "
+            f"a case that does not need one. {problems}"
+        ) from exc
+
+
 def gate(cases: GenCaseSet, gateway, out_dir: Path) -> list[GateResult]:
     """Replay every case in recorded mode and hold it to its expectation and its grade.
 
     ``gateway.provider`` must be a RecordedProvider: a miss raises, it never records.
     """
-    grades_path = out_dir / "grades.json"
-    grades = (
-        Grades.model_validate_json(grades_path.read_text(encoding="utf-8"))
-        if grades_path.exists()
-        else None
-    )
+    grades = _load_grades(out_dir / "grades.json")
     results: list[GateResult] = []
     for case in cases.cases:
         before = len(gateway.audit.records())

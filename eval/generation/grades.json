@@ -1,0 +1,66 @@
+{
+  "graded_by": null,
+  "graded_on": null,
+  "grades": {
+    "answer-10": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "answer-48-prazo": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "answer-4001-especie": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "version-70": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "version-16": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "version-original-70": {
+      "verdict": null,
+      "notes": ""
+    },
+    "partial-ouro": {
+      "verdict": "parcial",
+      "notes": "parcialmente correto, tem mais informações que denunciam sobre a compra do ouro, porém as informações mencionadas são corretas só seria possível trazer mais detalhes. Porém nada foi inventado e a localização foi feita corretamente."
+    },
+    "partial-joalheria": {
+      "verdict": "pass",
+      "notes": "A parte do gap que menciona que joalherias não compõem a lista de operações listadas, mas na verdade toda e qualquer atividade econômica deve estar atenta às suas negociações e cumprir o explicito na circular."
+    },
+    "answer-344": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "refusal-pena": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "refusal-multa": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "ambiguous-prazo": {
+      "verdict": "parcial",
+      "notes": "parcialmente correto, pois a pergunta é a vaga e ainda assim o modelo traz alguns prazos listados na documentação, com contextualização detalhada ao porquê e onde o prazo é apresentado. Mas penso que poderia ter sido recusado a princípio e pedido mais detalhes na pergunta."
+    },
+    "ambiguous-art4": {
+      "verdict": "pass",
+      "notes": "coerente"
+    },
+    "revoked-pep": {
+      "verdict": "pass",
+      "notes": "correto"
+    },
+    "revoked-present-tense": {
+      "verdict": null,
+      "notes": ""
+    }
+  }
+}

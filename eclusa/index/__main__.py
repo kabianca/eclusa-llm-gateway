@@ -23,12 +23,41 @@ def main(argv: list[str] | None = None) -> int:
     b.add_argument("--corpus", type=Path, default=Path("corpus"))
     b.add_argument("--out", type=Path, default=Path("var/index"))
     b.add_argument("--threads", type=int, default=1, help="1 keeps the build reproducible")
+    sh = sub.add_parser(
+        "show", help="print a provision by document and locator, to check a citation"
+    )
+    sh.add_argument("doc_id", help="circular-3978-2020@v5, or just circular-3978-2020")
+    sh.add_argument(
+        "locator", nargs="?", help='"art. 10, caput"; omit to list the act\'s provisions'
+    )
+    sh.add_argument("--corpus", type=Path, default=Path("corpus"))
     s = sub.add_parser("search")
     s.add_argument("question")
     s.add_argument("--index", type=Path, default=Path("var/index"))
     s.add_argument("-k", type=int, default=8)
     args = parser.parse_args(argv)
 
+    if args.command == "show":
+        from eclusa.ingest.extract import load_paragraphs
+        from eclusa.ingest.segment import segment
+
+        manifest = manifest_mod.load(args.corpus / "manifest.json")
+        docs = [d for d in manifest.documents if args.doc_id in (d.doc_id, d.act_id)]
+        if not docs:
+            print(f"no such document: {args.doc_id}")
+            return 1
+        for doc in docs:
+            segments = segment(doc.doc_id, load_paragraphs(args.corpus / doc.text_path))
+            print(f"\n=== {doc.doc_id} — {doc.title} ({doc.status.value})")
+            if args.locator is None:
+                print("   ", ", ".join(s.citation for s in segments if s.kind == "caput"))
+                continue
+            wanted = [s for s in segments if s.citation and s.citation.startswith(args.locator)]
+            if not wanted:
+                print(f"    (nada em {args.locator})")
+            for s in wanted:
+                print(f"\n[{s.citation}]  {s.text}")
+        return 0
     if args.command == "build":
         started = time.monotonic()
         manifest_path = args.corpus / "manifest.json"
