@@ -19,6 +19,8 @@ record is written, and only then does the answer leave.
   <img src="https://img.shields.io/badge/license-GPL--3.0-green" alt="GPL-3.0 license">
 </p>
 
+**English** · [Português](README.pt-BR.md)
+
 The thesis: **an LLM in production is a budget, a contract and an audit trail.
 The model is the easy part.** This repository does not claim to prevent
 hallucination; that claim is not testable. It claims something narrower and
@@ -130,7 +132,7 @@ the other eight, one by one.** The version comparison only means something if
 what differs between v1 and v5 is regulation and not extraction. So the eight
 differing articles were classified individually rather than declared "real
 change": arts. 16, 18, 24 and 33 changed by Resolução BCB 119/2021; 28 and 68
-by Resolução BCB 282/2022; 70 (the entry into force, *julho* to *outubro* —
+by Resolução BCB 282/2022; 70 (the entry into force, *julho* to *outubro*)
 by Circular 4.005/2020; and 69, whose inciso XVII gained an editorial
 cross-reference (*Vide Circular nº 3.942*) in the consolidation. Every change
 carries its provenance inline in the consolidated text; none is an artefact of
@@ -401,7 +403,7 @@ that nobody has to discover it.
 Everything but the cluster is `make`, and nothing here reaches a paid API.
 
 ```bash
-make test        # the gate: 143 tests, no network to any model, no key
+make test        # the gate: 150 tests, no network to any model, no key
 make lint        # ruff
 make index       # embed the corpus into var/index (a few minutes the first time:
                  # it downloads the pinned embedding model, ~470 MB, once)
@@ -453,7 +455,7 @@ eclusa/eval    the two evaluations
 prompts/       versioned prompt artifacts on disk, not strings inside functions
 eval/          frozen cases, metrics, measurements and the recorded answers
 k8s/           manifests + the kind cluster config
-tests/         143 tests
+tests/         150 tests
 ```
 
 ## Tests
@@ -519,7 +521,6 @@ gate replays.
   institutions, and every act deliberately left outside is an evaluation case:
   the penalty for the crime (federal law), gold-purchase procedures, COAF
   sectors, the FX family.
-- **A `README.pt-BR.md`**, as the four sibling repositories have.
 
 ## What I would do differently in production
 
