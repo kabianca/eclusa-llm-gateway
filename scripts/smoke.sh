@@ -8,7 +8,10 @@
 # lock runs with no network and no API key.
 set -euo pipefail
 
-BASE="${1:-http://localhost:30080}"
+# 127.0.0.1, not localhost: kind publishes the node port on IPv4 only, and on a host
+# where localhost resolves to ::1 first the connection is accepted and then closed —
+# "Recv failure: Connection closed by peer", which reads like a broken service and is not.
+BASE="${1:-http://127.0.0.1:30080}"
 QUESTION='Qual é o objetivo da avaliação interna de risco prevista na Circular 3.978?'
 
 echo "== readiness"
