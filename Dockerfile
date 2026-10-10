@@ -43,6 +43,7 @@ COPY prompts ./prompts
 COPY eval/generation/recordings.jsonl ./recordings.jsonl
 
 ENV ECLUSA_CORPUS=/app/corpus \
+    ECLUSA_PROMPTS=/app/prompts \
     ECLUSA_INDEX=/opt/index \
     ECLUSA_CASSETTE=/app/recordings.jsonl \
     ECLUSA_AUDIT=/var/lib/eclusa/trail.jsonl \

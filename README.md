@@ -2,11 +2,6 @@
 
 ### A question enters. What leaves has been checked, charged and written down.
 
-<!-- Draft. Sections still to come, in the house order: Why I built this ·
-     Architecture · Running it · Layout · Tests · Where this grows. "Design
-     decisions", "What running it taught me" and "What I would do differently"
-     are written as things happen. -->
-
 An LLM gateway over the Banco Central do Brasil's normative texts on the
 prevention of money laundering and terrorism financing (PLD/FT). A question
 enters, the answer is checked against a contract — every statement traceable to
@@ -16,6 +11,9 @@ record is written, and only then does the answer leave.
 <p>
   <a href="https://github.com/kabianca/eclusa-llm-gateway/actions/workflows/tests.yml">
     <img src="https://github.com/kabianca/eclusa-llm-gateway/actions/workflows/tests.yml/badge.svg" alt="tests">
+  </a>
+  <a href="https://github.com/kabianca/eclusa-llm-gateway/actions/workflows/kind.yml">
+    <img src="https://github.com/kabianca/eclusa-llm-gateway/actions/workflows/kind.yml/badge.svg" alt="kind">
   </a>
   <img src="https://img.shields.io/badge/Python-3.12+-3776AB?logo=python&logoColor=white" alt="Python 3.12+">
   <img src="https://img.shields.io/badge/license-GPL--3.0-green" alt="GPL-3.0 license">
@@ -38,6 +36,61 @@ the window with a watermark. Eclusa pins the corpus and the model. Maré reads
 what the central bank *measures* (the SGS numeric series API); Eclusa reads what
 it *determines* (normative acts, which are not in the open-data portal — a
 different service, reached a different way).
+
+## Why I built this
+
+Every demonstration of retrieval-augmented generation I had read measured the
+model. None of them measured the things that decide whether the answer can be
+trusted: whether the citation resolves, whether the corpus moved under the
+evaluation, what the call cost, and what was recorded when the answer was
+refused. Those are the parts an auditor asks about, and they are the parts
+that are missing.
+
+So the subject is one I can judge — the Banco Central's PLD/FT rules — and the
+corpus is frozen, because a corpus that changes underneath the system makes
+evaluation meaningless: a regression could be the prompt, or it could be a
+revoked norm, and there is no way to tell. The same act is held in two
+versions on purpose. Asked when Circular 3.978 came into force, a system that
+does not model version answers *1º de julho de 2020* with total confidence —
+a date that never came into force, because Circular 4.005 moved it to
+October. That error is not hypothetical; it is what a compliance analyst does
+every week when a search lands them on the original PDF.
+
+## Architecture
+
+```
+corpus/      21 normative acts, frozen: the capture, the extracted text, and
+             for each one its source URL, capture date, hash and the version of
+             the extractor that produced it
+collector/   the optional refresh path: polite, hash-checked, reports drift
+             instead of overwriting it. Never needed to run the service
+ingest/      two extraction routes reduced to one form, then segmentation that
+             gives every paragraph a locator: art. 24, § 3º, VI, g, 2
+index/       chunking into units, notices and amendments; a local multilingual
+             embedding model pinned by revision and file hash; exact search
+service/     the lock: contract -> budget -> provider -> audit, behind HTTP
+eval/        retrieval and generation measured separately, both frozen first
+k8s/         manifests and the kind config CI applies them to
+```
+
+The cycle, for one question:
+
+```
+question
+  -> retrieve        version-aware: text in force first, history only where it
+                     differs, a revoked act's notice attached by rule
+  -> budget          the ceiling buys a number of output tokens; if what is
+                     left buys too few, the call is never made
+  -> provider        recordings by default; the live model only with a flag
+                     and a key, both set deliberately
+  -> contract        every statement cites a passage retrieved for *this*
+                     request, at a locator that exists inside it; superseded
+                     text needs the current version, revoked text needs its
+                     revocation
+  -> audit           one record, appended, including the drafts that were
+                     blocked and what they tried to say
+answer, or a refusal that says why
+```
 
 ## What running it taught me
 
@@ -319,6 +372,111 @@ so hashing the question protects less than it appears to. On this corpus that
 does not matter — the questions are about public regulation and the evaluation
 cases are mine — and the draft is retained on purpose. It is named here so
 that nobody has to discover it.
+
+## Running it
+
+Everything but the cluster is `make`, and nothing here reaches a paid API.
+
+```bash
+make test        # the gate: 143 tests, no network to any model, no key
+make lint        # ruff
+make index       # embed the corpus into var/index (a few minutes the first time:
+                 # it downloads the pinned embedding model, ~470 MB, once)
+make eval        # retrieval over the frozen cases, and the generation gate
+```
+
+A question, without the cluster:
+
+```bash
+.venv/bin/python -m eclusa.index search "Quando a Circular 3.978 entra em vigor?"
+.venv/bin/uvicorn eclusa.service.app:app --port 8000
+curl -s localhost:8000/readyz | python3 -m json.tool
+```
+
+### Proving it on a cluster
+
+```bash
+make prove       # kind up, build, load, apply, wait for readiness, ask a question
+```
+
+`make prove` creates a `kind` cluster, builds the image, loads it with `kind
+load docker-image` — it never comes from a registry — applies the manifests,
+waits for the rollout, and then asks the service a real question and checks the
+answer: the outcome, a statement, and a citation naming a document and a
+device. The pod does that **with no network and no API key**, because the
+provider replays the committed recordings unless told twice to go live. The
+same sequence runs in CI on every push, which is the difference between
+knowing Kubernetes and showing it running.
+
+```bash
+make kind-down   # when you are done
+```
+
+The live model is reached only by `make record`, which needs `ECLUSA_LIVE=1`
+and `OPENAI_API_KEY` in the environment and stops before any call that would
+push the run's worst case over a ceiling. Recording the fifteen evaluation
+cases costs about five cents.
+
+## Layout
+
+```
+corpus/        manifest.json + raw/ (as captured) + text/ (what the system reads)
+collector/     eclusa/collector: the refresh path for the corpus
+eclusa/ingest  extraction (two routes, one form) and segmentation with locators
+eclusa/index   chunking, the pinned embedding model, exact search, version-aware
+               retrieval
+eclusa/service contract, budget, audit, provider, prompts, the gateway, the app
+eclusa/eval    the two evaluations
+prompts/       versioned prompt artifacts on disk, not strings inside functions
+eval/          frozen cases, metrics, measurements and the recorded answers
+k8s/           manifests + the kind cluster config
+tests/         143 tests
+```
+
+## Tests
+
+The gate is deterministic and offline. `pytest` with no arguments cannot call a
+paid API: the provider that replays recordings is the default, the live client
+is imported only when `ECLUSA_LIVE=1` and a key are both set, and a test asserts
+that the OpenAI SDK is not even loaded in recorded mode. If `pytest` alone could
+spend money, the design would be wrong, not the permission.
+
+What the suite holds, beyond the usual:
+
+- **Extraction**, before any LLM code existed: article numbering recoverable,
+  monotonic and complete against hand-checked counts, in four footer layouts;
+  the committed text byte-identical to what the raw captures extract to, with
+  the poppler version asserted first so a mismatch is named rather than left as
+  an unexplained diff.
+- **The manifest**: what the schema refuses — two versions in force, a
+  superseded document pointing at another act, a revoking act outside the
+  corpus, a marked PDF as a source.
+- **Locators** on all 21 documents: incisos running I, II, III under one parent,
+  alíneas a…z then aa…, each level resetting the ones below.
+- **Retrieval**, measured separately from generation over 29 frozen cases, with
+  the numbers held as a gate.
+- **The contract's failure paths**, exercised rather than documented: a draft
+  that cites a passage not retrieved for its request, a locator that is not a
+  device inside its chunk, superseded text without the current version, revoked
+  text without its revocation, output that is not JSON, JSON that is not a
+  draft, a budget that stops before the call. Every path writes exactly one
+  audit record.
+- **The service**: not ready before the corpus and the index are loaded, and a
+  recorded question answered end to end through the whole lock.
+
+## Where this grows
+
+- **The drift monitor.** A `workflow_dispatch` job that runs the same cases
+  against the live model and reports how far the answers moved, never gating
+  the badge. Model providers update models without notice; that is information
+  to observe, not a reason to fail a build. Designed, not built.
+- **A durable sink for the trail.** In the cluster it is an `emptyDir` and
+  belongs to the pod's lifetime.
+- **More of the corpus.** The boundary is PLD/FT for BCB-supervised
+  institutions, and every act deliberately left outside is an evaluation case:
+  the penalty for the crime (federal law), gold-purchase procedures, COAF
+  sectors, the FX family.
+- **A `README.pt-BR.md`**, as the four sibling repositories have.
 
 ## What I would do differently in production
 

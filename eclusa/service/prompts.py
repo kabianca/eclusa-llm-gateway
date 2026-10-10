@@ -8,6 +8,7 @@ a recording made with the old one.
 
 from __future__ import annotations
 
+import os
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,7 +16,11 @@ from pathlib import Path
 from eclusa.corpus.manifest import Manifest
 from eclusa.index.chunks import Chunk
 
-PROMPTS_DIR = Path(__file__).resolve().parent.parent.parent / "prompts"
+# Repo-relative when running from a checkout; ECLUSA_PROMPTS in the image, where the
+# package lives in site-packages and the prompts are copied next to the corpus.
+PROMPTS_DIR = Path(
+    os.environ.get("ECLUSA_PROMPTS", Path(__file__).resolve().parent.parent.parent / "prompts")
+)
 VERSIONED = re.compile(r"^(?P<name>[a-z]+)-v(?P<n>\d+)$")
 
 
