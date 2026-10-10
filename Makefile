@@ -7,7 +7,7 @@ PIP    := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 RUFF   := $(VENV)/bin/ruff
 
-.PHONY: venv test lint index eval record
+.PHONY: venv test lint index eval record image kind-up deploy smoke kind-down prove
 
 $(VENV)/bin/activate: pyproject.toml
 	$(PYTHON) -m venv $(VENV)
@@ -39,3 +39,32 @@ eval: venv
 # ARGS lets you spend one call before the other fourteen: make record ARGS="--only answer-10"
 record: venv
 	$(VENV)/bin/python -m eclusa.eval record --ceiling-usd 0.02 --max-total-usd 0.50 $(ARGS)
+
+# ---------------------------------------------------------------------------
+# The cluster. Docker and kind are the only things here that are not Python.
+IMAGE ?= eclusa:dev
+CLUSTER ?= eclusa
+
+# The index is built inside the image, so this takes a few minutes the first time:
+# it downloads the pinned embedding model and embeds the whole corpus.
+image:
+	docker build -t $(IMAGE) .
+
+kind-up:
+	kind create cluster --name $(CLUSTER) --config k8s/kind.yaml
+
+# The image is built here and loaded into the cluster; it never comes from a registry.
+deploy: image
+	kind load docker-image $(IMAGE) --name $(CLUSTER)
+	kubectl apply -f k8s/namespace.yaml
+	kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml
+	kubectl -n eclusa rollout status deployment/eclusa --timeout=300s
+
+smoke:
+	./scripts/smoke.sh
+
+kind-down:
+	kind delete cluster --name $(CLUSTER)
+
+# Everything, from nothing to an answered question out of a pod.
+prove: kind-up deploy smoke

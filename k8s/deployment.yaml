@@ -1,0 +1,72 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eclusa
+  namespace: eclusa
+  labels: { app: eclusa }
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: eclusa }
+  template:
+    metadata:
+      labels: { app: eclusa }
+    spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        seccompProfile: { type: RuntimeDefault }
+      containers:
+        - name: eclusa
+          image: eclusa:dev
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8000
+          env:
+            # Recorded by default: the pod answers with no network and no key.
+            # Set ECLUSA_LIVE=1 to spend money, and only then is the key read.
+            - name: ECLUSA_LIVE
+              value: "0"
+            - name: OPENAI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: eclusa-openai
+                  key: OPENAI_API_KEY
+                  optional: true
+            - name: ECLUSA_CEILING_USD
+              value: "0.02"
+          # Requests and limits are declared: the embedding model is held in memory,
+          # and a pod that can be evicted mid-answer is not a service.
+          resources:
+            requests: { cpu: "250m", memory: "1Gi" }
+            limits: { cpu: "2", memory: "2Gi" }
+          # Liveness asks whether the process is alive. Readiness asks whether the
+          # corpus is loaded, the index is read and the model is in memory - the pod
+          # takes traffic only after it can actually answer.
+          startupProbe:
+            httpGet: { path: /readyz, port: http }
+            periodSeconds: 5
+            failureThreshold: 60
+          readinessProbe:
+            httpGet: { path: /readyz, port: http }
+            periodSeconds: 10
+          livenessProbe:
+            httpGet: { path: /healthz, port: http }
+            periodSeconds: 20
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: { drop: ["ALL"] }
+          volumeMounts:
+            - name: audit
+              mountPath: /var/lib/eclusa
+            - name: tmp
+              mountPath: /tmp
+      volumes:
+        # The trail is append-only and belongs to the pod's lifetime here. In production
+        # it would go to a durable sink; see "What I would do differently" in the README.
+        - name: audit
+          emptyDir: {}
+        - name: tmp
+          emptyDir: {}

@@ -37,6 +37,15 @@ def embedder():
 
 
 @pytest.fixture(scope="session")
+def full_index(manifest, embedder):
+    """The whole corpus, built once: the recordings were made against this index, so any
+    test that replays one needs the same context the live run saw."""
+    from eclusa.index.store import build
+
+    return build(manifest, CORPUS_DIR, embedder, CORPUS_DIR / "manifest.json")
+
+
+@pytest.fixture(scope="session")
 def small_index(manifest, embedder):
     """Built once per session: four documents, enough for version, partial and revocation."""
     from eclusa.index.store import build

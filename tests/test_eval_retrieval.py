@@ -125,15 +125,16 @@ def test_metric_definitions_on_a_synthetic_ranking(manifest):
 
 
 @pytest.mark.slow
-def test_version_aware_retrieval_holds_the_frozen_after_numbers(manifest, corpus_dir, embedder):
+def test_version_aware_retrieval_holds_the_frozen_after_numbers(
+    manifest, corpus_dir, embedder, full_index
+):
     # The gate for retrieval, separate from generation: builds the whole index and requires
     # the numbers measured on 2026-09-14 (eval/retrieval/results-after.json). A change that
     # lowers any of them fails here, whatever the model would have answered.
     from eclusa.eval.retrieval import run
     from eclusa.index.retrieve import retrieve
-    from eclusa.index.store import build
 
-    store = build(manifest, corpus_dir, embedder, corpus_dir / "manifest.json")
+    store = full_index
     cases = load_cases()
     summary, _ = run(
         cases,

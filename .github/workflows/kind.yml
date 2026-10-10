@@ -1,0 +1,67 @@
+# The cluster, in CI. Applying manifests to a cluster the job actually creates is
+# what separates "I know Kubernetes" from "here it is, running": the image is built
+# in the job and loaded with `kind load docker-image`, never pulled from a registry,
+# and the run ends by asking the service a question and checking the answer.
+#
+# This is a separate workflow from `tests` on purpose. The test badge holds the
+# gate — deterministic, no network to any model — and must not go red because a
+# cluster was slow to come up.
+
+name: kind
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  cluster:
+    name: build, load, apply, ask
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - uses: actions/checkout@v7
+
+      # The build downloads the pinned embedding model and embeds the corpus, so it
+      # is the slow step. Nothing here reaches a model provider: the service answers
+      # from the committed recordings.
+      - name: Build the image
+        run: docker build -t eclusa:dev .
+
+      - name: Create the cluster
+        uses: helm/kind-action@v1
+        with:
+          cluster_name: eclusa
+          config: k8s/kind.yaml
+
+      - name: Load the image into the cluster
+        run: kind load docker-image eclusa:dev --name eclusa
+
+      - name: Apply the manifests
+        run: |
+          kubectl apply -f k8s/namespace.yaml
+          kubectl apply -f k8s/deployment.yaml -f k8s/service.yaml
+
+      # Readiness is the claim: the pod reports ready only once the corpus is loaded,
+      # the index is read and the model is in memory.
+      - name: Wait for the rollout
+        run: kubectl -n eclusa rollout status deployment/eclusa --timeout=600s
+
+      - name: Ask it something
+        run: ./scripts/smoke.sh
+
+      - name: What the cluster saw, if anything went wrong
+        if: failure()
+        run: |
+          kubectl -n eclusa get pods -o wide
+          kubectl -n eclusa describe deployment/eclusa
+          kubectl -n eclusa logs deployment/eclusa --tail=200 || true
