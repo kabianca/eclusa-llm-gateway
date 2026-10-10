@@ -20,6 +20,9 @@ var/
 # The gate's own trail is regenerated on every run; the live recording's trail
 # (audit-record.jsonl) is evidence of the one live run and stays versioned.
 eval/generation/audit-gate.jsonl
+# The drift run's own cassette and trail: evidence of a day, not of the recordings.
+eval/generation/drift/
+eval/generation/audit-drift.jsonl
 .cache/
 .hf-cache/
 

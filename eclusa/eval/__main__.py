@@ -45,6 +45,14 @@ def main(argv: list[str] | None = None) -> int:
         metavar="CASE_ID",
         help="record just these cases; the cassette is append-only, so spend one call first",
     )
+    dri = sub.add_parser(
+        "drift", help="run the frozen cases against the live model and report the distance"
+    )
+    dri.add_argument("--corpus", type=Path, default=Path("corpus"))
+    dri.add_argument("--index", type=Path, default=Path("var/index"))
+    dri.add_argument("--out", type=Path, default=Path("eval/generation"))
+    dri.add_argument("--report", type=Path, default=None, help="write the report as JSON")
+    dri.add_argument("--ceiling-usd", type=float, default=0.02)
     rev = sub.add_parser("review", help="print the recorded answers in a readable form, to grade")
     rev.add_argument("--out", type=Path, default=Path("eval/generation"))
     rev.add_argument("--only", nargs="+", metavar="CASE_ID")
@@ -58,7 +66,7 @@ def main(argv: list[str] | None = None) -> int:
 
     if args.command == "review":
         return _review(args)
-    if args.command in ("record", "generation"):
+    if args.command in ("record", "generation", "drift"):
         return _generation(args)
 
     manifest = manifest_mod.load(args.corpus / "manifest.json")
@@ -144,6 +152,7 @@ def _review(args) -> int:
 
 
 def _generation(args) -> int:
+    import json
     from datetime import date
 
     from eclusa.eval import generation as gen_mod
@@ -155,8 +164,17 @@ def _generation(args) -> int:
     from eclusa.service.provider import provider_from_env
 
     manifest = manifest_mod.load(args.corpus / "manifest.json")
-    cassette = args.out / "recordings.jsonl"
-    trail = args.out / ("audit-record.jsonl" if args.command == "record" else "audit-gate.jsonl")
+    # The drift run must never touch the cassette the gate replays: it asks the live model
+    # on purpose, and its answers are evidence of today, not the recordings of that day.
+    trails = {
+        "record": "audit-record.jsonl",
+        "generation": "audit-gate.jsonl",
+        "drift": "audit-drift.jsonl",
+    }
+    cassette = args.out / (
+        "drift/cassette.jsonl" if args.command == "drift" else "recordings.jsonl"
+    )
+    trail = args.out / trails[args.command]
     gateway = Gateway(
         manifest=manifest,
         manifest_path=args.corpus / "manifest.json",
@@ -169,6 +187,36 @@ def _generation(args) -> int:
         prompt=Prompt.load("answer-v1"),
     )
     cases = gen_mod.load_cases()
+    if args.command == "drift":
+        from datetime import date as _date
+
+        from eclusa.eval.drift import run as drift_run
+        from eclusa.service.provider import RecordingProvider
+
+        if not isinstance(gateway.provider, RecordingProvider):
+            print("the drift monitor only runs live: set ECLUSA_LIVE=1 and OPENAI_API_KEY")
+            return 1
+        report = drift_run(cases, gateway, args.out, _date.today())
+        if args.report:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            args.report.write_text(
+                json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
+            )
+        for r in report["results"]:
+            flags = []
+            if r["recorded_outcome"] != r["live_outcome"]:
+                flags.append(f"outcome {r['recorded_outcome']} -> {r['live_outcome']}")
+            if set(r["recorded_citations"]) != set(r["live_citations"]):
+                flags.append("citations moved")
+            if r["recorded_audit"] != r["live_audit"]:
+                flags.append(f"audit {r['recorded_audit']} -> {r['live_audit']}")
+            print(f"{'MOVED' if flags else 'same ':5s} {r['case_id']:24s} {'; '.join(flags)}")
+        print(
+            f"\n{report['cases']} cases, {report['moved']} moved, "
+            f"recordings {report['recordings_age_days']} days old, US$ {report['cost_usd']}"
+        )
+        # Never gates: drift is information to observe, not a reason to fail a build.
+        return 0
     if getattr(args, "only", None):
         chosen = [c for c in cases.cases if c.id in set(args.only)]
         missing = set(args.only) - {c.id for c in chosen}

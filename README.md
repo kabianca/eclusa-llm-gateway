@@ -464,12 +464,32 @@ What the suite holds, beyond the usual:
 - **The service**: not ready before the corpus and the index are loaded, and a
   recorded question answered end to end through the whole lock.
 
+### Two evaluation flows, and the difference between them
+
+Saying what separates them is worth more than either.
+
+**The gate** runs on every push and pull request, against recorded responses:
+deterministic, no network to any model, no API key, no card. That is what holds
+the badge. CI that depends on a live model and a credit card does not run, and a
+badge that depends on someone else's uptime lies.
+
+**The drift monitor** is `workflow_dispatch` only. It asks the same frozen
+questions of the live model and reports how far the answers moved from the
+recordings — outcome, the passages they rest on, what the contract did — and how
+many days old the recordings are, which is the number that says whether the
+comparison still means anything. It **never gates**: a provider can update a
+model without notice, and that is information to observe, not a reason to fail a
+build. It costs about five cents a run:
+
+```bash
+ECLUSA_LIVE=1 OPENAI_API_KEY=... .venv/bin/python -m eclusa.eval drift
+```
+
+It writes to its own cassette and its own trail, never to the recordings the
+gate replays.
+
 ## Where this grows
 
-- **The drift monitor.** A `workflow_dispatch` job that runs the same cases
-  against the live model and reports how far the answers moved, never gating
-  the badge. Model providers update models without notice; that is information
-  to observe, not a reason to fail a build. Designed, not built.
 - **A durable sink for the trail.** In the cluster it is an `emptyDir` and
   belongs to the pod's lifetime.
 - **More of the corpus.** The boundary is PLD/FT for BCB-supervised

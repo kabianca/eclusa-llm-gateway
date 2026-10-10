@@ -1,0 +1,70 @@
+# The drift monitor. It runs by hand, against the live model, and it never gates.
+#
+# The gate (`tests`) runs on every push against recorded responses: deterministic,
+# no network to any model, no key, no card. That is what holds the badge, because
+# CI that depends on someone else's uptime and a credit card does not run.
+#
+# This one asks the same frozen questions of the live model and reports how far
+# the answers have moved from the recordings — outcome, citations, what the
+# contract did — and how old the recordings are. A model provider can update a
+# model without notice; that is information to observe, not a reason to fail a
+# build. Nothing here can turn a badge red, and the job always succeeds.
+#
+# It costs about five cents per run and needs the OPENAI_API_KEY secret.
+
+name: drift
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  drift:
+    name: the live model against the recordings
+    runs-on: ubuntu-latest
+    container: python:3.12-slim-trixie
+    timeout-minutes: 45
+
+    env:
+      HF_HUB_CACHE: ${{ github.workspace }}/.hf-cache
+      HF_HUB_DISABLE_TELEMETRY: "1"
+      ECLUSA_LIVE: "1"
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Install poppler at the pinned version
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends 'poppler-utils=25.03.0-*'
+
+      - name: Cache the pinned embedding model
+        uses: actions/cache@v6
+        with:
+          path: .hf-cache
+          key: hf-intfloat-multilingual-e5-small-614241f622f53c4eeff9890bdc4f31cfecc418b3
+
+      - name: Install the package, with the live client
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev,live]"
+
+      - name: Build the index
+        run: python -m eclusa.index build --out var/index
+
+      - name: Measure the distance
+        run: |
+          python -m eclusa.eval drift --report drift-report.json | tee drift-summary.txt
+
+      - name: Keep the report
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: drift-report
+          path: |
+            drift-report.json
+            drift-summary.txt
+            eval/generation/audit-drift.jsonl
