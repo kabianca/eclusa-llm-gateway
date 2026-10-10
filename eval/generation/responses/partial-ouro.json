@@ -1,0 +1,92 @@
+{
+  "case_id": "partial-ouro",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-partial-ouro-2026-10-03",
+    "outcome": "partial",
+    "draft": {
+      "outcome": "partial",
+      "statements": [
+        {
+          "text": "Na compra de ouro, há indícios de suspeita quando houver \"venda ou compra de ouro com recursos em espécie, que apresentem atipicidade em relação à atividade econômica do cliente ou incompatibilidade com a sua capacidade financeira\".",
+          "citations": [
+            {
+              "doc_id": "carta-circular-4001-2020@v4",
+              "chunk_id": "carta-circular-4001-2020@v4#0011.20",
+              "locator": "art. 1º, caput"
+            }
+          ]
+        },
+        {
+          "text": "Na compra de ouro, há indícios de suspeita quando houver \"venda ou compra de ouro incompatível com o patrimônio, a atividade econômica ou a ocupação profissional e a capacidade financeira do cliente\".",
+          "citations": [
+            {
+              "doc_id": "carta-circular-4001-2020@v4",
+              "chunk_id": "carta-circular-4001-2020@v4#0011.20",
+              "locator": "art. 1º, caput"
+            }
+          ]
+        },
+        {
+          "text": "Os procedimentos de monitoramento e seleção devem ser compatíveis com o perfil de risco do cliente, com a política de prevenção à lavagem de dinheiro e ao financiamento do terrorismo e com a avaliação interna de risco.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0079",
+              "locator": "art. 13, § 1º"
+            }
+          ]
+        },
+        {
+          "text": "As instituições devem implementar procedimentos de monitoramento, seleção e análise de operações e situações com o objetivo de identificar e dispensar especial atenção às suspeitas de lavagem de dinheiro e de financiamento do terrorismo.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0263",
+              "locator": "art. 38, caput"
+            }
+          ]
+        },
+        {
+          "text": "Os procedimentos mencionados no caput devem ser compatíveis com a política de prevenção à lavagem de dinheiro e ao financiamento do terrorismo, ser definidos com base na avaliação interna de risco, considerar a condição de pessoa exposta politicamente e estar descritos em manual específico aprovado pela diretoria da instituição.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0266",
+              "locator": "art. 38, § 3º"
+            }
+          ]
+        },
+        {
+          "text": "Os procedimentos de que trata o caput devem ser aplicados, inclusive, às propostas de operações.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0265",
+              "locator": "art. 38, § 2º"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "text": "As passagens não informam um procedimento específico e exclusivo para a compra de ouro além dos indícios de suspeita e dos procedimentos gerais de monitoramento, seleção, análise e qualificação.",
+          "where": "fora do corpus"
+        }
+      ]
+    }
+  },
+  "audit_outcome": "partial",
+  "cost_usd": 0.005109,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "carta-circular-4001-2020@v4#0011.20",
+    "circular-3978-2020@v5#0079",
+    "circular-3978-2020@v5#0263",
+    "circular-3978-2020@v5#0266",
+    "circular-3978-2020@v5#0265",
+    "circular-3978-2020@v5#0273.0",
+    "circular-3978-2020@v5#0099",
+    "circular-3978-2020@v5#0105"
+  ]
+}

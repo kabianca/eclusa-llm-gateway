@@ -1,0 +1,23 @@
+{
+  "case_id": "refusal-multa",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-refusal-multa-2026-10-03",
+    "outcome": "refused",
+    "refusal_reason": "not_in_corpus",
+    "refusal_note": "As passagens fornecidas tratam do objeto, da vigência e da revogação da Circular nº 3.978, mas não informam multa por descumprimento."
+  },
+  "audit_outcome": "refused",
+  "cost_usd": 0.0027915,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0445",
+    "circular-3978-2020@v1#0409",
+    "circular-3978-2020@v5#0426.0",
+    "circular-3978-2020@v1#0390",
+    "carta-circular-4001-2020@v4#0011.1",
+    "circular-3978-2020@v5#0015",
+    "circular-3978-2020@v5#0307",
+    "circular-3978-2020@v5#0014"
+  ]
+}

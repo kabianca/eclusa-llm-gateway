@@ -1,0 +1,37 @@
+{
+  "case_id": "answer-4001-especie",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-answer-4001-especie-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "Sim. A Carta Circular nº 4.001 exemplifica como indício de suspeita \"depósitos, aportes, saques, pedidos de provisionamento para saque ou qualquer outro instrumento de transferência de recursos em espécie, que apresentem atipicidade em relação à atividade econômica do cliente ou incompatibilidade com a sua capacidade financeira\".",
+          "citations": [
+            {
+              "doc_id": "carta-circular-4001-2020@v4",
+              "chunk_id": "carta-circular-4001-2020@v4#0011.0",
+              "locator": "art. 1º, caput"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.002859,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "carta-circular-4001-2020@v4#0011.0",
+    "carta-circular-4001-2020@v4#0197",
+    "carta-circular-4001-2020@v4#0198",
+    "circular-3978-2020@v5#0273.0",
+    "circular-4005-2020@v1#0004",
+    "circular-3978-2020@v5#0256",
+    "circular-3978-2020@v5#0264",
+    "instrucao-normativa-bcb-761-2026@v1#0007"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "case_id": "ambiguous-prazo",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-ambiguous-prazo-2026-10-03",
+    "outcome": "partial",
+    "draft": {
+      "outcome": "partial",
+      "statements": [
+        {
+          "text": "O prazo de quarenta e cinco dias aparece para a execução dos procedimentos de monitoramento e de seleção das operações e situações suspeitas, contado da data de ocorrência da operação ou da situação.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0284",
+              "locator": "art. 39, parágrafo único"
+            }
+          ]
+        },
+        {
+          "text": "O prazo de quarenta e cinco dias aparece para a execução dos procedimentos de análise das operações e situações selecionadas, contado da data da seleção da operação ou situação.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0296",
+              "locator": "art. 43, § 1º"
+            }
+          ]
+        },
+        {
+          "text": "Há um prazo máximo de trinta dias para o início da relação de negócios em caso de insuficiência de informações relativas à qualificação do cliente, desde que não haja prejuízo aos procedimentos de monitoramento e seleção de que trata o art. 39.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0135",
+              "locator": "art. 23, parágrafo único"
+            }
+          ]
+        },
+        {
+          "text": "Os documentos e informações referidos nos incisos VIII a XIV do caput devem permanecer à disposição do Banco Central do Brasil pelo prazo mínimo de cinco anos.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0419",
+              "locator": "art. 66, § 2º"
+            }
+          ]
+        },
+        {
+          "text": "O contrato referido no inciso V do caput deve permanecer à disposição do Banco Central do Brasil pelo prazo mínimo de cinco anos após o encerramento da relação contratual.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0418",
+              "locator": "art. 66, § 1º"
+            }
+          ]
+        },
+        {
+          "text": "A comunicação mencionada no caput deve ser realizada até o dia útil seguinte ao da ocorrência da operação ou do provisionamento.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0326",
+              "locator": "art. 49, parágrafo único"
+            }
+          ]
+        },
+        {
+          "text": "As comunicações alteradas ou canceladas após o quinto dia útil seguinte ao da sua realização devem ser acompanhadas de justificativa da ocorrência.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0330",
+              "locator": "art. 51, caput"
+            }
+          ]
+        }
+      ],
+      "gaps": [
+        {
+          "text": "A pergunta não especifica qual prazo pretende saber; as passagens trazem vários prazos diferentes."
+        }
+      ]
+    }
+  },
+  "audit_outcome": "partial",
+  "cost_usd": 0.00462375,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0284",
+    "circular-3978-2020@v5#0296",
+    "circular-3978-2020@v5#0135",
+    "circular-3978-2020@v5#0419",
+    "circular-3978-2020@v5#0418",
+    "circular-3978-2020@v5#0326",
+    "circular-3978-2020@v5#0304",
+    "circular-3978-2020@v5#0330"
+  ]
+}

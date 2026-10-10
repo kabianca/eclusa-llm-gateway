@@ -1,0 +1,23 @@
+{
+  "case_id": "revoked-pep",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-revoked-pep-2026-10-03",
+    "outcome": "refused",
+    "refusal_reason": "contract_violation",
+    "refusal_note": "revoked_without_notice: statement 1: rests only on revoked text and the answer never cites the revocation of circular-3461-2009; revoked_without_notice: statement 2: rests only on revoked text and the answer never cites the revocation of circular-3461-2009; revoked_without_notice: statement 3: rests only on revoked text and the answer never cites the revocation of circular-3461-2009; revoked_without_notice: statement 4: rests only on revoked text and the answer never cites the revocation of circular-3461-2009; revoked_without_notice: statement 5: rests only on revoked text and the answer never cites the revocation of circular-3461-2009; revoked_without_notice: statement 6: rests only on revoked text and the answer never cites the revocation of circular-3461-2009"
+  },
+  "audit_outcome": "contract_violation",
+  "cost_usd": 0.00518025,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3461-2009@v10#0060",
+    "circular-3461-2009@v10#0001",
+    "circular-3461-2009@v10#0068",
+    "circular-3461-2009@v10#0046",
+    "circular-3461-2009@v10#0047",
+    "circular-3461-2009@v10#0069",
+    "circular-3461-2009@v10#0067",
+    "circular-3461-2009@v10#0048.1"
+  ]
+}

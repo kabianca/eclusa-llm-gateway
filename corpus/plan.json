@@ -1,0 +1,233 @@
+{
+  "targets": [
+    {
+      "doc_id": "circular-3978-2020@v1",
+      "act_type": "Circular",
+      "number": 3978,
+      "act_date": "2020-01-23",
+      "version_kind": "original",
+      "version_as_of": "2020-01-23",
+      "status": "superseded",
+      "text_source": "html",
+      "superseded_by": "circular-3978-2020@v5"
+    },
+    {
+      "doc_id": "circular-3978-2020@v5",
+      "act_type": "Circular",
+      "number": 3978,
+      "act_date": "2020-01-23",
+      "version_kind": "consolidated",
+      "version_as_of": "2023-10-04",
+      "status": "in_force",
+      "text_source": "pdf"
+    },
+    {
+      "doc_id": "circular-4005-2020@v1",
+      "act_type": "Circular",
+      "number": 4005,
+      "act_date": "2020-04-16",
+      "version_kind": "original",
+      "version_as_of": "2020-04-16",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "resolucao-bcb-119-2021@v1",
+      "act_type": "Resolução BCB",
+      "number": 119,
+      "act_date": "2021-07-27",
+      "version_kind": "original",
+      "version_as_of": "2021-07-27",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "resolucao-bcb-282-2022@v1",
+      "act_type": "Resolução BCB",
+      "number": 282,
+      "act_date": "2022-12-31",
+      "version_kind": "original",
+      "version_as_of": "2022-12-31",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "resolucao-bcb-344-2023@v1",
+      "act_type": "Resolução BCB",
+      "number": 344,
+      "act_date": "2023-10-04",
+      "version_kind": "original",
+      "version_as_of": "2023-10-04",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "carta-circular-4001-2020@v4",
+      "act_type": "Carta Circular",
+      "number": 4001,
+      "act_date": "2020-01-29",
+      "version_kind": "consolidated",
+      "version_as_of": "2026-05-04",
+      "status": "in_force",
+      "text_source": "pdf"
+    },
+    {
+      "doc_id": "carta-circular-4037-2020@v1",
+      "act_type": "Carta Circular",
+      "number": 4037,
+      "act_date": "2020-04-27",
+      "version_kind": "original",
+      "version_as_of": "2020-04-27",
+      "status": "in_force",
+      "text_source": "pdf"
+    },
+    {
+      "doc_id": "instrucao-normativa-bcb-461-2024@v1",
+      "act_type": "Instrução Normativa BCB",
+      "number": 461,
+      "act_date": "2024-04-02",
+      "version_kind": "original",
+      "version_as_of": "2024-04-02",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "instrucao-normativa-bcb-732-2026@v1",
+      "act_type": "Instrução Normativa BCB",
+      "number": 732,
+      "act_date": "2026-05-04",
+      "version_kind": "original",
+      "version_as_of": "2026-05-04",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "resolucao-bcb-44-2020@v1",
+      "act_type": "Resolução BCB",
+      "number": 44,
+      "act_date": "2020-11-24",
+      "version_kind": "original",
+      "version_as_of": "2020-11-24",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "instrucao-normativa-bcb-761-2026@v1",
+      "act_type": "Instrução Normativa BCB",
+      "number": 761,
+      "act_date": "2026-07-09",
+      "version_kind": "original",
+      "version_as_of": "2026-07-09",
+      "status": "in_force",
+      "text_source": "html"
+    },
+    {
+      "doc_id": "circular-3461-2009@v10",
+      "act_type": "Circular",
+      "number": 3461,
+      "act_date": "2009-07-24",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3517-2010@v2",
+      "act_type": "Circular",
+      "number": 3517,
+      "act_date": "2010-12-07",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3583-2012@v2",
+      "act_type": "Circular",
+      "number": 3583,
+      "act_date": "2012-03-12",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3654-2013@v2",
+      "act_type": "Circular",
+      "number": 3654,
+      "act_date": "2013-03-27",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3839-2017@v2",
+      "act_type": "Circular",
+      "number": 3839,
+      "act_date": "2017-06-28",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3889-2018@v2",
+      "act_type": "Circular",
+      "number": 3889,
+      "act_date": "2018-03-28",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-23",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3978-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "carta-circular-3542-2012@v2",
+      "act_type": "Carta Circular",
+      "number": 3542,
+      "act_date": "2012-03-12",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-01-29",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "carta-circular-4001-2020",
+      "revoked_from": "2020-10-01"
+    },
+    {
+      "doc_id": "circular-3780-2016@v2",
+      "act_type": "Circular",
+      "number": 3780,
+      "act_date": "2016-01-21",
+      "version_kind": "consolidated",
+      "version_as_of": "2019-05-21",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "circular-3942-2019",
+      "revoked_from": "2019-06-06"
+    },
+    {
+      "doc_id": "circular-3942-2019@v2",
+      "act_type": "Circular",
+      "number": 3942,
+      "act_date": "2019-05-21",
+      "version_kind": "consolidated",
+      "version_as_of": "2020-11-24",
+      "status": "revoked",
+      "text_source": "pdf",
+      "revoked_by": "resolucao-bcb-44-2020",
+      "revoked_from": "2021-01-04"
+    }
+  ]
+}

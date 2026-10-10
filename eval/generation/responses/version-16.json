@@ -1,0 +1,57 @@
+{
+  "case_id": "version-16",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-version-16-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "Sim. No processo de identificação do cliente pessoa jurídica, a Circular nº 3.978, em vigor, determina a coleta da firma ou denominação social e do número de registro no CNPJ; para cliente pessoa jurídica com domicílio ou sede no exterior desobrigada de inscrição no CNPJ, determina também a coleta do endereço da sede.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0091",
+              "locator": "art. 16, § 2º"
+            },
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0095",
+              "locator": "art. 16, § 4º"
+            }
+          ]
+        },
+        {
+          "text": "O texto original do art. 16, § 2º previa, para pessoa jurídica, a coleta da firma ou denominação social, do endereço da sede e do número de registro no CNPJ; esse texto foi superado pela versão consolidada, que passou a exigir apenas firma ou denominação social e número de registro no CNPJ.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v1",
+              "chunk_id": "circular-3978-2020@v1#0081",
+              "locator": "art. 16, § 2º"
+            },
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0091",
+              "locator": "art. 16, § 2º"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.0034275,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0095",
+    "circular-3978-2020@v5#0091",
+    "circular-3978-2020@v1#0081",
+    "circular-3978-2020@v5#0089",
+    "circular-3978-2020@v5#0143",
+    "circular-3978-2020@v5#0090",
+    "circular-3978-2020@v5#0131",
+    "circular-3978-2020@v5#0134"
+  ]
+}

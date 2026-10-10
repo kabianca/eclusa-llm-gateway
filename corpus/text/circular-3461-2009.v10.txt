@@ -1,0 +1,203 @@
+CIRCULAR Nº 3.461
+Documento normativo revogado, a partir de 1º/10/2020, pela Circular nº 3.978, de 23/1/2020.
+Consolida as regras sobre os procedimentos a
+serem adotados na prevenção e combate às
+atividades relacionadas com os crimes
+previstos na Lei nº 9.613, de 3 de março de
+1998.
+A Diretoria Colegiada do Banco Central do Brasil, em sessão realizada em 23 de julho de 2009, com base no disposto nos arts. 10, inciso IX, e 11, inciso VII, da Lei nº 4.595, de 31 de dezembro de 1964, 10 e 11 da Lei nº 9.613, de 3 de março de 1998, e tendo em vista o disposto na Convenção Internacional para Supressão do Financiamento do Terrorismo, adotada pela Assembléia-Geral das Nações Unidas em 9 de dezembro de 1999, promulgada por meio do Decreto nº 5.640, de 26 de dezembro de 2005,
+D E C I D I U:
+Art. 1º As instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil devem implementar políticas, procedimentos e controles internos, de forma compatível com seu porte e volume de operações, destinados a prevenir sua utilização na prática dos crimes de que trata a Lei nº 9.613, de 3 de março de 1998. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 1º As políticas de que trata o caput devem:
+I - especificar, em documento interno, as responsabilidades dos integrantes de cada nível hierárquico da instituição;
+II - contemplar a coleta e registro de informações tempestivas sobre clientes, que permitam a identificação dos riscos de ocorrência da prática dos mencionados crimes;
+III - definir os critérios e procedimentos para seleção, treinamento e acompanhamento da situação econômico-financeira dos empregados da instituição;
+IV - incluir a análise prévia de novos produtos e serviços, sob a ótica da prevenção dos mencionados crimes;
+V - ser aprovadas pelo conselho de administração ou, na sua ausência, pela diretoria da instituição;
+VI - receber ampla divulgação interna.
+§ 2º Os procedimentos de que trata o caput devem incluir medidas prévia e expressamente estabelecidas, que permitam:
+I - confirmar as informações cadastrais dos clientes e identificar os beneficiários finais das operações;
+II - possibilitar a caracterização ou não de clientes como pessoas politicamente expostas.
+§ 3º Para os fins desta circular, considera-se cliente eventual ou permanente qualquer pessoa natural ou jurídica com a qual seja mantido, respectivamente em caráter eventual ou permanente, relacionamento destinado à prestação de serviço financeiro ou à realização de operação financeira.
+§ 4º Os procedimentos de que trata o caput devem ser reforçados para início de relacionamento com:
+I - instituições financeiras, representantes ou correspondentes localizados no exterior, especialmente em países, territórios e dependências que não adotam procedimentos de registro e controle similares aos definidos nesta circular;
+II - clientes cujo contato seja efetuado por meio eletrônico, mediante correspondentes no País ou por outros meios indiretos.
+§ 5º As políticas e procedimentos internos de controle de que trata o caput devem ser implementados também pelas dependências e subsidiárias situadas no exterior das instituições financeiras e demais instituições autorizadas a funcionar pelo Banco Central do Brasil. (Incluído pela Circular nº 3.583, de 12/3/2012)
+§ 6º O diretor responsável pela implementação e cumprimento das medidas estabelecidas nesta Circular, nos termos do art. 18, deve informar por escrito ao Banco Central do Brasil sobre a existência de legislação ou regulamentação que impeça ou limite a aplicação do disposto no § 5º a suas dependências e subsidiárias situadas no exterior. (Incluído pela Circular nº 3.583, de 12/3/2012)
+Manutenção de Informações Cadastrais Atualizadas
+Art. 2º As instituições mencionadas no art. 1º devem coletar e manter atualizadas as informações cadastrais de seus clientes permanentes, incluindo, no mínimo:
+I - qualificação do cliente:
+a) pessoas naturais: nome completo, filiação, nacionalidade, data e local do nascimento, documento de identificação (tipo, número, data de emissão e órgão expedidor) e número de inscrição no Cadastro de Pessoas Físicas (CPF); e
+b) pessoas jurídicas: firma ou denominação social, atividade principal, forma e data de constituição, informações referidas na alínea “a” que qualifiquem e autorizem os administradores, mandatários ou prepostos, número de inscrição no Cadastro Nacional da Pessoa Jurídica (CNPJ) e dados dos atos constitutivos devidamente registrados na forma da lei;
+(Inciso I com redação dada pela Circular nº 3.654, de 27/3/2013.)
+II - endereços residencial e comercial completos; (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+III - número do telefone e código de Discagem Direta a Distância (DDD); (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+IV - valores de renda mensal e patrimônio, no caso de pessoas naturais, e de faturamento médio mensal referente aos doze meses anteriores, no caso de pessoas jurídicas; e (Incluído pela Circular nº 3.654, de 27/3/2013.)
+V - declaração firmada sobre os propósitos e a natureza da relação de negócio com a instituição. (Incluído pela Circular nº 3.654, de 27/3/2013.)
+§ 1º As informações relativas a cliente pessoa natural devem abranger as pessoas naturais autorizadas a representá-la.
+§ 2º As informações cadastrais relativas a cliente pessoa jurídica devem abranger as pessoas naturais autorizadas a representá-la, bem como a cadeia de participação societária, até alcançar a pessoa natural caracterizada como beneficiário final.
+§ 3º Excetuam-se do disposto no § 2º as pessoas jurídicas constituídas sob a forma de companhia aberta ou entidade sem fins lucrativos, para as quais as informações cadastrais devem abranger as pessoas naturais autorizadas a representá-las, bem como seus controladores, administradores e diretores, se houver.
+§ 4º As informações cadastrais relativas a cliente fundo de investimento devem incluir a respectiva denominação, número de inscrição no CNPJ, bem como as informações de que tratam os incisos I a III relativas às pessoas responsáveis por sua administração. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 5º As instituições mencionadas no art. 1º devem realizar testes de verificação, com periodicidade máxima de um ano, que assegurem a adequação dos dados cadastrais de seus clientes.
+Art. 3º As instituições mencionadas no art. 1º devem obter as seguintes informações cadastrais de seus clientes eventuais, do proprietário e do destinatário dos recursos envolvidos na operação ou serviço financeiro:
+I - quando pessoa natural, o nome completo e o número de inscrição no Cadastro de Pessoas Físicas (CPF); e (Redação dada pela Circular nº 3.517, de 7/12/2010.)
+II - quando pessoa jurídica, a razão social e número de inscrição no CNPJ.
+Parágrafo único. Admite-se o desenvolvimento de procedimento interno destinado à identificação de operações ou serviços financeiros eventuais que apresentem baixo risco de utilização para lavagem de dinheiro ou de financiamento ao terrorismo, para os quais é dispensada a exigência de obtenção das informações cadastrais de clientes, ressalvado o cumprimento do disposto nos demais artigos desta circular. (Redação dada pela Circular nº 3.517, de 7/12/2010.)
+Pessoas Expostas Politicamente (PEP)
+Art. 4º As instituições de que trata o art. 1º devem obter de seus clientes permanentes informações que permitam caracterizá-los ou não como pessoas expostas politicamente (PEP) e identificar a origem dos fundos envolvidos nas transações dos clientes assim caracterizados. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 1º Consideram-se PEP os agentes públicos que desempenham ou tenham desempenhado, nos últimos cinco anos, no Brasil ou em países, territórios e dependências estrangeiros, cargos, empregos ou funções públicas relevantes, assim como seus representantes, familiares e outras pessoas de seu relacionamento próximo. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 2º No caso de clientes brasileiros, devem ser abrangidos:
+I - os detentores de mandatos eletivos dos Poderes Executivo e Legislativo da União;
+II - os ocupantes de cargo, no Poder Executivo da União:
+a) de ministro de estado ou equiparado;
+b) de natureza especial ou equivalente;
+c) de presidente, vice-presidente e diretor, ou equivalentes, de autarquias, fundações públicas, empresas públicas ou sociedades de economia mista;
+d) do Grupo Direção e Assessoramento Superiores (DAS), nível 6, ou equivalentes;
+III - os membros do Conselho Nacional de Justiça, do Supremo Tribunal Federal, dos tribunais superiores, dos tribunais regionais federais, do trabalho e eleitorais, do Conselho Superior da Justiça do Trabalho e do Conselho da Justiça Federal; (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+IV - os membros do Conselho Nacional do Ministério Público, o Procurador-Geral da República, o Vice-Procurador-Geral da República, o Procurador-Geral do Trabalho, o Procurador-Geral da Justiça Militar, os Subprocuradores-Gerais da República e os Procuradores-Gerais de Justiça dos Estados e do Distrito Federal;
+V - os membros do Tribunal de Contas da União e o Procurador-Geral do Ministério Público junto ao Tribunal de Contas da União;
+VI - os governadores de Estado e do Distrito Federal, os presidentes de tribunal de justiça, de assembleia e câmara legislativa, os presidentes de tribunal de contas de Estado, do Distrito Federal e de Município, e de conselho de contas dos Municípios; (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+VII - os prefeitos e presidentes de Câmara Municipal de capitais de Estados.
+§ 3º No caso de clientes estrangeiros, para fins do disposto no caput, as instituições mencionadas no art. 1º devem adotar pelo menos uma das seguintes providências:
+I - solicitar declaração expressa do cliente a respeito da sua classificação;
+II - recorrer a informações publicamente disponíveis;
+III - consultar bases de dados comerciais sobre PEP; e (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+IV - considerar como PEP a pessoa que exerce ou exerceu funções públicas proeminentes em um país estrangeiro, tais como chefes de estado ou de governo, políticos de alto nível, altos servidores governamentais, judiciais, do legislativo ou militares, dirigentes de empresas públicas ou dirigentes de partidos políticos. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 4º O prazo de cinco anos referido no § 1º deve ser contado, retroativamente, a partir da data de início da relação de negócio ou da data em que o cliente passou a se enquadrar como PEP. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 5º Para efeito do § 1º são considerados familiares os parentes, na linha reta, até o primeiro grau, o cônjuge, o companheiro, a companheira, o enteado e a enteada.
+§ 6º No caso de relação de negócio com cliente estrangeiro que também seja cliente de instituição estrangeira fiscalizada por entidade governamental assemelhada ao Banco Central do Brasil, admite-se que as providências em relação a PEP sejam adotadas pela instituição estrangeira, desde que assegurado ao Banco Central do Brasil o acesso aos respectivos dados e procedimentos adotados. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 7º As operações ou propostas de operações que possuam PEP como parte envolvida serão sempre consideradas como merecedoras de especial atenção, conforme previsto no art. 10. (Incluído pela Circular nº 3.654, de 27/3/2013.)
+§ 8º O disposto neste artigo também se aplica a pessoa que exerce ou exerceu função de alta administração em uma organização internacional de qualquer natureza, assim considerados diretores, subdiretores, membros de conselho ou funções equivalentes. (Incluído pela Circular nº 3.654, de 27/3/2013.) Início ou Prosseguimento de Relação de Negócio
+Art. 5º As instituições de que trata o art. 1º somente devem iniciar qualquer relação de negócio ou dar prosseguimento a relação já existente com o cliente se observadas as providências estabelecidas nos arts. 2º, 3º e 4º, conforme o caso. (Redação dada pela Circular nº 3.583, de 12/3/2012.)
+Registros de Serviços Financeiros e Operações Financeiras
+Art. 6º As instituições de que trata o art. 1º devem manter registros de todos os serviços financeiros prestados e de todas as operações financeiras realizadas com os clientes ou em seu nome.
+§ 1º No caso de movimentação de recursos por clientes permanentes, os registros devem conter informações consolidadas que permitam verificar:
+I - a compatibilidade entre a movimentação de recursos e a atividade econômica e capacidade financeira do cliente;
+II - a origem dos recursos movimentados;
+III - os beneficiários finais das movimentações.
+§ 2º O sistema de registro deve permitir a identificação:
+I - das operações que, realizadas com uma mesma pessoa, conglomerado financeiro ou grupo, em um mesmo mês calendário, superem, por instituição ou entidade, em seu conjunto, o valor de R$10.000,00 (dez mil reais);
+II - das operações que, por sua habitualidade, valor ou forma, configurem artifício que objetive burlar os mecanismos de identificação, controle e registro.
+Registros de Depósitos em Cheque, Liquidação de Cheques Depositados em Outra Instituição Financeira e da Utilização de Instrumentos de Transferência de Recursos
+Art. 7º As instituições de que trata o art. 1º devem manter registros específicos das operações de transferência de recursos.
+§ 1º O sistema de registro deve permitir a identificação:
+I - das operações referentes ao acolhimento em depósitos de Transferência Eletrônica Disponível (TED), de cheque, cheque administrativo, cheque ordem de pagamento e outros documentos compensáveis de mesma natureza, e à liquidação de cheques depositados em outra instituição financeira;
+II - das emissões de cheque administrativo, de cheque ordem de pagamento, de ordem de pagamento, de Documento de Crédito (DOC), de TED e de outros instrumentos de transferência de recursos, quando de valor superior a R$1.000,00 (mil reais).
+§ 2º Os registros de que trata o inciso I do § 1º efetuados por instituição depositária devem conter, no mínimo, os dados relativos ao valor e ao número do cheque depositado, o código de compensação da instituição sacada, os números da agência e da conta de depósitos sacadas. (Redação dada pela Circular nº 3.517, de 7/12/2010.)
+§ 3º Os registros de que trata o inciso I do § 1º efetuados por instituição sacada devem conter, no mínimo, os dados relativos ao valor e ao número do cheque, o código de compensação da instituição depositária, os números da agência e da conta de depósitos depositárias, cabendo à instituição depositária fornecer à instituição sacada os dados relativos ao seu código de compensação e aos números da agência e da conta de depósitos depositárias (Redação dada pela Circular nº 3.517, de 7/12/2010.)
+§ 4º No caso de cheque utilizado em operação simultânea de saque e depósito na própria instituição sacada, com vistas à transferência de recursos da conta de depósitos do emitente para conta de depósitos de terceiros, os registros de que trata o inciso I do § 1º devem conter, no mínimo, os dados relativos ao valor e ao número do cheque sacado, bem como aos números das agências sacada e depositária e das respectivas contas de depósitos.
+§ 5º Os registros de que trata o inciso II do § 1º devem conter, no mínimo, as seguintes informações:
+I - o tipo e o número do documento emitido, a data da operação, o nome e o número de inscrição do adquirente ou remetente no CPF ou no CNPJ;
+II - quando pagos em cheque, o código de compensação da instituição, o número da agência e da conta de depósitos sacadas referentes ao cheque utilizado para o respectivo pagamento, inclusive no caso de cheque sacado contra a própria instituição emissora dos instrumentos referidos neste artigo;
+III - no caso de DOC, o código de identificação da instituição destinatária no sistema de liquidação de transferência de fundos e os números da agência, da conta de depósitos depositária e o número de inscrição no CPF ou no CNPJ do respectivo titular;
+IV - no caso de ordem de pagamento:
+a) destinada a crédito em conta: os números da agência destinatária e da conta de depósitos depositária;
+b) destinada a pagamento em espécie: os números da agência destinatária e de inscrição do beneficiário no CPF ou no CNPJ.
+§ 6º Em se tratando de operações de transferência de recursos envolvendo pessoa física residente no exterior desobrigada de inscrição no CPF, na forma definida pela Secretaria da Receita Federal do Brasil (RFB), a identificação prevista no § 5º, incisos I e IV, alínea "b", pode ser efetuada pelo número do respectivo passaporte, complementada com a nacionalidade da referida pessoa e, quando for o caso, o organismo internacional de que seja representante para o exercício de funções específicas no País.
+§ 7º A identificação prevista no § 5º, incisos I e IV, alínea "b", não se aplica às operações de transferência de recursos envolvendo pessoa jurídica com domicílio ou sede no exterior desobrigada de inscrição no CNPJ, na forma definida pela RFB.
+§ 8º A instituição sacada deve informar à instituição depositária e a instituição depositária deve informar à instituição sacada, quando requeridas, no prazo máximo de 5 (cinco) dias úteis contados a partir da data de solicitação, os números de inscrição no CPF ou CNPJ dos titulares da conta sacada e da conta depositária referentes às operações de transferência de valores efetuadas mediante cheque, cheque administrativo, cheque ordem de pagamento e outros documentos compensáveis de mesma natureza, e à liquidação de cheques depositados em outra instituição financeira. (Incluído pela Circular nº 3.517, de 7/12/2010.)
+Registros de Cartões Pré-Pagos
+Art. 8º As instituições de que trata o art. 1º devem manter registros específicos da emissão ou recarga de valores em um ou mais cartões pré-pagos.
+§ 1º O sistema de registro deve permitir a identificação da:
+I - emissão ou recarga de valores em um ou mais cartões pré-pagos, em montante acumulado igual ou superior a R$50.000,00 (cinquenta mil reais) ou o equivalente em moeda estrangeira, no mês calendário; e (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+II - emissão ou recarga de valores em cartão pré-pago que apresente indícios de ocultação ou dissimulação da natureza, da origem, da localização, da disposição, da movimentação ou da propriedade de bens, direitos e valores.
+§ 2º Para fins do disposto no caput, define-se cartão pré-pago como o cartão apto a receber carga ou recarga de valores em moeda nacional ou estrangeira oriundos de pagamento em espécie, de operação cambial ou de transferência a débito de contas de depósito.
+§ 3º Os registros das ocorrências de que tratam os incisos I e II do § 1º devem conter as seguintes informações:
+I - o nome ou razão social e o respectivo número de inscrição no CPF ou no CNPJ da pessoa natural ou jurídica responsável pela emissão ou recarga de valores em cartão pré-pago, no caso de emissão ou recarga efetuada por residente ou domiciliado no País;
+II - o nome, o número do passaporte e o respectivo país emissor, no caso de emissão ou recarga de valores em cartão pré-pago efetuada por pessoa natural não residente no País ou domiciliada no exterior;
+III - o nome e o respectivo número de inscrição no CPF da pessoa natural a quem se destina o cartão pré-pago;
+IV - a identificação das instituições, das agências e das contas de depósito ou de poupança debitadas, os nomes dos titulares das contas e respectivos números de inscrição no CPF, no caso de emissão ou recarga de valores em cartão pré-pago oriundos de transferências a débito de contas de depósito ou de poupança tituladas por pessoas naturais;
+V - a identificação das instituições, das agências e das contas de depósito ou de poupança debitadas, os nomes dos titulares das contas e respectivos números de inscrição no CNPJ, bem como os nomes das pessoas naturais autorizadas a movimentá-las e respectivos números de inscrição no CPF, no caso de emissão ou recarga de valores em cartão pré-pago oriundos de transferências a débito de contas de depósito ou de poupança tituladas por pessoas jurídicas;
+VI - a data e o valor de cada emissão ou recarga de valores em cartão pré-pago;
+VII - o propósito da emissão do cartão pré-pago;
+VIII - o nome e o respectivo número de inscrição no CPF das pessoas naturais que representem as pessoas jurídicas responsáveis pela emissão ou recarga de valores em cartão pré-pago.
+Das Operações com Recursos em Espécie
+(Seção com redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+Art. 9º Os bancos comerciais, a Caixa Econômica Federal, os bancos múltiplos com carteira comercial ou de crédito imobiliário, as sociedades de crédito imobiliário, as sociedades de poupança e empréstimo e as cooperativas de crédito devem manter registros específicos das operações de depósito em espécie, saque em espécie, saque em espécie por meio de cartão pré-pago ou pedido de provisionamento para saque.
+§ 1º O sistema de registro deve permitir a identificação de:
+I - depósito em espécie, saque em espécie, ou saque em espécie por meio de cartão pré-pago, de valor igual ou superior a R$50.000,00 (cinquenta mil reais); (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+II - depósito em espécie, saque em espécie, saque em espécie por meio de cartão pré-pago ou pedido de provisionamento para saque, que apresente indícios de ocultação ou dissimulação da natureza, da origem, da localização, da disposição, da movimentação ou da propriedade de bens, direitos e valores;
+III - emissão de cheque administrativo, TED ou de qualquer outro instrumento de transferência de fundos contra pagamento em espécie, de valor igual ou superior a R$50.000,00 (cinquenta mil reais). (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+§ 2º Os registros de que trata o caput devem conter as informações abaixo indicadas:
+I - o nome e o respectivo número de inscrição no CPF ou no CNPJ, conforme o caso, do proprietário ou beneficiário dos recursos e da pessoa que efetuar o depósito, o saque em espécie ou o pedido de provisionamento para saque;
+II - o tipo e o número do documento, o número da instituição, da agência e da conta corrente de depósitos à vista ou da conta de poupança a que se destinam os valores ou de onde o valor será sacado, conforme o caso;
+III - o nome e o respectivo número de inscrição no CPF ou no CNPJ, conforme o caso, dos titulares das contas referidas no inciso II, se na mesma instituição;
+IV - o nome e o respectivo número de inscrição no CPF, no caso de saque em espécie por meio de cartão pré-pago cujo portador seja residente ou domiciliado no País;
+V - o nome e o número do passaporte e o respectivo país emissor, no caso de saque em espécie por meio de cartão pré-pago cujo portador seja não residente no País ou domiciliado no exterior;
+VI - a data e o valor do depósito, do saque em espécie, do saque em espécie por meio de cartão pré-pago ou do provisionamento para saque; e (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+VII - a finalidade do saque ou do pagamento em espécie mencionados nos incisos I e III do § 1º. (Incluído, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+§ 3º Na hipótese de recusa do cliente ou do sacador não cliente em prestar a informação referida no § 2º, inciso VII, as instituições mencionadas no caput devem registrar o fato. (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+§ 4º (Revogado, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+Art. 9º-A As instituições mencionadas no art. 9º devem requerer de seus clientes e dos sacadores não clientes comunicação prévia, com, no mínimo, três dias úteis de antecedência, dos saques e pagamentos em espécie de valor igual ou superior a R$50.000,00 (cinquenta mil reais) de que trata o art. 9º, § 1º, incisos I e III.
+§ 1º As instituições mencionadas no caput devem:
+I - possibilitar a comunicação prévia por meio do sítio eletrônico da instituição na internet e das agências e Postos de Atendimento (PA);
+II - emitir protocolo de atendimento ao cliente ou sacador não cliente, no qual devem ser informados o valor da operação, a dependência na qual deverá ser efetuado o saque e a data programada para o saque; e
+III - registrar, no ato da comunicação prévia, as informações indicadas no art. 9º, § 2º, conforme o caso.
+§ 2º No caso de saque em espécie a ser realizado por meio de cheque por sacador não cliente, a comunicação prévia de que trata o caput deve ser realizada exclusivamente em agências e PAs.
+§ 3º O disposto neste artigo deve ser observado sem prejuízo do disposto no art. 2º da Resolução nº 3.695, de 26 de março de 2009.
+(Artigo 9º-A incluído, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+Art. 9º-B As instituições financeiras devem manter registro específico de recebimentos de boleto de pagamento pagos com recursos em espécie.
+Parágrafo único. A instituição que receber boleto de pagamento que não seja de sua emissão deve remeter à instituição emissora a informação de que o boleto foi pago em espécie.
+(Artigo 9º-B incluído pela Circular nº 3.889, de 28/3/2018.)
+Especial Atenção
+Art. 10. As instituições de que trata o art. 1º devem dispensar especial atenção a:
+I - operações ou propostas cujas características, no que se refere às partes envolvidas, valores, formas de realização e instrumentos utilizados, ou que, pela falta de fundamento econômico ou legal, indiquem risco de ocorrência dos crimes previstos na Lei nº 9.613, de 1998, ou com eles relacionados;
+II - propostas de início de relacionamento e operações com pessoas politicamente expostas de nacionalidade brasileira e as oriundas de países com os quais o Brasil possua elevado número de transações financeiras e comerciais, fronteiras comuns ou proximidade étnica, linguística ou política;
+III - indícios de burla aos procedimentos de identificação e registro estabelecidos nesta circular;
+IV - clientes e operações em que não seja possível identificar o beneficiário final;
+V - operações oriundas ou destinadas a países ou territórios que aplicam insuficientemente as recomendações do Gafi, conforme informações divulgadas pelo Banco Central do Brasil; e (Redação dada pela Circular nº 3.517, de 7/12/2010.)
+VI - situações em que não seja possível manter atualizadas as informações cadastrais de seus clientes.
+§ 1º A expressão “especial atenção” inclui os seguintes procedimentos:
+I - monitoramento contínuo reforçado, mediante a adoção de procedimentos mais rigorosos para a apuração de situações suspeitas; (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+II - análise com vistas à verificação da necessidade das comunicações de que tratam os arts. 12 e 13;
+III - avaliação da alta gerência quanto ao interesse no início ou manutenção do relacionamento com o cliente.
+§ 2º Considera-se alta gerência qualquer detentor de cargo ou função de nível hierárquico superior ao daquele ordinariamente responsável pela autorização do relacionamento com o cliente.
+Manutenção de Informações e Registros
+Art. 11. As informações e registros de que trata esta circular devem ser mantidos e conservados durante os seguintes períodos mínimos, contados a partir do primeiro dia do ano seguinte ao do término do relacionamento com o cliente permanente ou da conclusão das operações:
+I - 10 (dez) anos, para as informações e registros de que trata o art. 7º;
+II - 5 (cinco) anos, para as informações e registros de que tratam os arts. 6º, 8º e 9º.
+III - 5 (cinco) anos, para as informações cadastrais definidas nos arts. 2º e 3º. (Incluído pela Circular nº 3.517, de 7/12/2010.)
+Parágrafo único. As informações de que trata o art. 2º devem ser mantidas e conservadas juntamente com o nome da pessoa incumbida da atualização cadastral, o nome do gerente responsável pela conferência e confirmação das informações prestadas e a data de início do relacionamento com o cliente permanente.
+Comunicações ao Coaf
+Art. 12. As instituições de que trata o art. 1º devem comunicar ao Conselho de Controle de Atividades Financeiras (Coaf), na forma determinada pelo Banco Central do Brasil:
+I - as ocorrências de que trata o art. 8º, § 1º, inciso I, no caso de operações em espécie; (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+II - as ocorrências de que trata o art. 9º, § 1º, incisos I e III. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 1º Devem também ser comunicadas ao Coaf as propostas de realização das operações de que tratam os incisos I e II do caput e as comunicações prévias de que trata o art. 9º-A. (Redação dada, a partir de 27/12/2017, pela Circular nº 3.839, de 28/6/2017.)
+§ 2º As comunicações das ocorrências mencionadas no caput devem ser realizadas até o dia útil seguinte àquele em que verificadas. (Incluído pela Circular nº 3.654, de 27/3/2013.)
+Art. 13. As instituições de que trata o art. 1º devem comunicar ao Coaf, na forma determinada pelo Banco Central do Brasil:
+I - as operações realizadas ou serviços prestados cujo valor seja igual ou superior a R$10.000,00 (dez mil reais) e que, considerando as partes envolvidas, os valores, as formas de realização, os instrumentos utilizados ou a falta de fundamento econômico ou legal, possam configurar a existência de indícios dos crimes previstos na Lei nº 9.613, de 1998;
+II - as operações realizadas ou serviços prestados que, por sua habitualidade, valor ou forma, configurem artifício que objetive burlar os mecanismos de identificação, controle e registro;
+III - as operações realizadas ou os serviços prestados, qualquer que seja o valor, a pessoas que reconhecidamente tenham perpetrado ou intentado perpetrar atos terroristas ou neles participado ou facilitado o seu cometimento, bem como a existência de recursos pertencentes ou por eles controlados direta ou indiretamente;
+IV - os atos suspeitos de financiamento do terrorismo.
+§ 1º O disposto no inciso III aplica-se também às entidades pertencentes ou controladas, direta ou indiretamente, pelas pessoas ali mencionadas, bem como por pessoas e entidades atuando em seu nome ou sob seu comando.
+§ 2º As comunicações das ocorrências de que tratam os incisos I a IV do caput devem ser realizadas até o dia útil seguinte àquele em que forem verificadas. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 3º Devem também ser comunicadas ao Coaf as propostas de realização das operações e atos descritos nos incisos I a IV.
+Art. 14. As comunicações de que tratam os arts. 12 e 13 deverão ser efetuadas sem que seja dada ciência aos envolvidos ou a terceiros. (Redação dada pela Circular nº 3.654, de 27/3/2013.)
+§ 1º As comunicações relativas a cliente identificado como pessoa politicamente exposta devem incluir especificamente essa informação.
+§ 2º A alteração ou o cancelamento de comunicação efetuados após o quinto dia útil seguinte ao da sua inclusão devem ser acompanhados de justificativa da ocorrência.
+Art. 15. As comunicações de que tratam os arts. 12 e 13 relativas a instituições integrantes de conglomerado financeiro e a instituições associadas a sistemas cooperativos de crédito podem ser efetuadas, respectivamente, pela instituição líder do conglomerado econômico e pela cooperativa central de crédito.
+Art. 15-A. As instituições de que trata o art. 1º que não tiverem efetuado comunicações nos termos dos arts. 12 e 13 em cada ano civil deverão prestar declaração, por meio do Sistema de Controle de Atividades Financeiras (Siscoaf), atestando a não ocorrência de transações passíveis de comunicação conforme previsto nesta Circular.
+Parágrafo único. A declaração mencionada no caput deve ser:
+I - enviada em até dez dias úteis após o encerramento do ano civil;
+II - considerada para fins da verificação do atendimento ao disposto no art. 11, inciso III, da Lei nº 9.613, de 1998; e
+III - fornecida, no que se refere ao art. 12, apenas pelas instituições que mantêm os registros mencionados nos arts. 8º e 9º desta Circular.”
+(Artigo 15-A incluído pela Circular nº 3.654, de 27/3/2013.)
+Art. 16. As instituições de que trata o art. 1º devem manter, pelo prazo de 5 (cinco) anos, os documentos relativos às análises de operações ou propostas que fundamentaram a decisão de efetuar ou não as comunicações de que tratam os arts. 12 e 13.
+Procedimentos Internos de Controle
+Art. 17. (Revogado pela Circular nº 3.858, de 14/11/2017.)
+Art. 18. As instituições de que trata o art. 1º devem indicar ao Banco Central do Brasil diretor responsável pela implementação e cumprimento das medidas estabelecidas nesta circular, bem como pelas comunicações de que tratam os arts. 12 e 13.
+§ 1º Para fins da responsabilidade de que trata o caput, admite-se que o diretor indicado desempenhe outras funções na instituição, exceto a relativa à administração de recursos de terceiros.
+§ 2º No caso de conglomerados financeiros, admite-se a indicação de um diretor responsável pela implementação e cumprimento das medidas estabelecidas nesta circular, bem como pelas comunicações referentes às respectivas instituições integrantes.
+Art. 18-A. (Revogado, a partir de 6/6/2019, pela Circular nº 3.942, de 21/5/2019.)
+Art. 19. O Banco Central do Brasil divulgará:
+I - os procedimentos para efetuar as comunicações de que tratam os arts. 12 e 13;
+II - operações e situações que podem configurar indício de ocorrência dos crimes previstos na Lei nº 9.613, de 1998;
+III - situações exemplificativas de relacionamento próximo, para fins do disposto no art. 4º.
+Art. 20. A atualização das informações cadastrais relativas a clientes permanentes cujos relacionamentos tenham sido iniciados antes da entrada em vigor desta circular deve ser efetuada em conformidade com os testes de verificação de que trata o § 5º do art. 2º.
+Art. 20-A. As instituições financeiras devem implementar até 11 de março de 2019 o registro e a remessa de que trata o art. 9º-B desta Circular. (Incluído pela Circular nº 3.889, de 28/3/2018.)
+Art. 21. Esta circular entra em vigor na data de sua publicação, surtindo efeitos 30 (trinta) dias após a data de publicação para os relacionamentos com clientes permanentes ou eventuais estabelecidos a partir dessa data.
+Art. 22. Ficam revogadas as Circulares ns. 2.852, de 3 de dezembro de 1998, 3.339, de 22 de dezembro de 2006, e 3.422, de 27 de novembro de 2008, e os arts. 1º e 2º da Circular nº 3.290, de 5 de setembro de 2005.
+Brasília, 24 de julho de 2009.
+Alexandre Antonio Tombini Alvir Alberto Hoffmann
+Diretor Diretor
+Este texto não substitui o publicado no DOU de 27/7/2009, Seção 1, p. 42-44, e no Sisbacen.

@@ -1,0 +1,37 @@
+{
+  "case_id": "answer-48-prazo",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-answer-48-prazo-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "A comunicação da operação ou situação suspeita ao Coaf deve ser realizada até o dia útil seguinte ao da decisão de comunicação.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0319",
+              "locator": "art. 48, § 2º"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.00213975,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0319",
+    "circular-3978-2020@v5#0314",
+    "circular-3978-2020@v5#0315",
+    "circular-3978-2020@v5#0326",
+    "circular-3978-2020@v5#0337",
+    "circular-3978-2020@v5#0297",
+    "circular-3978-2020@v5#0338",
+    "circular-3978-2020@v5#0330"
+  ]
+}

@@ -1,0 +1,11 @@
+# A cluster anyone can start locally, and the one CI creates. One node is enough:
+# what this demonstrates is a pod that only receives traffic once it can answer,
+# not scheduling across nodes.
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+  - role: control-plane
+    extraPortMappings:
+      - containerPort: 30080
+        hostPort: 30080
+        protocol: TCP

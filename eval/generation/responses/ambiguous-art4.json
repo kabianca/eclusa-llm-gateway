@@ -1,0 +1,37 @@
+{
+  "case_id": "ambiguous-art4",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-ambiguous-art4-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "O art. 4º determina que as instituições de que trata o art. 1º devem comunicar imediatamente a indisponibilidade de ativos e as tentativas de sua transferência relacionadas às pessoas naturais, às pessoas jurídicas ou às entidades sancionadas por resolução do Conselho de Segurança das Nações Unidas ou por designações de seus comitês de sanções, nos termos do art. 11 da Lei nº 13.810, de 2019, ao Banco Central do Brasil, ao Ministério da Justiça e Segurança Pública e ao Conselho de Controle de Atividades Financeiras (Coaf).",
+          "citations": [
+            {
+              "doc_id": "resolucao-bcb-44-2020@v1",
+              "chunk_id": "resolucao-bcb-44-2020@v1#0010",
+              "locator": "art. 4º, caput"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.00254325,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "resolucao-bcb-44-2020@v1#0010",
+    "resolucao-bcb-44-2020@v1#0018",
+    "resolucao-bcb-44-2020@v1#0014",
+    "resolucao-bcb-44-2020@v1#0006",
+    "resolucao-bcb-44-2020@v1#0016",
+    "resolucao-bcb-44-2020@v1#0017",
+    "carta-circular-4001-2020@v4#0198",
+    "instrucao-normativa-bcb-761-2026@v1#0019"
+  ]
+}

@@ -1,0 +1,70 @@
+# The gate. Runs on every push to main and every pull request: deterministic, no
+# network to any model, no API key, no card. This is what holds the badge.
+#
+# The job runs inside python:3.12-slim-trixie rather than on the runner's Ubuntu,
+# and installs poppler at a pinned upstream version. corpus/manifest.json records
+# that corpus/text was extracted with pdftotext 25.03.0; a test asserts the
+# installed version matches before comparing bytes, so a mismatch is named, not
+# left as unexplained differences. ubuntu-latest ships 24.02.0; Debian trixie
+# ships 25.03.0; the image tag moves with Debian point releases, so the version
+# is pinned here rather than inherited — "25.03.0-*" fixes the upstream and
+# tolerates Debian's security revisions, and fails loudly if trixie ever ships a
+# different upstream. Pin what moves, and write down what you pinned. The drift
+# monitor against the live model is a separate workflow, run by hand, never gating.
+
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    name: pytest (Python 3.12, Debian trixie, poppler 25.03.0)
+    runs-on: ubuntu-latest
+    container: python:3.12-slim-trixie
+    timeout-minutes: 15
+
+    env:
+      # The embedding model is fetched once from the Hub at a pinned revision and
+      # verified by hash; the cache is keyed on that revision. Free, and never a
+      # call to a paid API.
+      HF_HUB_CACHE: ${{ github.workspace }}/.hf-cache
+      HF_HUB_DISABLE_TELEMETRY: "1"
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Cache the pinned embedding model
+        uses: actions/cache@v6
+        with:
+          path: .hf-cache
+          key: hf-intfloat-multilingual-e5-small-614241f622f53c4eeff9890bdc4f31cfecc418b3
+
+      - name: Install poppler at the pinned version — the PDF route must run, never skip
+        run: |
+          apt-get update
+          apt-get install -y --no-install-recommends 'poppler-utils=25.03.0-*'
+          pdftotext -v
+
+      - name: Install the package
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+
+      - name: Lint
+        run: |
+          ruff check .
+          ruff format --check .
+
+      - name: Test
+        run: pytest

@@ -1,0 +1,37 @@
+{
+  "case_id": "answer-10",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-answer-10-2026-10-03",
+    "outcome": "answered",
+    "draft": {
+      "outcome": "answered",
+      "statements": [
+        {
+          "text": "A avaliação interna deve ser realizada com o objetivo de identificar e mensurar o risco de utilização de produtos e serviços na prática da lavagem de dinheiro e do financiamento do terrorismo.",
+          "citations": [
+            {
+              "doc_id": "circular-3978-2020@v5",
+              "chunk_id": "circular-3978-2020@v5#0056",
+              "locator": "art. 10, caput"
+            }
+          ]
+        }
+      ],
+      "gaps": []
+    }
+  },
+  "audit_outcome": "answered",
+  "cost_usd": 0.002148,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0065",
+    "circular-3978-2020@v5#0062",
+    "circular-3978-2020@v5#0067",
+    "circular-3978-2020@v5#0057",
+    "circular-3978-2020@v5#0056",
+    "circular-3978-2020@v5#0064",
+    "circular-3978-2020@v5#0066",
+    "circular-3978-2020@v5#0063"
+  ]
+}

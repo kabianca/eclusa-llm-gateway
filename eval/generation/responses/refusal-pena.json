@@ -1,0 +1,23 @@
+{
+  "case_id": "refusal-pena",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-refusal-pena-2026-10-03",
+    "outcome": "refused",
+    "refusal_reason": "out_of_scope",
+    "refusal_note": "As passagens tratam da Circular nº 3.978/2020 sobre política, procedimentos e controles internos de PLD/FT, mas não informam a pena do crime de lavagem de dinheiro."
+  },
+  "audit_outcome": "refused",
+  "cost_usd": 0.00201675,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0015",
+    "circular-3978-2020@v5#0018",
+    "circular-3978-2020@v5#0039",
+    "circular-3978-2020@v5#0042",
+    "circular-3978-2020@v5#0041",
+    "circular-3978-2020@v5#0050",
+    "circular-3978-2020@v5#0014",
+    "circular-3978-2020@v5#0019"
+  ]
+}

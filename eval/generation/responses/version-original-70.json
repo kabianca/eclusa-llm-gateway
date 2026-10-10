@@ -1,0 +1,23 @@
+{
+  "case_id": "version-original-70",
+  "recorded_on": "2026-10-03",
+  "response": {
+    "request_id": "record-version-original-70-2026-10-03",
+    "outcome": "refused",
+    "refusal_reason": "contract_violation",
+    "refusal_note": "superseded_without_current: statement 1: cites circular-3978-2020@v1 art. 70, caput (superseded) and the answer never cites circular-3978-2020@v5 art. 70, caput"
+  },
+  "audit_outcome": "contract_violation",
+  "cost_usd": 0.002412,
+  "model": "gpt-5.4-mini-2026-03-17",
+  "retrieved_chunk_ids": [
+    "circular-3978-2020@v5#0445",
+    "circular-3978-2020@v1#0409",
+    "carta-circular-4037-2020@v1#0016",
+    "circular-4005-2020@v1#0004",
+    "circular-3978-2020@v5#0426.1",
+    "circular-3978-2020@v1#0390",
+    "circular-3978-2020@v5#0425",
+    "circular-3978-2020@v1#0386"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "graded_by": "Karla B S Oliveira",
+  "graded_on": "2026-10-10",
+  "grades": {
+    "answer-10": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "answer-48-prazo": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "answer-4001-especie": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "version-70": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "version-16": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "version-original-70": {
+      "verdict": null,
+      "notes": ""
+    },
+    "partial-ouro": {
+      "verdict": "parcial",
+      "notes": "Partially correct. The corpus holds more that flags the purchase of gold, but what it did say is correct — it could only have gone into more detail. Nothing was invented and the provision was located correctly."
+    },
+    "partial-joalheria": {
+      "verdict": "pass",
+      "notes": "The part of the gap saying that jewellers are not among the operations listed — when in truth any economic activity whatsoever must watch its dealings and comply with what the circular makes explicit."
+    },
+    "answer-344": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "refusal-pena": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "refusal-multa": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "ambiguous-prazo": {
+      "verdict": "parcial",
+      "notes": "Partially correct: the question is vague and even so the model brings several of the deadlines listed in the documentation, with detailed context on why and where each one appears. But I think it could have been refused at the outset, asking for more detail in the question."
+    },
+    "ambiguous-art4": {
+      "verdict": "pass",
+      "notes": "Coherent."
+    },
+    "revoked-pep": {
+      "verdict": "pass",
+      "notes": "Correct."
+    },
+    "revoked-present-tense": {
+      "verdict": null,
+      "notes": ""
+    }
+  }
+}
